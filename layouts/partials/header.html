@@ -1,0 +1,51 @@
+<header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="{{ "/" | relURL }}">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="{{ "/" | relURL }}">Главная</a></li>
+
+        {{/* Верхний уровень: только корневые секции, по weight */}}
+        {{ range $sec := .Site.Sections.ByWeight }}
+          {{ if not (eq $sec.Params.menu_exclude true) }}
+            {{/* Дети секции: вложенные секции + обычные страницы */}}
+            {{ $childSecs  := $sec.Sections.ByWeight }}
+            {{ $childPages := $sec.RegularPages.ByWeight }}  {{/* RegularPages — без секций */}}
+            {{ $hasKids := or (gt (len $childSecs) 0) (gt (len $childPages) 0) }}
+
+            {{ if $hasKids }}
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">{{ $sec.Title }}</button>
+                <ul class="submenu" role="menu" aria-label="Подменю {{ $sec.Title }}">
+                  {{/* Сначала: вложенные секции */}}
+                  {{ range $s := $childSecs }}
+                    {{ if not (eq $s.Params.menu_exclude true) }}
+                      <li role="none"><a role="menuitem" href="{{ $s.RelPermalink }}">{{ $s.Title }}</a></li>
+                    {{ end }}
+                  {{ end }}
+
+                  {{/* Затем: обычные страницы (без дублей секций) */}}
+                  {{ range $p := $childPages }}
+                    {{ if not (eq $p.Params.menu_exclude true) }}
+                      <li role="none"><a role="menuitem" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></li>
+                    {{ end }}
+                  {{ end }}
+                </ul>
+              </li>
+            {{ else }}
+              <li role="none"><a role="menuitem" href="{{ $sec.RelPermalink }}">{{ $sec.Title }}</a></li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>
+
