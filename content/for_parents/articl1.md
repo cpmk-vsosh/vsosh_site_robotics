@@ -2,7 +2,7 @@
 date: 2025-09-03T10:00:00+03:00
 publishDate: 2025-09-03T10:00:00+03:00
 title: "Стресс у детей"
-draft: false
+draft: true
 author: "CHAT GPT"
 tags: ["управление", "PID", "регуляторы", "контроль", "сенсоры", "приводы"]
 cover: "/img/uploads/pid-cover.png" # замените на свой файл
