@@ -38,10 +38,6 @@
   {{ else }}
     <script defer src="{{ "js/script.js" | relURL }}"></script>
   {{ end }}
-
-  {{ if or .Params.math .Site.Params.math }}
-    {{ partial "math.html" . }}
-  {{ end }}
 </body>
 </html>
 
