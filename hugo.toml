@@ -4,7 +4,7 @@ enableRobotsTXT = true
 title = "ВСОШ робототехника"
 [params]
   description = "Актуальная информация олимпиады по профилю робототехника"
-  ogDefault   = "/img/social/default.jpg"
+  ogDefault   = "/img/og.png"
   math = false
   authorName = "Команда ЦПМК"
 
