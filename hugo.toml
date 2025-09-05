@@ -1,8 +1,24 @@
-baseURL = "/"
-languageCode = "ru"
+baseURL = "https://robot.mipt.ru"
+languageCode = "ru-ru"
+enableRobotsTXT = true
 title = "ВСОШ робототехника"
 [params]
+  description = "Актуальная информация олимпиады по профилю робототехника"
+  ogDefault   = "/img/default.jpg"
+  math = false
   authorName = "Команда ЦПМК"
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+
 # ----- (опционально) ЯВНОЕ МЕНЮ ----- (сейчас генерируется из секций в папке content исключение posts)
 # [menu]
 #   [[menu.main]]
