@@ -1,8 +1,8 @@
 ---
-title: "test article"
-date: 2025-09-01
-date: 2025-09-03T10:00:00+03:00
-publishDate: 2025-09-03T10:00:00+03:00
+title: "Полезные ссылки"
+date: 2025-09-06
+date: 2025-09-06T10:00:00+03:00
+publishDate: 2025-09-06T10:00:00+03:00
 draft: true
 author: "Admin"
 ---
@@ -11,7 +11,7 @@ author: "Admin"
 - [Дистанционный видеокурс «Уроки робототехники», уровень 1](https://lektorium.tv/newrobotics-1)
 - [Дистанционный видеокурс «Уроки робототехники», уровень 2](https://lektorium.tv/newrobotics)
 - [ГОСТ Р 60.0.0.4-2023/ИСО 8373:2021, дата введения 2023-09-01](https://docs.cntd.ru/document/1301394978)
-- [Уроки и справочные материалы по электротехнике и программированию](http://wiki.amperka.ru)
+- [Уроки и справочные материалы по электротехнике и программированию микроконтроллеров](http://wiki.amperka.ru)
 ## Рекомендуемое ПО
 - [Среда программирования виртуальных роботов TRIK Studio](https://trikset.com/downloads#trikstudio)
 - [Среда программирования Arduino IDE](https://www.arduino.cc/en/software)
