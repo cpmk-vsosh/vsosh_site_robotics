@@ -3,7 +3,7 @@ title: "Полезные ссылки"
 date: 2025-09-06
 date: 2025-09-06T10:00:00+03:00
 publishDate: 2025-09-06T10:00:00+03:00
-draft: true
+draft: false
 author: "Admin"
 ---
 ## Полезные ресурсы
