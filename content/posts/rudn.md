@@ -12,7 +12,8 @@ excerpt: "Очная встреча в РУДН, посвящённая орга
 
 ## Материалы мероприятия:
 - [Презентация Петровская Н.В.](/downloads/Petrovskaya.pdf)
-- [Презентация Филиппоф С.А.](/downloads/Filippov.pdf)
+- [Презентация Филиппоф С.А.(без видео PDF версия)](/downloads/Filippov.pdf)
+- [Презентация Филиппоф С.А. (поный вариант)](https://disk.yandex.ru/i/UEkC8eNCXtp6tg)
 - [Презентация Мустафин С.В.](/downloads/Mustafin.pdf)
 - [Презентация Осокин И.](/downloads/Osokin.pdf)
 
