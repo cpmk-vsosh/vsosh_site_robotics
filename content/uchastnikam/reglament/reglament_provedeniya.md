@@ -2,7 +2,7 @@
 title: "Текущий регламент"
 date: 2025-09-01
 date: 2025-09-03T10:00:00+03:00
-publishDate: 2025-09-03T10:00:00+03:00
+publishDate: 2025-10-30T10:00:00+03:00
 draft: false
 author: "Admin"
 ---
