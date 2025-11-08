@@ -150,6 +150,44 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px}
 .link-item .desc{ margin-top:6px; color:#444; }
 .muted{ color:var(--muted); }
 
+:where(.article-simple, .hero, .section-head, .links-block) a{
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: .08em;
+  text-underline-offset: 2px;
+  transition: color .15s ease, text-underline-offset .15s ease, background-color .15s ease;
+}
+
+:where(.article-simple, .hero, .section-head, .links-block) a:hover,
+:where(.article-simple, .hero, .section-head, .links-block) a:focus-visible{
+  text-underline-offset: 3px;
+  outline: none;
+}
+
+:where(.article-simple, .hero, .section-head, .links-block) a:visited{
+  color: color-mix(in oklab, var(--link) 70%, black 30%);
+}
+
+a.btn{ text-decoration: none !important; }
+
+.links-clean{ gap:6px; }
+.links-clean .link-item{
+  border:0; background:transparent; padding:0; border-radius:0; box-shadow:none;
+}
+.links-clean .link-item + .link-item{
+  border-top:1px dashed var(--brd);
+  padding-top:6px; margin-top:6px;
+}
+.links-clean .link{
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding:2px 0;
+}
+.links-clean .link:hover,
+.links-clean .link:focus-visible{
+  text-underline-offset: 3px;
+}
+
 @media (max-width:600px){
   .back-row{flex-wrap:wrap}
   .back-row .article-meta{order:2; width:100%; justify-content:flex-start}
