@@ -12,4 +12,4 @@ author: "Команда ЦПМК"
 ## Полный документ и модели для скачивания
 - [ЕТЗ](/downloads/etz_re.pdf)
 - [Зубчатая рейка](/downloads/toothed_rack.zip)
-- [Рабоичий лист](/downloads/ruler.png)
+- [Рабочий лист](/downloads/ruler.png)
