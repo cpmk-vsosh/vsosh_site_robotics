@@ -310,5 +310,73 @@ a.btn{ text-decoration: none !important; }
 :root{
   --container: 1200px; /* если переменной нет — задаём */
 }
+/* ===== Pagination (markup: ul.pagination.pagination-default) ===== */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 18px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.page-item { display: inline-flex; }
+
+.page-link{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--brd);
+  border-radius: 10px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background .15s ease, border-color .15s ease, transform .06s ease;
+}
+
+.page-link:hover,
+.page-link:focus-visible{
+  background: var(--bg);
+  outline: none;
+}
+
+.page-item.active .page-link{
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
+.page-item.disabled .page-link{
+  opacity: .5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.page-link:active{ transform: translateY(1px); }
+
+/* Компактная вариация (добавь класс .pagination-compact к <ul>) */
+.pagination-compact .page-link{
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Если пагинация в правой части полосы действий */
+.pagination.align-right{ justify-content: flex-end; }
+
+/* На очень узких экранах чуть плотнее */
+@media (max-width: 420px){
+  .pagination{ gap: 4px; }
+}
 
 
