@@ -145,7 +145,7 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px}
 .links-list{ list-style:none; padding:0; margin:8px 0 24px; display:flex; flex-direction:column; gap:10px; }
 .link-item{ border:1px solid var(--brd); border-radius:12px; padding:12px; background:#fff; }
 .link-item .link{ font-weight:600; text-decoration:none;color:var(--link);}
-.link-item .meta{ margin-top:6px; font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center; }
+.link-item .meta{font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center; }
 .link-item .meta .dot{ opacity:.6 }
 .link-item .desc{ margin-top:6px; color:#444; }
 .muted{ color:var(--muted); }
