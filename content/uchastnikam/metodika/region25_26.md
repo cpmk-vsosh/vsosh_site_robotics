@@ -15,12 +15,12 @@ author: "Admin"
 - [Поле 11 класс](/downloads/)
 - [Методология оценивания](/downloads/)
 ## Проектный тур
-- [Задания](/downloads/)
-- [Критерии](/downloads/)
-- [Бланк ответов](/downloads/)
+- [Задания](/downloads/problems_etz.docx)
+- [Критерии](/downloads/criteria_etz.pdf)
+- [Бланк ответов](/downloads/form_etz.pdf)
 
 ## Теоретический тур
-- [Задания 9 класс](/downloads/problems_9)
-- [Задания 11 класс](/downloads/problems_11)
-- [Решения 9класс](/downloads/answers_9))
-- [Решения 11 класс](/downloads/answers_11)
+- [Задания 9 класс](/downloads/problems_9.docx)
+- [Задания 11 класс](/downloads/problems_11.docx)
+- [Решения 9класс](/downloads/answers_9.docx)
+- [Решения 11 класс](/downloads/answers_11.docx)
