@@ -328,9 +328,7 @@ a.btn{ text-decoration: none !important; }
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  min-width: 36px;
-  height: 36px;
-  padding: 0 20px;
+  padding: 20px;
   border: 1px solid var(--brd);
   border-radius: 10px;
   background: #fff;
