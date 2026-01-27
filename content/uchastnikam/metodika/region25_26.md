@@ -15,12 +15,12 @@ author: "Admin"
 - [Поле 11 класс](/downloads/)
 - [Методология оценивания](/downloads/)
 ## Проектный тур
-- [Среда программирования виртуальных роботов TRIK Studio](https://trikset.com/downloads#trikstudio)
-- [Среда программирования Arduino IDE](https://www.arduino.cc/en/software)
-- [Симулятор Wokwi для проектирования и программирования электронных схем](https://wokwi.com)
-- [Среда TestSys для организации дистанционных этапов олимпиады с автоматической проверкой заданий в TRIK Studio](https://testsys.trikset.com/2024/)
-- [[Среда TestSys для организации дистанционных этапов олимпиады с автоматической проверкой заданий в TRIK Studio вариант 2]](https://olymp.trikset.com/)
-- [Образовательная среда для обучения программированию и робототехнике Кulibin](https://kulibin.app)
+- [Задания](/downloads/)
+- [Критерии](/downloads/)
+- [Бланк ответов](/downloads/)
 
-## Практический тур
-- [Онлайн симулятор электрических схем](https://www.falstad.com/circuit/)
+## Теоретический тур
+- [Задания 9 класс](/downloads/)
+- [Задания 11 класс](/downloads/)
+- [Решения 9класс](/downloads/)
+- [Решения 11 класс](/downloads/)
