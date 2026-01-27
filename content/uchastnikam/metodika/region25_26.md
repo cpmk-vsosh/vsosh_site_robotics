@@ -7,13 +7,13 @@ draft: false
 author: "Admin"
 ---
 ## Практический тур
-- [Задания 9 класс](http://mosrobotics.ru/vsosh/)
-- [Критерии 9класс](https://lektorium.tv/newrobotics-1)
-- [Поле 9 класс](https://lektorium.tv/newrobotics)
-- [Задания 11 класс](http://mosrobotics.ru/vsosh/)
-- [Критерии 11 класс](https://lektorium.tv/newrobotics-1)
-- [Поле 11 класс](https://lektorium.tv/newrobotics)
-- [Методология оценивания](https://lektorium.tv/newrobotics)
+- [Задания 9 класс](/downloads/)
+- [Критерии 9класс](/downloads/)
+- [Поле 9 класс](/downloads/)
+- [Задания 11 класс](/downloads/)
+- [Критерии 11 класс](/downloads/)
+- [Поле 11 класс](/downloads/)
+- [Методология оценивания](/downloads/)
 ## Проектный тур
 - [Среда программирования виртуальных роботов TRIK Studio](https://trikset.com/downloads#trikstudio)
 - [Среда программирования Arduino IDE](https://www.arduino.cc/en/software)
