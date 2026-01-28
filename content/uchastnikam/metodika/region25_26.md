@@ -13,7 +13,7 @@ author: "Admin"
 - [Задания 11 класс](/downloads/problems_11_PT.pdf)
 - [Критерии 11 класс](/downloads/criteria_10_11_PT.pdf)
 - [Поле 11 класс](/downloads/Robo26-R-P-10_11_2400х1500.pdf)
-- [Схемы](/downloads/)
+- [Примеры схем](/downloads/circuits.pdf)
 ## Проектный тур
 - [Задания](/downloads/problems_etz.pdf)
 - [Критерии](/downloads/criteria_etz.pdf)
