@@ -7,7 +7,7 @@ draft: false
 author: "Admin"
 ---
 ## Практический тур
-- [Задания 9 класс](/downloads/problems_9_PT.docx)
+- [Задания 9 класс](/downloads/problems_9_PT.pdf)
 - [Критерии 9 класс](/downloads/criteria_9_PT.pdf)
 - [Поле 9 класс](/downloads/Robo26-R-P-9_2400х1500.pdf)
 - [Задания 11 класс](/downloads/problems_11_PT.pdf)
