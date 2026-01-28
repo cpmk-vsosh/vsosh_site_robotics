@@ -10,8 +10,8 @@ author: "Admin"
 - [Задания 9 класс](/downloads/problems_9_PT.pdf)
 - [Критерии 9 класс](/downloads/criteria_9_PT.pdf)
 - [Поле 9 класс](/downloads/Robo26-R-P-9_2400х1500.pdf)
-- [Задания 11 класс](/downloads/problems_11_PT.pdf)
-- [Критерии 11 класс](/downloads/criteria_10_11_PT.pdf)
+- [Задания 10-11 класс](/downloads/problems_11_PT.pdf)
+- [Критерии 10-11 класс](/downloads/criteria_10_11_PT.pdf)
 - [Поле 11 класс](/downloads/Robo26-R-P-10_11_2400х1500.pdf)
 - [Примеры схем](/downloads/circuits.pdf)
 ## Проектный тур
@@ -21,6 +21,6 @@ author: "Admin"
 
 ## Теоретический тур
 - [Задания 9 класс](/downloads/problems_9.pdf)
-- [Задания 11 класс](/downloads/problems_11.pdf)
+- [Задания 10-11 класс](/downloads/problems_11.pdf)
 - [Решения 9 класс](/downloads/answers_9.pdf)
-- [Решения 11 класс](/downloads/answers_11.pdf)
+- [Решения 10-11 класс](/downloads/answers_11.pdf)
