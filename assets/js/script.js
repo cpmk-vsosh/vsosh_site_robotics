@@ -74,16 +74,6 @@ menu?.addEventListener('click', (e) => {
   if (isLink && isMobile()) closeNav();
 });
 
-// Сохраняем «откуда пришли» для кнопки Назад
-document.addEventListener('click', (e) => {
-  const a = e.target.closest('a[href]');
-  if (!a) return;
-  if (a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.hasAttribute('download')) return;
-  const to = new URL(a.getAttribute('href'), location.href);
-  if (to.origin === location.origin) {
-    try { sessionStorage.setItem('backTarget', location.href); } catch(_) {}
-  }
-});
 
 // Кнопка Назад
 (function(){
