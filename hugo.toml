@@ -9,11 +9,10 @@ title = "ВСОШ робототехника"
   authorName = "Команда ЦПМК"
 
 [markup]
-  [markup.goldmark.renderer]
-    style = "github"
-    lineNos = false
-    codeFences = true
-    guessSyntax = true
+  [markup.highlight]
+    style = "monokai" # или "friendly", "native", "arduino" (если есть)
+    lineNumbersInTable = false
+    noClasses = false
 
 [permalinks]
   posts = "/posts/:slug/"
