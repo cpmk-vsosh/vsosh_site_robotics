@@ -5,5 +5,5 @@ publishDate: 2026-02-25T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
-## [Требования заключительного этапа (полный текст)](/downloads/trebovaniya_zakl_25-26..pdf)
+## [Требования заключительного этапа (полный текст)](/downloads/trebovaniya_zakl_25-26.pdf)
 
