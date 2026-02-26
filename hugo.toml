@@ -8,7 +8,7 @@ title = "ВСОШ робототехника"
   math = false
   authorName = "Команда ЦПМК"
 
-[[markup]
+[markup]
   [markup.highlight]
     noClasses = false
 
