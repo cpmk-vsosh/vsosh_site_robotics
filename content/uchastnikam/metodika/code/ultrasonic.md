@@ -5,6 +5,7 @@ publishDate: 2026-02-26T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
+![hc-sr04](/img/hrc.png)
 ````cpp
 // Определяем пины подключения HC-SR04
 const int TRIG_PIN = 9;
