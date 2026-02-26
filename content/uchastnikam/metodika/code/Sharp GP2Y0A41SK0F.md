@@ -1,4 +1,10 @@
-## Sharp GP2Y0A41SK0F
+---
+title: "Sharp GP2Y0A41SK0F"
+date: 2026-02-26T10:00:00+03:00
+publishDate: 2026-02-26T10:00:00+03:00
+draft: false
+author: "Команда ЦПМК"
+---
 ````cpp
 /*
   Пример кода для датчика Sharp GP2Y0A41SK0F (4-30 см)
