@@ -1,39 +1,53 @@
 ## Sharp GP2Y0A41SK0F
 ````cpp
-// Определяем пин, к которому подключен датчик
-#define sensorPin A1
+/*
+  Пример кода для датчика Sharp GP2Y0A41SK0F (4-30 см)
+*/
+
+const int sensorPin = A0; // Аналоговый пин, к которому подключен Vo
+const int numReadings = 10; // Количество считываний для усреднения
+int readings[numReadings]; 
+int readIndex = 0; 
+int total = 0; 
+int average = 0;
 
 void setup() {
-  // Запускаем последовательный порт для вывода данных в монитор
   Serial.begin(9600);
+  // Инициализация массива считываний
+  for (int i = 0; i < numReadings; i++) {
+    readings[i] = 0;
+  }
 }
 
 void loop() {
-  // Считываем значение с аналогового пина (0-1023)
-  uint16_t analogValue = analogRead(sensorPin);
+  // --- Усреднение показаний (для стабильности) ---
+  total = total - readings[readIndex];
+  readings[readIndex] = analogRead(sensorPin);
+  total = total + readings[readIndex];
+  readIndex = readIndex + 1;
 
-  // Преобразуем значение в расстояние (в сантиметрах)
-  // Формула взята из примера DFRobot [citation:1]
-  double distanceCm = getDistance(analogValue);
+  if (readIndex >= numReadings) {
+    readIndex = 0;
+  }
+  average = total / numReadings;
 
-  // Выводим результаты в Serial Monitor
-  Serial.print("Analog Value: ");
-  Serial.print(analogValue);
-  Serial.print(" | Distance: ");
-  Serial.print(distanceCm);
+  // --- Преобразование в напряжение (0-5В -> 0-1023) ---
+  float voltage = average * (5.0 / 1023.0);
+
+  // --- Преобразование напряжения в расстояние (см) ---
+  // Формула основана на аппроксимации кривой датчика
+  // Для GP2Y0A41SK0F (4-30 см) часто используют: distance = 12.0 / (voltage - 0.1) 
+  // или калибровочные формулы [1]
+  float distance = 13.0 * pow(voltage, -1); // Упрощенная формула
+
+  // Вывод данных
+  Serial.print("Voltage: ");
+  Serial.print(voltage);
+  Serial.print("V, Distance: ");
+  Serial.print(distance);
   Serial.println(" cm");
 
-  // Небольшая задержка для стабильности
-  delay(200);
-}
-
-// Функция для преобразования аналогового значения в расстояние
-double getDistance(uint16_t analogValue) {
-  if (analogValue < 16) {
-    analogValue = 16; // Минимальное значение для корректной работы формулы
-  }
-  // Эта эмпирическая формула получена из даташита [citation:1]
-  return 2076.0 / (analogValue - 11.0);
+  delay(50); // Небольшая пауза
 }
 
 ````
