@@ -11,6 +11,7 @@ title = "ВСОШ робототехника"
 [markup]
   [markup.highlight]
     noClasses = false
+    style = "friendly"
 
 [permalinks]
   posts = "/posts/:slug/"
