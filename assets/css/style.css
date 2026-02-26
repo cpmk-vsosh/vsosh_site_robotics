@@ -123,10 +123,6 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px}
 .article-image{margin:8px 0 14px}
 
 .article-simple code{background:#f3f4f6; padding:2px 4px; border-radius:6px}
-.article-simple pre{
-  background:#0f172a; color:#e5e7eb;
-  border-radius:12px; padding:12px; overflow:auto; font-size:14px; line-height:1.45
-}
 
 .back-row{
   display:flex; align-items:center; gap:12px; justify-content:space-between;
@@ -368,44 +364,105 @@ a.btn{ text-decoration: none !important; }
   border-radius: 8px;
   font-size: 14px;
 }
-/* фон */
-.chroma {
-  background-color: #ffffff;
-  color: #000000;
-  font-family: "Source Code Pro", monospace;
-  font-size: 14px;
+
+/* --- Базовый контейнер блока кода --- */
+
+.article-simple .highlight,
+.article-simple .chroma {
+  background: #ffffff;
+  border: 1px solid var(--brd);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* комментарии */
-.chroma .c {
+/* Сам <pre> */
+.article-simple .chroma pre {
+  margin: 0;
+  padding: 16px;
+  background: #ffffff;
+  color: #000000;
+  font-family: "Source Code Pro", Consolas, Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-x: auto;
+}
+
+/* Убираем двойную заливку */
+.article-simple .chroma code {
+  background: transparent;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* --- Inline code --- */
+
+.article-simple p code,
+.article-simple li code {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+/* Комментарии */
+.chroma .c,
+.chroma .c1,
+.chroma .cm {
   color: #95a5a6;
   font-style: italic;
 }
 
-/* ключевые слова */
-.chroma .k {
+/* Ключевые слова */
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr {
   color: #d35400;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* типы */
+/* Типы */
 .chroma .kt {
   color: #2980b9;
 }
 
-/* строки */
-.chroma .s {
+/* Строки */
+.chroma .s,
+.chroma .s1,
+.chroma .s2 {
   color: #27ae60;
 }
 
-/* числа */
-.chroma .m {
+/* Числа */
+.chroma .m,
+.chroma .mi,
+.chroma .mf {
   color: #8e44ad;
 }
 
-/* функции */
+/* Функции */
 .chroma .nf {
   color: #2c3e50;
+}
+
+/* Константы */
+.chroma .nb,
+.chroma .no {
+  color: #8e44ad;
+}
+
+/* Операторы */
+.chroma .o {
+  color: #111827;
+}
+
+.chroma .ln {
+  color: #9ca3af;
+  padding-right: 12px;
+  user-select: none;
 }
 /* Если пагинация в правой части полосы действий */
 .pagination.align-right{ justify-content: flex-end; }
