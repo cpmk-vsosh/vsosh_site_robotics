@@ -368,7 +368,45 @@ a.btn{ text-decoration: none !important; }
   border-radius: 8px;
   font-size: 14px;
 }
+/* фон */
+.chroma {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+}
 
+/* комментарии */
+.chroma .c {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+/* ключевые слова */
+.chroma .k {
+  color: #d35400;
+  font-weight: bold;
+}
+
+/* типы */
+.chroma .kt {
+  color: #2980b9;
+}
+
+/* строки */
+.chroma .s {
+  color: #27ae60;
+}
+
+/* числа */
+.chroma .m {
+  color: #8e44ad;
+}
+
+/* функции */
+.chroma .nf {
+  color: #2c3e50;
+}
 /* Если пагинация в правой части полосы действий */
 .pagination.align-right{ justify-content: flex-end; }
 
