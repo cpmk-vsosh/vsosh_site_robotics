@@ -9,7 +9,7 @@ title = "ВСОШ робототехника"
   authorName = "Команда ЦПМК"
 
 [markup]
-  [markup.highlight]
+  [markup.goldmark.rendere]
     style = "github"
     lineNos = false
     codeFences = true

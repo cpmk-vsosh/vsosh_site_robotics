@@ -2,7 +2,7 @@
 date: 2025-09-03T10:00:00+03:00
 publishDate: 2025-09-03T10:00:00+03:00
 title: "Зачем нужен регулятор"
-draft: false
+draft: true
 author: "CHAT GPT"
 #cover: "/img/uploads/pid-cover.png"
 excerpt: "Кратко разбираем, что такое P/PI/PID-регуляторы, когда какой выбирать, как настроить и какие ошибки чаще всего встречаются."
