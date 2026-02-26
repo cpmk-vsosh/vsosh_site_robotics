@@ -1,6 +1,6 @@
 ---
 title: "Заключительный этап"
-weight: 10
+weight: 20
 description: "Информация о заключительном этапе 25/26г."
 menu_exclude: false
 ---
