@@ -2,7 +2,7 @@
 title: "Проектный тур"
 date: 2026-02-25T10:00:00+03:00
 publishDate: 2026-02-25T10:00:00+03:00
-draft: false
+draft: true
 author: "Команда ЦПМК"
 ---
 [Текст ЕТЗ (09.02.2026)](/downloads/etz_re.pdf)
