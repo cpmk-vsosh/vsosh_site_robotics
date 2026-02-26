@@ -8,10 +8,8 @@ title = "ВСОШ робототехника"
   math = false
   authorName = "Команда ЦПМК"
 
-[markup]
+[[markup]
   [markup.highlight]
-    style = "monokai" # или "friendly", "native", "arduino" (если есть)
-    lineNumbersInTable = false
     noClasses = false
 
 [permalinks]
