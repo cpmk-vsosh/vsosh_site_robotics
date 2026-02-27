@@ -5,6 +5,7 @@ publishDate: 2026-02-26T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
+![line_sens](/img/line_sens.png)
 ````cpp
 // Пины датчиков
 const int SENSOR_PINS[] = {A0, A1, A2}; 
