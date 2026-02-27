@@ -5,6 +5,7 @@ publishDate: 2026-02-26T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
+![Sharp_GP2Y0A41SK0F](/img/Sharp_GP2Y0A41SK0F.jpg)
 ````cpp
 /*
   Пример кода для датчика Sharp GP2Y0A41SK0F (4-30 см)
