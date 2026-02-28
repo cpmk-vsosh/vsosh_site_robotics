@@ -5,6 +5,7 @@ publishDate: 2028-02-28T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
+
 ![jga25-370b](/img/jga25-370b.png)
 
 ````cpp
