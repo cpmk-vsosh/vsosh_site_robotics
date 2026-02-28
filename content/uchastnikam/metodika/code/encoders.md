@@ -6,7 +6,7 @@ publishDate: 2028-02-26T10:00:00+03:00
 draft: false
 author: "Команда ЦПМК"
 ---
-![MG996R](/img/MG996R.png)
+
 ````cpp
 
 // Copyright (c) 2026 ЦПМК по информатике
