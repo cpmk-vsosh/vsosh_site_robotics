@@ -7,6 +7,10 @@ author: "Команда ЦПМК"
 ---
 ![Sharp_GP2Y0A41SK0F](/img/Sharp_GP2Y0A41SK0F.jpg)
 ````cpp
+// Copyright (c) 2026 ЦПМК по информатике
+// Licensed under the MIT License.
+// https://robot.mipt.ru/
+
 /*
   Пример кода для датчика Sharp GP2Y0A41SK0F (4-30 см)
 */
