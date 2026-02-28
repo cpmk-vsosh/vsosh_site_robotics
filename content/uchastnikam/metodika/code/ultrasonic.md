@@ -7,6 +7,10 @@ author: "Команда ЦПМК"
 ---
 ![hc-sr04](/img/hrc.png)
 ````cpp
+// Copyright (c) 2026 ЦПМК по информатике
+// Licensed under the MIT License.
+// https://robot.mipt.ru/
+
 // Определяем пины подключения HC-SR04
 const int TRIG_PIN = 9;
 const int ECHO_PIN = 10;
