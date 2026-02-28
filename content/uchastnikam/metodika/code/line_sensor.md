@@ -7,6 +7,10 @@ author: "Команда ЦПМК"
 ---
 ![line_sens](/img/line_sens.png)
 ````cpp
+// Copyright (c) 2026 ЦПМК по информатике
+// Licensed under the MIT License.
+// https://robot.mipt.ru/
+
 // Пины датчиков
 const int SENSOR_PINS[] = {A0, A1, A2}; 
 const int SENSOR_COUNT = 3;
