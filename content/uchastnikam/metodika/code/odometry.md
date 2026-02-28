@@ -1,3 +1,15 @@
+---
+title: "Пример вычисления одометрии с помощью энкодеров"
+date: 2026-02-27T10:00:00+03:00
+publishDate: 2026-02-27T10:00:00+03:00
+draft: false
+author: "Команда ЦПМК"
+---
+
+![jga25-370b](/img/jga25-370b.png)
+
+````cpp
+
 // Copyright (c) 2026 ЦПМК по информатике
 // Licensed under the MIT License.
 // https://robot.mipt.ru/
@@ -82,3 +94,4 @@ void doEncoderR() {
     right_ticks++;
   }
 }
+```
