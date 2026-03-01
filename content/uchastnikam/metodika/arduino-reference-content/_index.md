@@ -5,3 +5,6 @@ publishDate: 2026-02-28T10:00:00+03:00
 draft: false
 author: "Admin"
 ---
+## Лицензия
+Материалы основаны на Arduino Language Reference  
+© Arduino — CC BY-SA 4.0
