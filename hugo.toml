@@ -11,6 +11,10 @@ title = "ВСОШ робототехника"
 [markup]
   [markup.highlight]
     noClasses = false
+    
+[markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [permalinks]
   posts = "/posts/:slug/"

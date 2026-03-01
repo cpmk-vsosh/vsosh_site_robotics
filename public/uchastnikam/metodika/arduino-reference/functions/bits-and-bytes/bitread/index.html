@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>bitRead() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Reads a bit of a variable, e.g. bool, int. Note that float &amp; double are not supported. You can read the bit of variables up to an unsigned long …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitread/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="bitRead()">
+<meta property="og:description" content="Description
+Reads a bit of a variable, e.g. bool, int. Note that float &amp; double are not supported. You can read the bit of variables up to an unsigned long long (64 bits / 8 bytes).
+Syntax …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitread/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="bitRead()">
+<meta name="twitter:description" content="Description
+Reads a bit of a variable, e.g. bool, int. Note that float &amp; double are not supported. You can read the bit of variables up to an unsigned long long (64 bits / 8 bytes).
+Syntax …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>bitRead()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Reads a bit of a variable, e.g. <code>bool</code>, <code>int</code>. Note that <code>float</code> &amp; <code>double</code> are not supported. You can read the bit of variables up to an <code>unsigned long long</code> (64 bits / 8 bytes).</p>
+<p><strong>Syntax</strong></p>
+<p><code>bitRead(x, n)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>x</code>: the number from which to read.<br>
+<code>n</code>: which bit to read, starting at 0 for the least-significant (rightmost) bit.</p>
+<p><strong>Returns</strong></p>
+<p>The value of the bit (0 or 1).</p>
+<p><strong>Example Code</strong></p>
+<p>This example code demonstrates how to read two variables, one increasing counter, one decreasing counter, and print out both the binary and decimal values of the variables.</p>
+<p>The <code>readBit()</code> function loops through each bit of the variable (starting from the rightmost bit), and prints it out.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">long</span> <span class="n">negative_var</span> <span class="o">=</span> <span class="o">-</span><span class="mi">0</span><span class="p">;</span>  <span class="c1">//
+</span></span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">positive_var</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//predefined sizes when looping through bits
+</span></span></span><span class="line"><span class="cl"><span class="c1">//e.g. long_size is 32 bit (which is 0-31). Therefore, we subtract &#34;1&#34;.
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">bool_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">int_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">long_size</span> <span class="o">=</span> <span class="p">(</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//run readBit function, passing the pos/neg variables
+</span></span></span><span class="line"><span class="cl">  <span class="n">readBit</span><span class="p">(</span><span class="s">&#34;Positive &#34;</span><span class="p">,</span> <span class="n">positive_var</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">readBit</span><span class="p">(</span><span class="s">&#34;Negative &#34;</span><span class="p">,</span> <span class="n">negative_var</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">//increase and decrease the variables
+</span></span></span><span class="line"><span class="cl">  <span class="n">negative_var</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">positive_var</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*this function takes a variable, prints it out bit by bit (starting from the right)
+</span></span></span><span class="line"><span class="cl"><span class="cm">then prints the decimal number for comparison.*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">readBit</span><span class="p">(</span><span class="kt">String</span> <span class="n">direction</span><span class="p">,</span> <span class="kt">long</span> <span class="n">counter</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">direction</span> <span class="o">+</span> <span class="s">&#34;Binary Number: &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//loop through each bit
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">long_size</span><span class="p">;</span> <span class="n">b</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">b</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">byte</span> <span class="nf">bit</span> <span class="o">=</span> <span class="nf">bitRead</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">bit</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34; Decimal Number: &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">counter</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>See also</strong></p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

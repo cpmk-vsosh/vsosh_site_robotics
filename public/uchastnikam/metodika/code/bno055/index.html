@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Инерциальный модуль BNO055 — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ #include &lt;Wire.h&gt; #define BNO_ADDR 0x29 // I2C …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/code/bno055/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Инерциальный модуль BNO055">
+<meta property="og:description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ #include &lt;Wire.h&gt; #define BNO_ADDR 0x29 // I2C адрес BNO055 (0x28 или 0x29) #define …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/code/bno055/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Инерциальный модуль BNO055">
+<meta name="twitter:description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ #include &lt;Wire.h&gt; #define BNO_ADDR 0x29 // I2C адрес BNO055 (0x28 или 0x29) #define …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-26T10:00:00&#43;03:00">
+          26.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Команда ЦПМК</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Инерциальный модуль BNO055</h1>
+
+      
+
+      <p><img src="/img/BNO055.png" alt="BNO055"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Copyright (c) 2026 ЦПМК по информатике
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Licensed under the MIT License.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// https://robot.mipt.ru/
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define BNO_ADDR 0x29         </span><span class="c1">// I2C адрес BNO055 (0x28 или 0x29)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define BNO_CHIP_ID_REG 0x00  </span><span class="c1">// Регистр идентификации (должен вернуть 0xA0)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// --- Структура для хранения данных ---
+</span></span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">BNOData</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">euler</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>   <span class="c1">// [0]-Курс(H), [1]-Крен(R), [2]-Тангаж(P). Эйлеровы углы в градусах.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">quat</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>    <span class="c1">// [0]-W, [1]-X, [2]-Y, [3]-Z. Кватернионы Нормированные значения.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">linAcc</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>  <span class="c1">// Линейное ускорение без гравитации (X, Y, Z) в m/s^2.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">grav</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>    <span class="c1">// Вектор силы тяжести (X, Y, Z) в m/s^2.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">acc</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>     <span class="c1">// Общее ускорение (X, Y, Z) в m/s^2.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">gyro</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>    <span class="c1">// Угловая скорость (X, Y, Z) в Dps (град/сек).
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">mag</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>     <span class="c1">// Напряженность магн. поля (X, Y, Z) в uT (микротесла).
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int8_t</span> <span class="n">temp</span><span class="p">;</span>      <span class="c1">// Температура чипа в градусах Цельсия.
+</span></span></span><span class="line"><span class="cl">  <span class="kt">uint8_t</span> <span class="n">cal</span><span class="p">[</span><span class="mi">4</span><span class="p">];</span>   <span class="c1">// Статус калибровки [0]-Система, [1]-Гироскоп, [2]-Акселерометр, [3]-Магнитометр (0..3).
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Функция записи в регистр
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">writeReg</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">reg</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">BNO_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Функция чтения нескольких регистров подряд
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">readRegs</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">reg</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">buf</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">BNO_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">reg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">requestFrom</span><span class="p">((</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">BNO_ADDR</span><span class="p">,</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)</span><span class="n">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Wire</span><span class="p">.</span><span class="n">read</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// --- Функция чтения всех данных ---
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">readBNOData</span><span class="p">(</span><span class="n">BNOData</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">uint8_t</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>  <span class="c1">// Буфер для приема данных (макс 8 байт для кватернионов)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x08: Акселерометр (X,Y,Z). 1 LSB = 1/100 m/s^2
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x08</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x0E: Магнитометр (X,Y,Z). 1 LSB = 1/16 uT
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x0E</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">mag</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">16.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x14: Гироскоп (X,Y,Z). 1 LSB = 1/16 Dps
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x14</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">16.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x1A: Эйлеровы углы (H,R,P). 1 LSB = 1/16 Degree
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x1A</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">16.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x20: Кватернионы (W,X,Y,Z). 1 LSB = 1/2^14 (16384)
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x20</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">quat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">16384.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x28: Линейное ускорение (X,Y,Z). 1 LSB = 1/100 m/s^2
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x28</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">linAcc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x2E: Гравитация (X,Y,Z). 1 LSB = 1/100 m/s^2
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x2E</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">data</span><span class="p">.</span><span class="n">grav</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int16_t</span><span class="p">)((</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="n">buffer</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="mf">100.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x34: Температура. 1 LSB = 1°C
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x34</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">data</span><span class="p">.</span><span class="n">temp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int8_t</span><span class="p">)</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Регистр 0x35: Статус калибровки (битовое поле)
+</span></span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="mh">0x35</span><span class="p">,</span> <span class="n">buffer</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">6</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">;</span>  <span class="c1">// Система
+</span></span></span><span class="line"><span class="cl">  <span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">;</span>  <span class="c1">// Гироскоп
+</span></span></span><span class="line"><span class="cl">  <span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">;</span>  <span class="c1">// Акселерометр
+</span></span></span><span class="line"><span class="cl">  <span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&amp;</span> <span class="mh">0x03</span><span class="p">;</span>         <span class="c1">// Магнитометр
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printOutput</span><span class="p">(</span><span class="n">BNOData</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Функция для вывода в Serial всех измеряемых значений
+</span></span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;--- BNO055 FULL REPORT ---&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Euler: &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Quat:  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">quat</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">quat</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">quat</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">quat</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;LinAcc:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">linAcc</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">linAcc</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">linAcc</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Grav:  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">grav</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">grav</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">grav</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;TotalAcc:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">acc</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Gyro:  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">gyro</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Mag:   &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">mag</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">mag</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">mag</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Temp:  &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34; C&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Calib: [S:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; G:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; A:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34; M:&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">cal</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;]&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">plotEuler</span><span class="p">(</span><span class="k">const</span> <span class="n">BNOData</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Функция для вывода в Serial Plotter углов Эйлера
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// Формат для Serial Plotter: &#34;Название1:Значение1,Название2:Значение2...&#34;
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Heading:&#34;</span><span class="p">);</span>  <span class="c1">// [0]-Курс(H)
+</span></span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;,&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Roll:&#34;</span><span class="p">);</span>  <span class="c1">// [1]-Крен(R)
+</span></span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;,&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&#34;Pitch:&#34;</span><span class="p">);</span>         <span class="c1">// [2]-Тангаж(P)
+</span></span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">euler</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>  <span class="c1">// В конце обязательно println
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Проверка связи с датчиком, остановит программу если BNO055 не найден
+</span></span></span><span class="line"><span class="cl">  <span class="kt">uint8_t</span> <span class="n">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">readRegs</span><span class="p">(</span><span class="n">BNO_CHIP_ID_REG</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">id</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">id</span> <span class="o">!=</span> <span class="mh">0xA0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;Ошибка: BNO055 не найден!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Настройка датчика
+</span></span></span><span class="line"><span class="cl">  <span class="n">writeReg</span><span class="p">(</span><span class="mh">0x3D</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>  <span class="c1">// OPR_MODE: CONFIGMODE (нужен для настройки)
+</span></span></span><span class="line"><span class="cl">  <span class="n">writeReg</span><span class="p">(</span><span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">);</span>  <span class="c1">// SYS_TRIGGER: Сброс системы
+</span></span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">700</span><span class="p">);</span>            <span class="c1">// Время на перезагрузку
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">writeReg</span><span class="p">(</span><span class="mh">0x3B</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">);</span>  <span class="c1">// UNIT_SEL: m/s2, Dps, Degrees, Celsius (выбор единиц измерения) 
+</span></span></span><span class="line"><span class="cl">  <span class="n">writeReg</span><span class="p">(</span><span class="mh">0x3D</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">);</span>  <span class="c1">// OPR_MODE: NDOF (Sensor Fusion включен)
+</span></span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">BNOData</span> <span class="n">currentData</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">readBNOData</span><span class="p">(</span><span class="n">currentData</span><span class="p">);</span>  <span class="c1">// Вызов функции чтения
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">plotEuler</span><span class="p">(</span><span class="n">currentData</span><span class="p">);</span>  <span class="c1">// Функция для вывода в Serial Plotter углов Эйлера
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  printOutput(currentData);  // Вывод в Serial всех данных
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

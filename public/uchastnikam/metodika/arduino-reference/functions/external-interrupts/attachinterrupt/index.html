@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>attachInterrupt() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Digital Pins With Interrupts
+The first parameter to attachInterrupt() is an interrupt number. Normally you should use digitalPinToInterrupt(pin) to …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/external-interrupts/attachinterrupt/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="attachInterrupt()">
+<meta property="og:description" content="Description
+Digital Pins With Interrupts
+The first parameter to attachInterrupt() is an interrupt number. Normally you should use digitalPinToInterrupt(pin) to translate the actual digital pin to the …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/external-interrupts/attachinterrupt/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="attachInterrupt()">
+<meta name="twitter:description" content="Description
+Digital Pins With Interrupts
+The first parameter to attachInterrupt() is an interrupt number. Normally you should use digitalPinToInterrupt(pin) to translate the actual digital pin to the …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>attachInterrupt()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p><strong>Digital Pins With Interrupts</strong></p>
+<p>The first parameter to <code>attachInterrupt()</code> is an interrupt number. Normally you should use <code>digitalPinToInterrupt(pin)</code> to translate the actual digital pin to the specific interrupt number. For example, if you connect to pin 3, use <code>digitalPinToInterrupt(3)</code> as the first parameter to <code>attachInterrupt()</code>.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Board</th>
+          <th>Digital Pins Usable For Interrupts</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Uno Rev3, Nano, Mini, other 328-based</td>
+          <td>2, 3</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>UNO R4 Minima, UNO R4 WiFi</td>
+          <td>2, 3</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Uno WiFi Rev2, Nano Every</td>
+          <td>All digital pins</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Mega, Mega2560, MegaADK</td>
+          <td>2, 3, 18, 19, 20, 21</td>
+          <td>(<strong>pins 20 &amp; 21</strong> are not available to use for interrupts while they are used for I2C communication; they also have external pull-ups that cannot be disabled)</td>
+      </tr>
+      <tr>
+          <td>Micro, Leonardo</td>
+          <td>0, 1, 2, 3, 7</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Zero</td>
+          <td>0-3, 5-13, A0-A5</td>
+          <td>Pin 4 cannot be used as an interrupt.</td>
+      </tr>
+      <tr>
+          <td>MKR Family boards</td>
+          <td>0, 1, 4, 5, 6, 7, 8, 9, A1, A2</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Nano 33 IoT</td>
+          <td>2, 3, 9, 10, 11, 13, A1, A5, A7</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Nano 33 BLE, Nano 33 BLE Sense (rev 1 &amp; 2)</td>
+          <td>all pins</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Nano RP2040 Connect</td>
+          <td>0-13, A0-A5</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Nano ESP32</td>
+          <td>all pins</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>GIGA R1 WiFi</td>
+          <td>all pins</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Due</td>
+          <td>all digital pins</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>101</td>
+          <td>all digital pins</td>
+          <td>(Only pins 2, 5, 7, 8, 10, 11, 12, 13 work with <strong>CHANGE</strong>))</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Notes and Warnings</strong></p>
+<p><strong>Note</strong><br>
+Inside the attached function, <code>delay()</code> won’t work and the value returned by <code>millis()</code> will not increment. Serial data received while in the function may be lost. You should declare as <code>volatile</code> any variables that you modify within the attached function. See the section on ISRs below for more information.</p>
+<p><strong>Using Interrupts</strong></p>
+<p>Interrupts are useful for making things happen automatically in microcontroller programs and can help solve timing problems. Good tasks for using an interrupt may include reading a rotary encoder, or monitoring user input.</p>
+<p>If you wanted to ensure that a program always caught the pulses from a rotary encoder, so that it never misses a pulse, it would make it very tricky to write a program to do anything else, because the program would need to constantly poll the sensor lines for the encoder, in order to catch pulses when they occurred. Other sensors have a similar interface dynamic too, such as trying to read a sound sensor that is trying to catch a click, or an infrared slot sensor (photo-interrupter) trying to catch a coin drop. In all of these situations, using an interrupt can free the microcontroller to get some other work done while not missing the input.</p>
+<p><strong>About Interrupt Service Routines</strong></p>
+<p>ISRs are special kinds of functions that have some unique limitations most other functions do not have. An ISR cannot have any parameters, and they shouldn’t return anything.</p>
+<p>Generally, an ISR should be as short and fast as possible. If your sketch uses multiple ISRs, only one can run at a time, other interrupts will be executed after the current one finishes in an order that depends on the priority they have. <code>millis()</code> relies on interrupts to count, so it will never increment inside an ISR. Since <code>delay()</code> requires interrupts to work, it will not work if called inside an ISR. <code>micros()</code> works initially but will start behaving erratically after 1-2 ms. <code>delayMicroseconds()</code> does not use any counter, so it will work as normal.</p>
+<p>Typically global variables are used to pass data between an ISR and the main program. To make sure variables shared between an ISR and the main program are updated correctly, declare them as <code>volatile</code>.</p>
+<p>For more information on interrupts, see <a href="http://gammon.com.au/interrupts">Nick Gammon’s notes</a>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>attachInterrupt(digitalPinToInterrupt(pin), ISR, mode)</code> (recommended)<br>
+<code>attachInterrupt(interrupt, ISR, mode)</code> (not recommended)<br>
+<code>attachInterrupt(pin, ISR, mode)</code> (Not recommended. Additionally, this syntax only works on Arduino SAMD Boards, Uno WiFi Rev2, Due, and 101.)</p>
+<p><strong>Parameters</strong></p>
+<p><code>interrupt</code>: the number of the interrupt. Allowed data types: <code>int</code>.<br>
+<code>pin</code>: the Arduino pin number.<br>
+<code>ISR</code>: the ISR to call when the interrupt occurs; this function must take no parameters and return nothing. This function is sometimes referred to as an interrupt service routine.<br>
+<code>mode</code>: defines when the interrupt should be triggered. Four constants are predefined as valid values:\</p>
+<ul>
+<li>
+<p><strong>LOW</strong> to trigger the interrupt whenever the pin is low,\</p>
+</li>
+<li>
+<p><strong>CHANGE</strong> to trigger the interrupt whenever the pin changes value\</p>
+</li>
+<li>
+<p><strong>RISING</strong> to trigger when the pin goes from low to high,\</p>
+</li>
+<li>
+<p><strong>FALLING</strong> for when the pin goes from high to low.\</p>
+</li>
+</ul>
+<p>The Due, Zero and MKR1000 boards allow also:\</p>
+<ul>
+<li><strong>HIGH</strong> to trigger the interrupt whenever the pin is high.</li>
+</ul>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">byte</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">byte</span> <span class="n">interruptPin</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">volatile</span> <span class="kt">byte</span> <span class="n">state</span> <span class="o">=</span> <span class="kc">LOW</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">interruptPin</span><span class="p">,</span> <span class="kc">INPUT_PULLUP</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">attachInterrupt</span><span class="p">(</span><span class="nf">digitalPinToInterrupt</span><span class="p">(</span><span class="n">interruptPin</span><span class="p">),</span> <span class="nf">blink</span><span class="p">,</span> <span class="kc">CHANGE</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">blink</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">state</span> <span class="o">=</span> <span class="o">!</span><span class="n">state</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Interrupt Numbers</strong></p>
+<p>Normally you should use <code>digitalPinToInterrupt(pin)</code>, rather than place an interrupt number directly into your sketch. The specific pins with interrupts and their mapping to interrupt number varies for each type of board. Direct use of interrupt numbers may seem simple, but it can cause compatibility trouble when your sketch runs on a different board.</p>
+<p>However, older sketches often have direct interrupt numbers. Often number 0 (for digital pin 2) or number 1 (for digital pin 3) were used. The table below shows the available interrupt pins on various boards.</p>
+<p>Note that in the table below, the interrupt numbers refer to the number to be passed to <code>attachInterrupt()</code>. For historical reasons, this numbering does not always correspond directly to the interrupt numbering on the ATmega chip (e.g. int.0 corresponds to INT4 on the ATmega2560 chip).</p>
+<table>
+  <thead>
+      <tr>
+          <th>Board</th>
+          <th>int.0</th>
+          <th>int.1</th>
+          <th>int.2</th>
+          <th>int.3</th>
+          <th>int.4</th>
+          <th>int.5</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Uno, Ethernet</td>
+          <td>2</td>
+          <td>3</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Mega2560</td>
+          <td>2</td>
+          <td>3</td>
+          <td>21</td>
+          <td>20</td>
+          <td>19</td>
+          <td>18</td>
+      </tr>
+      <tr>
+          <td>32u4 based (e.g Leonardo, Micro)</td>
+          <td>3</td>
+          <td>2</td>
+          <td>0</td>
+          <td>1</td>
+          <td>7</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>For Uno WiFi Rev2, Due, Zero, MKR Family and 101 boards the <strong>interrupt number = pin number</strong>.</p>
+<p><strong>See also</strong></p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Further Syntax on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/structure/further-syntax/</link>
+    <description>Recent content in Further Syntax on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/structure/further-syntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>;</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/semicolon/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/semicolon/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Used to end a statement.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;13&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Notes and Warnings&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Forgetting to end a line in a semicolon will result in a compiler error. The error text may be obvious, and refer to a missing semicolon, or it may not. If an impenetrable or seemingly illogical compiler error comes up, one of the first things to check is a missing semicolon, in the immediate vicinity, preceding the line at which the compiler complained.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>{}</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/curly-braces/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/curly-braces/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Curly braces (also referred to as just &amp;ldquo;braces&amp;rdquo; or as &amp;ldquo;curly brackets&amp;rdquo;) are a major part of the C++ programming language. They are used in several different constructs, outlined below, and this can sometimes be confusing for beginners.&lt;br&gt;&#xA;An opening curly brace &lt;code&gt;{&lt;/code&gt; must always be followed by a closing curly brace &lt;code&gt;}&lt;/code&gt;. This is a condition that is often referred to as the braces being balanced. The Arduino IDE (Integrated Development Environment) includes a convenient feature to check the balance of curly braces. Just select a brace, or even click the insertion point immediately following a brace, and its logical companion will be highlighted.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>/* */</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/block-comment/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/block-comment/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt; are lines in the program that are used to inform yourself or others about the way the program works. They are ignored by the compiler, and not exported to the processor, so they don’t take up any space in the microcontroller’s flash memory. Comments&amp;rsquo; only purpose is to help you understand (or remember), or to inform others about how your program works.&lt;/p&gt;&#xA;&lt;p&gt;The beginning of a &lt;strong&gt;block comment&lt;/strong&gt; or a &lt;strong&gt;multi-line comment&lt;/strong&gt; is marked by the symbol &lt;code&gt;/*&lt;/code&gt; and the symbol &lt;code&gt;*/&lt;/code&gt; marks its end. This type of comment is called so as this can extend over more than one line; once the compiler reads the &lt;code&gt;/*&lt;/code&gt; it ignores whatever follows until it encounters a &lt;code&gt;*/&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>//</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/single-line-comment/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/single-line-comment/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Comments&lt;/strong&gt; are lines in the program that are used to inform yourself or others about the way the program works. They are ignored by the compiler, and not exported to the processor, so they don’t take up any space in the microcontroller’s flash memory. Comments&amp;rsquo; only purpose is to help you understand (or remember), or to inform others about how your program works.&lt;/p&gt;&#xA;&lt;p&gt;A &lt;strong&gt;single line comment&lt;/strong&gt; begins with &lt;code&gt;//&lt;/code&gt; (two adjacent slashes). This comment ends automatically at the end of a line. Whatever follows &lt;code&gt;//&lt;/code&gt; till the end of a line will be ignored by the compiler.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>#define</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/define/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/define/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;#define&lt;/code&gt; is a useful C++ component that allows the programmer to give a name to a constant value before the program is compiled. Defined constants in arduino don’t take up any program memory space on the chip. The compiler will replace references to these constants with the defined value at compile time.&lt;/p&gt;&#xA;&lt;p&gt;This can have some unwanted side effects though, if for example, a constant name that had been #defined is included in some other constant or variable name. In that case the text would be replaced by the #defined number (or text).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>#include</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/include/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/further-syntax/include/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;#include&lt;/code&gt; is used to include outside libraries in your sketch. This gives the programmer access to a large group of standard C libraries (groups of pre-made functions), and also libraries written especially for Arduino.&lt;/p&gt;&#xA;&lt;p&gt;The main reference page for AVR C libraries (AVR is a reference to the Atmel chips on which the Arduino is based) is &lt;a href=&#34;http://www.nongnu.org/avr-libc/user-manual/modules.html&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Note that &lt;code&gt;#include&lt;/code&gt;, similar to &lt;code&gt;#define&lt;/code&gt;, has no semicolon terminator, and the compiler will yield cryptic error messages if you add one.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

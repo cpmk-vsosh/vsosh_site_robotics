@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>float — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Datatype for floating-point numbers, a number that has a decimal point. Floating-point numbers are often used to approximate analog and continuous …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/float/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="float">
+<meta property="og:description" content="Description
+Datatype for floating-point numbers, a number that has a decimal point. Floating-point numbers are often used to approximate analog and continuous values because they have greater …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/float/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="float">
+<meta name="twitter:description" content="Description
+Datatype for floating-point numbers, a number that has a decimal point. Floating-point numbers are often used to approximate analog and continuous values because they have greater …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>float</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Datatype for floating-point numbers, a number that has a decimal point. Floating-point numbers are often used to approximate analog and continuous values because they have greater resolution than integers. Floating-point numbers can be as large as 3.4028235E+38 and as low as -3.4028235E+38. They are stored as 32 bits (4 bytes) of information.</p>
+<p><strong>Syntax</strong></p>
+<p><code>float var = val;</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>var</code>: variable name.<br>
+<code>val</code>: the value you assign to that variable.</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">myfloat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">sensorCalbrate</span> <span class="o">=</span> <span class="mf">1.117</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">z</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>          <span class="c1">// y now contains 0, ints can&#39;t hold fractions
+</span></span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span><span class="p">;</span> <span class="c1">// z now contains .5 (you have to use 2.0, not 2)
+</span></span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>If doing math with floats, you need to add a decimal point, otherwise it will be treated as an int. See the <a href="../../constants/floatingpointconstants">Floating point</a> constants page for details.</p>
+<p>The float data type has only 6-7 decimal digits of precision. That means the total number of digits, not the number to the right of the decimal point. Unlike other platforms, where you can get more precision by using a double (e.g. up to 15 digits), on the Arduino, double is the same size as float.</p>
+<p>Floating point numbers are not exact, and may yield strange results when compared. For example 9.0 / 0.3 may not quite equal 30.0. You should instead check that the absolute value of the difference between the numbers is less than some small number.</p>
+<p>Conversion from floating point to integer math results in truncation:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">2.9</span><span class="p">;</span> <span class="c1">// A float type variable
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>  <span class="c1">// 2
+</span></span></span></code></pre></div><p>If, instead, you want to round off during the conversion process, you need to add <code>0.5</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">2.9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">;</span>  <span class="c1">// 3
+</span></span></span></code></pre></div><p>or use the <code>round()</code> function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">2.9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>  <span class="c1">// 3
+</span></span></span></code></pre></div><p>Floating point math is also much slower than integer math in performing calculations, so should be avoided if, for example, a loop has to run at top speed for a critical timing function. Programmers often go to some lengths to convert floating point calculations to integer math to increase speed.</p>
+<p><strong>See also</strong></p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

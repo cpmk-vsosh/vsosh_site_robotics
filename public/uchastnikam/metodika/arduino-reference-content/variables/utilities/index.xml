@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utilities on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/utilities/</link>
+    <description>Recent content in Utilities on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/utilities/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PROGMEM</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/progmem/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/progmem/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Keep constant data in flash (program) memory only, instead of copying it to SRAM when the program starts. There’s a description of the various &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/Foundations/Memory&#34;&gt;types of memory&lt;/a&gt; available on an Arduino board.&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;PROGMEM&lt;/code&gt; keyword is a variable modifier, it should be used only with the datatypes defined in pgmspace.h. It tells the compiler &amp;ldquo;keep this information in flash memory only&amp;rdquo;, instead of copying it to SRAM at start up, like it would normally do.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>sizeof()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/sizeof/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/sizeof/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;sizeof&lt;/code&gt; operator returns the number of bytes in a variable type, or the number of bytes occupied by an array.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;sizeof(variable)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;variable&lt;/code&gt;: The thing to get the size of. Allowed data types: any variable type or array (e.g. &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;byte&lt;/code&gt;).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The number of bytes in a variable or bytes occupied in an array. Data type: &lt;code&gt;size_t&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;sizeof&lt;/code&gt; operator is useful for dealing with arrays (such as strings) where it is convenient to be able to change the size of the array without breaking other parts of the program.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

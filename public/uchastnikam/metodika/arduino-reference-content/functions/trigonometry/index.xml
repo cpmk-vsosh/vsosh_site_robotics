@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trigonometry on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/trigonometry/</link>
+    <description>Recent content in Trigonometry on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/trigonometry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cos()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/cos/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/cos/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Calculates the cosine of an angle (in radians). The result will be between -1 and 1.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;cos(rad)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;rad&lt;/code&gt;: The angle in radians. Allowed data types: &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The cos of the angle. Data type: &lt;code&gt;double&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/float&#34;&gt;float&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/double&#34;&gt;double&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>sin()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/sin/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/sin/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Calculates the sine of an angle (in radians). The result will be between -1 and 1.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;sin(rad)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;rad&lt;/code&gt;: The angle in radians. Allowed data types: &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The sine of the angle. Data type: &lt;code&gt;double&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/float&#34;&gt;float&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/double&#34;&gt;double&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>tan()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/tan/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/trigonometry/tan/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Calculates the tangent of an angle (in radians). The result will be between negative infinity and infinity.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;tan(rad)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;rad&lt;/code&gt;: The angle in radians. Allowed data types: &lt;code&gt;float&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The tangent of the angle. Data type: &lt;code&gt;double&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/float&#34;&gt;float&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/double&#34;&gt;double&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>array — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+An array is a collection of variables that are accessed with an index number. Arrays in the C&#43;&#43; programming language Arduino sketches are written in …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/array/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="array">
+<meta property="og:description" content="Description
+An array is a collection of variables that are accessed with an index number. Arrays in the C&#43;&#43; programming language Arduino sketches are written in can be complicated, but using simple …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/array/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="array">
+<meta name="twitter:description" content="Description
+An array is a collection of variables that are accessed with an index number. Arrays in the C&#43;&#43; programming language Arduino sketches are written in can be complicated, but using simple …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>array</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>An array is a collection of variables that are accessed with an index number. Arrays in the C++ programming language Arduino sketches are written in can be complicated, but using simple arrays is relatively straightforward.</p>
+<p><strong>Creating (Declaring) an Array</strong></p>
+<p>All of the methods below are valid ways to create (declare) an array.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl">  <span class="c1">// Declare an array of a given length without initializing the values:
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">myInts</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Declare an array without explicitly choosing a size (the compiler
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// counts the elements and creates an array of the appropriate size):
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">myPins</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Declare an array of a given length and initialize its values:
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">mySensVals</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// When declaring an array of type char, you&#39;ll need to make it longer
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// by one element to hold the required the null termination character:
+</span></span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">message</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;hello&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p><strong>Accessing an Array</strong></p>
+<p>Arrays are zero indexed, that is, referring to the array initialization above, the first element of the array is at index 0, hence</p>
+<p><code>mySensVals[0] == 2, mySensVals[1] == 4,</code> and so forth.</p>
+<p>It also means that in an array with ten elements, index nine is the last element. Hence:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">myArray</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// myArray[9]    contains 11
+</span></span></span><span class="line"><span class="cl"><span class="c1">// myArray[10]   is invalid and contains random information (other memory address)
+</span></span></span></code></pre></div><p>For this reason you should be careful in accessing arrays. Accessing past the end of an array (using an index number greater than your declared array size - 1) is reading from memory that is in use for other purposes. Reading from these locations is probably not going to do much except yield invalid data. Writing to random memory locations is definitely a bad idea and can often lead to unhappy results such as crashes or program malfunction. This can also be a difficult bug to track down.</p>
+<p>Unlike BASIC or JAVA, the C++ compiler does no checking to see if array access is within legal bounds of the array size that you have declared.</p>
+<p><strong>To assign a value to an array:</strong></p>
+<p><code>mySensVals[0] = 10;</code></p>
+<p><strong>To retrieve a value from an array:</strong></p>
+<p><code>x = mySensVals[4];</code></p>
+<p><strong>Arrays and FOR Loops</strong></p>
+<p>Arrays are often manipulated inside for loops, where the loop counter is used as the index for each array element. For example, to print the elements of an array over the serial port, you could do something like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">byte</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">myPins</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Example Code</strong></p>
+<p>For a complete program that demonstrates the use of arrays, see the (<a href="https://docs.arduino.cc/built-in-examples/control-structures/Arrays">How to Use Arrays example</a>) from the (<a href="https://docs.arduino.cc/built-in-examples">Built-in Examples</a>).</p>
+<p><strong>See also</strong></p>
+<ul>
+<li><em>LANGUAGE</em> <a href="../../utilities/progmem">PROGMEM</a></li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

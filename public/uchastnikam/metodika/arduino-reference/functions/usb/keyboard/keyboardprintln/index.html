@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Keyboard.println() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Sends one or more keystrokes to a connected computer, followed by a keystroke on the Enter key.
+Keyboard.println() must be called after initiating …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/keyboard/keyboardprintln/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keyboard.println()">
+<meta property="og:description" content="Description
+Sends one or more keystrokes to a connected computer, followed by a keystroke on the Enter key.
+Keyboard.println() must be called after initiating Keyboard.begin().
+Syntax …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/keyboard/keyboardprintln/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keyboard.println()">
+<meta name="twitter:description" content="Description
+Sends one or more keystrokes to a connected computer, followed by a keystroke on the Enter key.
+Keyboard.println() must be called after initiating Keyboard.begin().
+Syntax …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Keyboard.println()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Sends one or more keystrokes to a connected computer, followed by a keystroke on the Enter key.</p>
+<p><code>Keyboard.println()</code> must be called after initiating <a href="../keyboardbegin">Keyboard.begin()</a>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Keyboard.println()</code><br>
+<code>Keyboard.println(character)</code><br>
+<code>Keyboard.println(characters)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>character</code>: a char or int to be sent to the computer as a keystroke, followed by Enter.<br>
+<code>characters</code>: a string to be sent to the computer as keystrokes, followed by Enter.</p>
+<p><strong>Returns</strong></p>
+<p>Number of keystrokes sent. Data type: <code>size_t</code>.</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Keyboard.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// make pin 2 an input and turn on the
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// pullup resistor so it goes high unless
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// connected to ground:
+</span></span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">INPUT_PULLUP</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Keyboard</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//if the button is pressed
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">digitalRead</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">LOW</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//Send the message
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Keyboard</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;Hello!&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>When you use the Keyboard.println() command, the Arduino takes over your keyboard! Make sure you have control before you use the command. A pushbutton to toggle the keyboard control state is effective.</p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

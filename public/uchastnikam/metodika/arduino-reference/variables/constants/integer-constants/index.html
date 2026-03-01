@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Integer Constants — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Integer constants are numbers that are used directly in a sketch, like 123. By default, these numbers are treated as int but you can change this …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/integer-constants/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Integer Constants">
+<meta property="og:description" content="Description
+Integer constants are numbers that are used directly in a sketch, like 123. By default, these numbers are treated as int but you can change this with the U and L modifiers (see below). …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/integer-constants/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Integer Constants">
+<meta name="twitter:description" content="Description
+Integer constants are numbers that are used directly in a sketch, like 123. By default, these numbers are treated as int but you can change this with the U and L modifiers (see below). …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Integer Constants</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Integer constants are numbers that are used directly in a sketch, like 123. By default, these numbers are treated as <a href="../../data-types/int">int</a> but you can change this with the U and L modifiers (see below).</p>
+<p>Normally, integer constants are treated as base 10 (decimal) integers, but special notation (formatters) may be used to enter numbers in other bases.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Base</th>
+          <th>Example</th>
+          <th>Formatter</th>
+          <th>Comment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>10 (decimal)</td>
+          <td>123</td>
+          <td>none</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>2 (binary)</td>
+          <td>0b1111011</td>
+          <td>leading &ldquo;0b&rdquo;</td>
+          <td>characters 0&amp;1 valid</td>
+      </tr>
+      <tr>
+          <td>8 (octal)</td>
+          <td>0173</td>
+          <td>leading &ldquo;0&rdquo;</td>
+          <td>characters 0-7 valid</td>
+      </tr>
+      <tr>
+          <td>16 (hexadecimal)</td>
+          <td>0x7B</td>
+          <td>leading &ldquo;0x&rdquo;</td>
+          <td>characters 0-9, A-F, a-f valid</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Decimal (base 10)</strong></p>
+<p>This is the common-sense math with which you are acquainted. Constants without other prefixes are assumed to be in decimal format.</p>
+<p><strong>Example Code:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">101</span><span class="p">;</span>  <span class="c1">// same as 101 decimal ((1 * 10^2) + (0 * 10^1) + 1)
+</span></span></span></code></pre></div><p><strong>Binary (base 2)</strong></p>
+<p>Only the characters 0 and 1 are valid.</p>
+<p><strong>Example Code:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="n">b101</span><span class="p">;</span> <span class="c1">// same as 5 decimal ((1 * 2^2) + (0 * 2^1) + 1)
+</span></span></span></code></pre></div><p><strong>Octal (base 8)</strong></p>
+<p>Only the characters 0 through 7 are valid. Octal values are indicated by the prefix &ldquo;0&rdquo; (zero).</p>
+<p><strong>Example Code:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mo">0101</span><span class="p">;</span> <span class="c1">// same as 65 decimal ((1 * 8^2) + (0 * 8^1) + 1)
+</span></span></span></code></pre></div><p>It is possible to generate a hard-to-find bug by (unintentionally) including a leading zero before a constant and having the compiler unintentionally interpret your constant as octal.</p>
+<p><strong>Hexadecimal (base 16)</strong></p>
+<p>Valid characters are 0 through 9 and letters A through F; A has the value 10, B is 11, up to F, which is 15. Hex values are indicated by the prefix &ldquo;0x&rdquo;. Note that A-F may be upper (A-F) or lower case (a-f).</p>
+<p><strong>Example Code:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="n">n</span> <span class="o">=</span> <span class="mh">0x101</span><span class="p">;</span>  <span class="c1">// same as 257 decimal ((1 * 16^2) + (0 * 16^1) + 1)
+</span></span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p><strong>U &amp; L formatters:</strong></p>
+<p>By default, an integer constant is treated as an int with the attendant limitations in values. To specify an integer constant with another data type, follow it with:</p>
+<ul>
+<li>
+<p>a &lsquo;u&rsquo; or &lsquo;U&rsquo; to force the constant into an unsigned data format. Example: 33u</p>
+</li>
+<li>
+<p>a &rsquo;l&rsquo; or &lsquo;L&rsquo; to force the constant into a long data format. Example: 100000L</p>
+</li>
+<li>
+<p>a &lsquo;ul&rsquo; or &lsquo;UL&rsquo; to force the constant into an unsigned long constant. Example: 32767ul</p>
+</li>
+</ul>
+<p><strong>See also</strong></p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

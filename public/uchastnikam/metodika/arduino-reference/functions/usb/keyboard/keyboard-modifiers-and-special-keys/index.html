@@ -1,0 +1,632 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Keyboard Modifiers and Special Keys — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+When given a printable ASCII character as an argument, the functions Keyboard.write(), Keyboard.press() and Keyboard.release() simulate actuations …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/keyboard/keyboard-modifiers-and-special-keys/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keyboard Modifiers and Special Keys">
+<meta property="og:description" content="Description
+When given a printable ASCII character as an argument, the functions Keyboard.write(), Keyboard.press() and Keyboard.release() simulate actuations on the corresponding keys. These …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/keyboard/keyboard-modifiers-and-special-keys/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keyboard Modifiers and Special Keys">
+<meta name="twitter:description" content="Description
+When given a printable ASCII character as an argument, the functions Keyboard.write(), Keyboard.press() and Keyboard.release() simulate actuations on the corresponding keys. These …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Keyboard Modifiers and Special Keys</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>When given a printable ASCII character as an argument, the functions <code>Keyboard.write()</code>, <code>Keyboard.press()</code> and <code>Keyboard.release()</code> simulate actuations on the corresponding keys. These functions can also handle ASCII characters that require pressing a key in combination with Shift or, on international keyboards, AltGr. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="nc">Keyboard</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">);</span>  <span class="c1">// press and release the &#39;A&#39; key
+</span></span></span><span class="line"><span class="cl"><span class="nc">Keyboard</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="sc">&#39;A&#39;</span><span class="p">);</span>  <span class="c1">// press Shift and &#39;A&#39;, then release both
+</span></span></span></code></pre></div><p>A typical keyboard, however, has many keys that do not match a printable ASCII character. In order to simulate those keys, the library provides a set of macros that can be passed as arguments to <code>Keyboard.write()</code>, <code>Keyboard.press()</code> and <code>Keyboard.release()</code>. For example, the key combination Shift+F2 can be generated by:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="nc">Keyboard</span><span class="p">.</span><span class="nf">press</span><span class="p">(</span><span class="n">KEY_LEFT_SHIFT</span><span class="p">);</span>  <span class="c1">// press and hold Shift
+</span></span></span><span class="line"><span class="cl"><span class="nc">Keyboard</span><span class="p">.</span><span class="nf">press</span><span class="p">(</span><span class="n">KEY_F2</span><span class="p">);</span>          <span class="c1">// press and hold F2
+</span></span></span><span class="line"><span class="cl"><span class="nc">Keyboard</span><span class="p">.</span><span class="nf">releaseAll</span><span class="p">();</span>           <span class="c1">// release both
+</span></span></span></code></pre></div><p>Note that, in order to press multiple keys simultaneously, one has to use <a href="../keyboardpress"><code>Keyboard.press()</code></a> rather than <a href="../keyboardwrite"><code>Keyboard.write()</code></a>, as the latter just “hits” the keys (it presses and immediately releases them).</p>
+<p>The available macros are listed below:</p>
+<p><strong>Keyboard modifiers</strong></p>
+<p>These keys are meant to modify the normal action of another key when the two are pressed in combination.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_LEFT_CTRL</td>
+          <td>0x80</td>
+          <td>128</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KEY_LEFT_SHIFT</td>
+          <td>0x81</td>
+          <td>129</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KEY_LEFT_ALT</td>
+          <td>0x82</td>
+          <td>130</td>
+          <td>Option (⌥) on Mac</td>
+      </tr>
+      <tr>
+          <td>KEY_LEFT_GUI</td>
+          <td>0x83</td>
+          <td>131</td>
+          <td>OS logo, Command (⌘) on Mac</td>
+      </tr>
+      <tr>
+          <td>KEY_RIGHT_CTRL</td>
+          <td>0x84</td>
+          <td>132</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KEY_RIGHT_SHIFT</td>
+          <td>0x85</td>
+          <td>133</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KEY_RIGHT_ALT</td>
+          <td>0x86</td>
+          <td>134</td>
+          <td>also AltGr, Option (⌥) on Mac</td>
+      </tr>
+      <tr>
+          <td>KEY_RIGHT_GUI</td>
+          <td>0x87</td>
+          <td>135</td>
+          <td>OS logo, Command (⌘) on Mac</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Special keys</strong></p>
+<p>These are all the keys that do not match a printable ASCII character and are not modifiers.</p>
+<p><strong>Within the alphanumeric cluster</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_TAB</td>
+          <td>0xB3</td>
+          <td>179</td>
+      </tr>
+      <tr>
+          <td>KEY_CAPS_LOCK</td>
+          <td>0xC1</td>
+          <td>193</td>
+      </tr>
+      <tr>
+          <td>KEY_BACKSPACE</td>
+          <td>0xB2</td>
+          <td>178</td>
+      </tr>
+      <tr>
+          <td>KEY_RETURN</td>
+          <td>0xB0</td>
+          <td>176</td>
+      </tr>
+      <tr>
+          <td>KEY_MENU</td>
+          <td>0xED</td>
+          <td>237</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Navigation cluster</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_INSERT</td>
+          <td>0xD1</td>
+          <td>209</td>
+      </tr>
+      <tr>
+          <td>KEY_DELETE</td>
+          <td>0xD4</td>
+          <td>212</td>
+      </tr>
+      <tr>
+          <td>KEY_HOME</td>
+          <td>0xD2</td>
+          <td>210</td>
+      </tr>
+      <tr>
+          <td>KEY_END</td>
+          <td>0xD5</td>
+          <td>213</td>
+      </tr>
+      <tr>
+          <td>KEY_PAGE_UP</td>
+          <td>0xD3</td>
+          <td>211</td>
+      </tr>
+      <tr>
+          <td>KEY_PAGE_DOWN</td>
+          <td>0xD6</td>
+          <td>214</td>
+      </tr>
+      <tr>
+          <td>KEY_UP_ARROW</td>
+          <td>0xDA</td>
+          <td>218</td>
+      </tr>
+      <tr>
+          <td>KEY_DOWN_ARROW</td>
+          <td>0xD9</td>
+          <td>217</td>
+      </tr>
+      <tr>
+          <td>KEY_LEFT_ARROW</td>
+          <td>0xD8</td>
+          <td>216</td>
+      </tr>
+      <tr>
+          <td>KEY_RIGHT_ARROW</td>
+          <td>0xD7</td>
+          <td>215</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Numeric keypad</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_NUM_LOCK</td>
+          <td>0xDB</td>
+          <td>219</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_SLASH</td>
+          <td>0xDC</td>
+          <td>220</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_ASTERISK</td>
+          <td>0xDD</td>
+          <td>221</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_MINUS</td>
+          <td>0xDE</td>
+          <td>222</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_PLUS</td>
+          <td>0xDF</td>
+          <td>223</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_ENTER</td>
+          <td>0xE0</td>
+          <td>224</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_1</td>
+          <td>0xE1</td>
+          <td>225</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_2</td>
+          <td>0xE2</td>
+          <td>226</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_3</td>
+          <td>0xE3</td>
+          <td>227</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_4</td>
+          <td>0xE4</td>
+          <td>228</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_5</td>
+          <td>0xE5</td>
+          <td>229</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_6</td>
+          <td>0xE6</td>
+          <td>230</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_7</td>
+          <td>0xE7</td>
+          <td>231</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_8</td>
+          <td>0xE8</td>
+          <td>232</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_9</td>
+          <td>0xE9</td>
+          <td>233</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_0</td>
+          <td>0xEA</td>
+          <td>234</td>
+      </tr>
+      <tr>
+          <td>KEY_KP_DOT</td>
+          <td>0xEB</td>
+          <td>235</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Escape and function keys</strong></p>
+<p>The library can simulate function keys up to F24.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_ESC</td>
+          <td>0xB1</td>
+          <td>177</td>
+      </tr>
+      <tr>
+          <td>KEY_F1</td>
+          <td>0xC2</td>
+          <td>194</td>
+      </tr>
+      <tr>
+          <td>KEY_F2</td>
+          <td>0xC3</td>
+          <td>195</td>
+      </tr>
+      <tr>
+          <td>KEY_F3</td>
+          <td>0xC4</td>
+          <td>196</td>
+      </tr>
+      <tr>
+          <td>KEY_F4</td>
+          <td>0xC5</td>
+          <td>197</td>
+      </tr>
+      <tr>
+          <td>KEY_F5</td>
+          <td>0xC6</td>
+          <td>198</td>
+      </tr>
+      <tr>
+          <td>KEY_F6</td>
+          <td>0xC7</td>
+          <td>199</td>
+      </tr>
+      <tr>
+          <td>KEY_F7</td>
+          <td>0xC8</td>
+          <td>200</td>
+      </tr>
+      <tr>
+          <td>KEY_F8</td>
+          <td>0xC9</td>
+          <td>201</td>
+      </tr>
+      <tr>
+          <td>KEY_F9</td>
+          <td>0xCA</td>
+          <td>202</td>
+      </tr>
+      <tr>
+          <td>KEY_F10</td>
+          <td>0xCB</td>
+          <td>203</td>
+      </tr>
+      <tr>
+          <td>KEY_F11</td>
+          <td>0xCC</td>
+          <td>204</td>
+      </tr>
+      <tr>
+          <td>KEY_F12</td>
+          <td>0xCD</td>
+          <td>205</td>
+      </tr>
+      <tr>
+          <td>KEY_F13</td>
+          <td>0xF0</td>
+          <td>240</td>
+      </tr>
+      <tr>
+          <td>KEY_F14</td>
+          <td>0xF1</td>
+          <td>241</td>
+      </tr>
+      <tr>
+          <td>KEY_F15</td>
+          <td>0xF2</td>
+          <td>242</td>
+      </tr>
+      <tr>
+          <td>KEY_F16</td>
+          <td>0xF3</td>
+          <td>243</td>
+      </tr>
+      <tr>
+          <td>KEY_F17</td>
+          <td>0xF4</td>
+          <td>244</td>
+      </tr>
+      <tr>
+          <td>KEY_F18</td>
+          <td>0xF5</td>
+          <td>245</td>
+      </tr>
+      <tr>
+          <td>KEY_F19</td>
+          <td>0xF6</td>
+          <td>246</td>
+      </tr>
+      <tr>
+          <td>KEY_F20</td>
+          <td>0xF7</td>
+          <td>247</td>
+      </tr>
+      <tr>
+          <td>KEY_F21</td>
+          <td>0xF8</td>
+          <td>248</td>
+      </tr>
+      <tr>
+          <td>KEY_F22</td>
+          <td>0xF9</td>
+          <td>249</td>
+      </tr>
+      <tr>
+          <td>KEY_F23</td>
+          <td>0xFA</td>
+          <td>250</td>
+      </tr>
+      <tr>
+          <td>KEY_F24</td>
+          <td>0xFB</td>
+          <td>251</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Function control keys</strong></p>
+<p>These are three keys that sit above the navigation cluster.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Hexadecimal value</th>
+          <th>Decimal value</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>KEY_PRINT_SCREEN</td>
+          <td>0xCE</td>
+          <td>206</td>
+          <td>Print Screen or PrtSc / SysRq</td>
+      </tr>
+      <tr>
+          <td>KEY_SCROLL_LOCK</td>
+          <td>0xCF</td>
+          <td>207</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>KEY_PAUSE</td>
+          <td>0xD0</td>
+          <td>208</td>
+          <td>Pause / Break</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>International keyboard layouts</strong></p>
+<p>Some national layouts define extra keys. For example, the Swedish and Danish layouts define <code>KEY_A_RING</code> as <code>0xB7</code>, which is the key to the right of “P”, labeled “Å” on those layouts and “{”/“[” on the US layout. In order to use those definitions, one has to include the proper Keyboard_*.h file. For example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Keyboard.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Keyboard_sv_SE.h&gt; // extra key definitions from Swedish layout</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Keyboard</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="n">KeyboardLayout_sv_SE</span><span class="p">);</span> <span class="c1">// use the Swedish layout
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Keyboard</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="n">KEY_A_RING</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span> <span class="c1">// do-nothing loop
+</span></span></span></code></pre></div><p>For the list of layout-specific key definitions, see the respective Keyboard_*.h file within the library sources.</p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

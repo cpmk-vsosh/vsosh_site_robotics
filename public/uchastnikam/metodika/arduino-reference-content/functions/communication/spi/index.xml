@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spi on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/communication/spi/</link>
+    <description>Recent content in Spi on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/communication/spi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SPI.begin()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spibegin/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spibegin/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Initializes the SPI bus by setting SCK, MOSI, and SS to outputs, pulling SCK and MOSI low, and SS high.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.begin()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.beginTransaction()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spibegintransaction/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spibegintransaction/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Initializes the SPI bus. Note that calling &lt;a href=&#34;../begin&#34;&gt;SPI.begin()&lt;/a&gt; is required before calling this one.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.beginTransaction(mySettings)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;mySettings: the chosen settings (see &lt;a href=&#34;../spisettings&#34;&gt;SPISettings&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.end()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiend/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiend/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Disables the SPI bus (leaving pin modes unchanged).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.end()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.endTransaction()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiendtransaction/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiendtransaction/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Stop using the SPI bus. Normally this is called after de-asserting the chip select, to allow other libraries to use the SPI bus.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.endTransaction()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.setBitOrder()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetbitorder/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetbitorder/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This function should not be used in new projects. Use &lt;a href=&#34;../spisettings&#34;&gt;SPISettings&lt;/a&gt;. with &lt;a href=&#34;../begintransaction&#34;&gt;SPI.beginTransaction()&lt;/a&gt;. to configure SPI parameters.&lt;/p&gt;&#xA;&lt;p&gt;Sets the order of the bits shifted out of and into the SPI bus, either LSBFIRST (least-significant bit first) or MSBFIRST (most-significant bit first).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.setBitOrder(order)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;order: either LSBFIRST or MSBFIRST&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.setClockDivider()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetclockdivider/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetclockdivider/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This function should not be used in new projects. Use &lt;a href=&#34;../spisettings&#34;&gt;SPISettings&lt;/a&gt;. with &lt;a href=&#34;../begintransaction&#34;&gt;SPI.beginTransaction()&lt;/a&gt;. to configure SPI parameters.&lt;/p&gt;&#xA;&lt;p&gt;Sets the SPI clock divider relative to the system clock. On AVR based boards, the dividers available are 2, 4, 8, 16, 32, 64 or 128. The default setting is SPI_CLOCK_DIV4, which sets the SPI clock to one-quarter the frequency of the system clock (4 Mhz for the boards at 16 MHz).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;For Arduino Due:&lt;/strong&gt; On the Due, the system clock can be divided by values from 1 to 255. The default value is 21, which sets the clock to 4 MHz like other Arduino boards.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.setDataMode()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetdatamode/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisetdatamode/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;This function should not be used in new projects. Use &lt;a href=&#34;../spisettings&#34;&gt;SPISettings&lt;/a&gt;. with &lt;a href=&#34;../begintransaction&#34;&gt;SPI.beginTransaction()&lt;/a&gt;. to configure SPI parameters.&lt;/p&gt;&#xA;&lt;p&gt;Sets the SPI data mode: that is, clock polarity and phase. See the Wikipedia article on &lt;a href=&#34;http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus:&#34;&gt;SPI&lt;/a&gt; for details.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.setDataMode(mode)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;mode:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SPI_MODE0&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SPI_MODE1&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SPI_MODE2&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;SPI_MODE3&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;chipSelectPin - peripheral device CS pin (Arduino Due only)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.transfer()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spitransfer/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spitransfer/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;SPI transfer is based on a simultaneous send and receive: the received data is returned in receivedVal (or receivedVal16). In case of buffer transfers the received data is stored in the buffer in-place (the old data is replaced with the data received).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;receivedVal = SPI.transfer(val)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;receivedVal16 = SPI.transfer16(val16)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.transfer(buffer, size)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;val: the byte to send out over the bus&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;val16: the two bytes variable to send out over the bus&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPI.usingInterrupt()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiusinginterrupt/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spiusinginterrupt/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If your program will perform SPI transactions within an interrupt, call this function to register the interrupt number or name with the SPI library. This allows &lt;code&gt;SPI.beginTransaction()&lt;/code&gt; to prevent usage conflicts. Note that the interrupt specified in the call to usingInterrupt() will be disabled on a call to &lt;code&gt;beginTransaction()&lt;/code&gt; and re-enabled in &lt;code&gt;endTransaction().&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;SPI.usingInterrupt(interruptNumber)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;interruptNumber: the associated interrupt number.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SPISettings</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisettings/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/spi/spisettings/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The &lt;code&gt;SPISettings&lt;/code&gt; object is used to configure the SPI port for your SPI device. All 3 parameters are combined to a single &lt;code&gt;SPISettings&lt;/code&gt; object, which is given to &lt;code&gt;SPI.beginTransaction()&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;When all of your settings are constants, SPISettings should be used directly in &lt;code&gt;SPI.beginTransaction()&lt;/code&gt;. See the syntax section below. For constants, this syntax results in smaller and faster code.&lt;/p&gt;&#xA;&lt;p&gt;If any of your settings are variables, you may create a SPISettings object to hold the 3 settings. Then you can give the object name to SPI.beginTransaction(). Creating a named SPISettings object may be more efficient when your settings are not constants, especially if the maximum speed is a variable computed or configured, rather than a number you type directly into your sketch.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PROGMEM — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Keep constant data in flash (program) memory only, instead of copying it to SRAM when the program starts. There’s a description of the various types …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/progmem/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="PROGMEM">
+<meta property="og:description" content="Description
+Keep constant data in flash (program) memory only, instead of copying it to SRAM when the program starts. There’s a description of the various types of memory available on an Arduino …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/utilities/progmem/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PROGMEM">
+<meta name="twitter:description" content="Description
+Keep constant data in flash (program) memory only, instead of copying it to SRAM when the program starts. There’s a description of the various types of memory available on an Arduino …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>PROGMEM</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Keep constant data in flash (program) memory only, instead of copying it to SRAM when the program starts. There’s a description of the various <a href="https://www.arduino.cc/en/Tutorial/Foundations/Memory">types of memory</a> available on an Arduino board.</p>
+<p>The <code>PROGMEM</code> keyword is a variable modifier, it should be used only with the datatypes defined in pgmspace.h. It tells the compiler &ldquo;keep this information in flash memory only&rdquo;, instead of copying it to SRAM at start up, like it would normally do.</p>
+<p>PROGMEM is part of the <a href="http://www.nongnu.org/avr-libc/user-manual/group__avr__pgmspace.html">pgmspace.h</a> library. It is included automatically in the Arduino IDE.</p>
+<p>While <code>PROGMEM</code> could be used on a single variable, it is really only worth the fuss if you have a larger block of data that needs to be stored, which is usually easiest in an array, (or another C++ data structure beyond our present discussion).</p>
+<p>Using <code>PROGMEM</code> is a two-step procedure. Once a variable has been defined with <code>PROGMEM</code>, it cannot be read like a regular SRAM-based variable: you have to read it using specific functions, also defined in <a href="http://www.nongnu.org/avr-libc/user-manual/group__avr__pgmspace.html">pgmspace.h</a>.</p>
+<p>==== Important Note!</p>
+<p><code>PROGMEM</code> is useful <em>only</em> when working with AVR boards (Uno Rev3, Leonardo etc.). Newer boards (Due, MKR WiFi 1010, GIGA R1 WiFi etc.) automatically use the program space when a variable is declared as a <code>const</code>. However, for retro compatibility, <code>PROGMEM</code> can still be used with newer boards. This implementation currently lives <a href="https://github.com/arduino/ArduinoCore-API/blob/master/api/deprecated-avr-comp/avr/pgmspace.h">here</a>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>const dataType variableName[] PROGMEM = {data0, data1, data3…​};</code></p>
+<p>Note that because PROGMEM is a variable modifier, there is no hard and fast rule about where it should go, so the Arduino compiler accepts all of the definitions below, which are also synonymous. However, experiments have indicated that, in various versions of Arduino (having to do with GCC version), PROGMEM may work in one location and not in another. The &ldquo;string table&rdquo; example below has been tested to work with Arduino 13. Earlier versions of the IDE may work better if PROGMEM is included after the variable name.</p>
+<p><code>const dataType variableName[] PROGMEM = {}; // use this form</code><br>
+<code>const PROGMEM dataType variableName[] = {}; // or this one</code><br>
+<code>const dataType PROGMEM variableName[] = {}; // not this one</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>dataType</code>: Allowed data types: any variable type.<br>
+<code>variableName</code>: the name for your array of data.</p>
+<p><strong>Example Code</strong></p>
+<p>The following code fragments illustrate how to read and write unsigned chars (bytes) and ints (2 bytes) to PROGMEM.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="c1">// save some unsigned ints
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">PROGMEM</span> <span class="kt">uint16_t</span> <span class="n">charSet</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">65000</span><span class="p">,</span> <span class="mi">32796</span><span class="p">,</span> <span class="mi">16843</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11234</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// save some chars
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">signMessage</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;I AM PREDATOR,  UNSEEN COMBATANT. CREATED BY THE UNITED STATES DEPART&#34;</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">displayInt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">myChar</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nc">Serial</span><span class="p">);</span>  <span class="c1">// wait for serial port to connect. Needed for native USB
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// put your setup code here, to run once:
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// read back a 2-byte int
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">byte</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">displayInt</span> <span class="o">=</span> <span class="n">pgm_read_word_near</span><span class="p">(</span><span class="n">charSet</span> <span class="o">+</span> <span class="n">k</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">displayInt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// read back a char
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">signMessageLength</span> <span class="o">=</span> <span class="n">strlen_P</span><span class="p">(</span><span class="n">signMessage</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">byte</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">signMessageLength</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">myChar</span> <span class="o">=</span> <span class="n">pgm_read_byte_near</span><span class="p">(</span><span class="n">signMessage</span> <span class="o">+</span> <span class="n">k</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">myChar</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// put your main code here, to run repeatedly:
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Arrays of strings</strong></p>
+<p>It is often convenient when working with large amounts of text, such as a project with an LCD, to setup an array of strings. Because strings themselves are arrays, this is actually an example of a two-dimensional array.</p>
+<p>These tend to be large structures so putting them into program memory is often desirable. The code below illustrates the idea.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">  PROGMEM string demo
+</span></span></span><span class="line"><span class="cl"><span class="cm">  How to store a table of strings in program memory (flash),
+</span></span></span><span class="line"><span class="cl"><span class="cm">  and retrieve them.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">  Information summarized from:
+</span></span></span><span class="line"><span class="cl"><span class="cm">  http://www.nongnu.org/avr-libc/user-manual/pgmspace.html
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">  Setting up a table (array) of strings in program memory is slightly complicated, but
+</span></span></span><span class="line"><span class="cl"><span class="cm">  here is a good template to follow.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">  Setting up the strings is a two-step process. First, define the strings.
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;avr/pgmspace.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_0</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 0&#34;</span><span class="p">;</span> <span class="c1">// &#34;String 0&#34; etc are strings to store - change to suit.
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_1</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 1&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_2</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 2&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_3</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 3&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_4</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 4&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">string_5</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;String 5&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Then set up a table to refer to your strings.
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">string_table</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="p">{</span><span class="n">string_0</span><span class="p">,</span> <span class="n">string_1</span><span class="p">,</span> <span class="n">string_2</span><span class="p">,</span> <span class="n">string_3</span><span class="p">,</span> <span class="n">string_4</span><span class="p">,</span> <span class="n">string_5</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="nf">buffer</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>  <span class="c1">// make sure this is large enough for the largest string it must hold
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="nc">Serial</span><span class="p">);</span>  <span class="c1">// wait for serial port to connect. Needed for native USB
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;OK&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="cm">/* Using the string table in program memory requires the use of special functions to retrieve the data.
+</span></span></span><span class="line"><span class="cl"><span class="cm">     The strcpy_P function copies a string from program space to a string in RAM (&#34;buffer&#34;).
+</span></span></span><span class="line"><span class="cl"><span class="cm">     Make sure your receiving string in RAM is large enough to hold whatever
+</span></span></span><span class="line"><span class="cl"><span class="cm">     you are retrieving from program space. */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strcpy_P</span><span class="p">(</span><span class="nf">buffer</span><span class="p">,</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">pgm_read_ptr</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">string_table</span><span class="p">[</span><span class="n">i</span><span class="p">])));</span>  <span class="c1">// Necessary casts and dereferencing, just copy.
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">buffer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>Please note that variables must be either globally defined, OR defined with the static keyword, in order to work with PROGMEM.</p>
+<p>The following code will NOT work when inside a function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">char</span> <span class="n">long_str</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;Hi, I would like to tell you a bit about myself.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p>The following code WILL work, even if locally defined within a function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="k">const</span> <span class="k">static</span> <span class="kt">char</span> <span class="n">long_str</span><span class="p">[]</span> <span class="kt">PROGMEM</span> <span class="o">=</span> <span class="s">&#34;Hi, I would like to tell you a bit about myself.</span><span class="se">\n</span><span class="s">&#34;</span>
+</span></span></code></pre></div><p><strong>The <code>F()</code> macro</strong></p>
+<p>When an instruction like :</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;Write something on  the Serial Monitor&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>is used, the string to be printed is normally saved in RAM. If your sketch prints a lot of stuff on the Serial Monitor, you can easily fill the RAM. This can be avoided by not loading strings from the FLASH memory space until they are needed. You can easily indicate that the string is not to be copied to RAM at start up using the syntax:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">F</span><span class="p">(</span><span class="s">&#34;Write something on the Serial Monitor that is stored in FLASH&#34;</span><span class="p">));</span>
+</span></span></code></pre></div><p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>EXAMPLE</em> <a href="https://www.arduino.cc/en/Tutorial/Foundations/Memory">Types of memory available on an Arduino board</a></p>
+</li>
+<li>
+<p><em>DEFINITION</em> <a href="../../data-types/array">array</a></p>
+</li>
+<li>
+<p><em>DEFINITION</em> <a href="../../data-types/string">string</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

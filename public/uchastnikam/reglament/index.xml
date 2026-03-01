@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Региональный этап on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/reglament/</link>
+    <description>Recent content in Региональный этап on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 08 Nov 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/reglament/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Подробно о едином техническом задании</title>
+      <link>http://localhost:1313/uchastnikam/reglament/etz_info/</link>
+      <pubDate>Fri, 14 Nov 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/reglament/etz_info/</guid>
+      <description>&lt;h2 id=&#34;кратко-о-етз&#34;&gt;Кратко о ЕТЗ&lt;/h2&gt;&#xA;&lt;p&gt;В рамках инженерного направления ВСОШ участникам предлагается разработать автономное робототехническое устройство для нанесения изображений на плоскую поверхность. Робот должен самостоятельно перемещаться по оси X по зубчатым рейкам, работать в заданной рабочей области и аккуратно наносить линии маркером, выданным организаторами. В процессе проектирования школьники создают собственную механику, электронику и систему управления на базе микроконтроллера, обеспечивают точность позиционирования, работу в разных режимах, взаимодействие с датчиками и соблюдение всех требований безопасности.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Подробно о регламенте проведения регионального этапа</title>
+      <link>http://localhost:1313/uchastnikam/reglament/reglament_provedeniya/</link>
+      <pubDate>Thu, 30 Oct 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/reglament/reglament_provedeniya/</guid>
+      <description>&lt;h2 id=&#34;краткое-содержаните-к-проведению-рэ&#34;&gt;Краткое содержаните к проведению РЭ&lt;/h2&gt;&#xA;&lt;p&gt;Региональный этап олимпиады по профилю «Робототехника» проводится 17 и 19 января 2026 года. Региональный этап олимпиады по профилю «Робототехника» проводится в три тура: I тур – теоретический; II тур – практический; III тур – проектный. Теоретический и проектный туры проводятся в первый день олимпиады. Практический тур проводится во второй день олимпиады.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Теоретический тур&lt;/strong&gt; включает выполнение участниками письменных заданий и проводится отдельно для трех возрастных групп: 9 классы, 10 классы и 11 классы. Длительность теоретического тура составляет 180 минут.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Mouse.move() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Moves the cursor on a connected computer. The motion onscreen is always relative to the cursor’s current location. Before using Mouse.move() you …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/mouse/mousemove/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mouse.move()">
+<meta property="og:description" content="Description
+Moves the cursor on a connected computer. The motion onscreen is always relative to the cursor’s current location. Before using Mouse.move() you must call Mouse.begin()
+Syntax …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/usb/mouse/mousemove/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mouse.move()">
+<meta name="twitter:description" content="Description
+Moves the cursor on a connected computer. The motion onscreen is always relative to the cursor’s current location. Before using Mouse.move() you must call Mouse.begin()
+Syntax …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Mouse.move()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Moves the cursor on a connected computer. The motion onscreen is always relative to the cursor’s current location. Before using <code>Mouse.move()</code> you must call <a href="../mousebegin">Mouse.begin()</a></p>
+<p><strong>Syntax</strong></p>
+<p><code>Mouse.move(xVal, yVal, wheel)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>xVal</code>: amount to move along the x-axis. Allowed data types: <code>signed char</code>.<br>
+<code>yVal</code>: amount to move along the y-axis. Allowed data types: <code>signed char</code>.<br>
+<code>wheel</code>: amount to move scroll wheel. Allowed data types: <code>signed char</code>.</p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Mouse.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">xAxis</span> <span class="o">=</span> <span class="n">A1</span><span class="p">;</span>         <span class="c1">//analog sensor for X axis
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">yAxis</span> <span class="o">=</span> <span class="n">A2</span><span class="p">;</span>         <span class="c1">// analog sensor for Y axis
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">range</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>               <span class="c1">// output range of X or Y movement
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">responseDelay</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>        <span class="c1">// response delay of the mouse, in ms
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">threshold</span> <span class="o">=</span> <span class="n">range</span> <span class="o">/</span> <span class="mi">4</span><span class="p">;</span>    <span class="c1">// resting threshold
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">center</span> <span class="o">=</span> <span class="n">range</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>       <span class="c1">// resting position value
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">minima</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1023</span><span class="p">,</span> <span class="mi">1023</span><span class="p">};</span>  <span class="c1">// actual analogRead minima for {x, y}
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">maxima</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>        <span class="c1">// actual analogRead maxima for {x, y}
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">axis</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">xAxis</span><span class="p">,</span> <span class="n">yAxis</span><span class="p">};</span>  <span class="c1">// pin numbers for {x, y}
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">mouseReading</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>          <span class="c1">// final mouse readings for {x, y}
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Mouse</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// read and scale the two axes:
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">xReading</span> <span class="o">=</span> <span class="n">readAxis</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">yReading</span> <span class="o">=</span> <span class="n">readAxis</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// move the mouse:
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Mouse</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="n">xReading</span><span class="p">,</span> <span class="n">yReading</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">delay</span><span class="p">(</span><span class="n">responseDelay</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">  reads an axis (0 or 1 for x or y) and scales the
+</span></span></span><span class="line"><span class="cl"><span class="cm">  analog input range to a range from 0 to &lt;range&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">readAxis</span><span class="p">(</span><span class="kt">int</span> <span class="n">axisNumber</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">distance</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// distance from center of the output range
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// read the analog input:
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">reading</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">axis</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// of the current reading exceeds the max or min for this axis,
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// reset the max or min:
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">reading</span> <span class="o">&lt;</span> <span class="n">minima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">minima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">]</span> <span class="o">=</span> <span class="n">reading</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">reading</span> <span class="o">&gt;</span> <span class="n">maxima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">maxima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">]</span> <span class="o">=</span> <span class="n">reading</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// map the reading from the analog input range to the output range:
+</span></span></span><span class="line"><span class="cl">  <span class="n">reading</span> <span class="o">=</span> <span class="nf">map</span><span class="p">(</span><span class="n">reading</span><span class="p">,</span> <span class="n">minima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">],</span> <span class="n">maxima</span><span class="p">[</span><span class="n">axisNumber</span><span class="p">],</span> <span class="mi">0</span><span class="p">,</span> <span class="n">range</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// if the output reading is outside from the
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// rest position threshold,  use it:
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">reading</span> <span class="o">-</span> <span class="n">center</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distance</span> <span class="o">=</span> <span class="p">(</span><span class="n">reading</span> <span class="o">-</span> <span class="n">center</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// the Y axis needs to be inverted in order to
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// map the movement correctly:
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">axisNumber</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">distance</span> <span class="o">=</span> <span class="o">-</span><span class="n">distance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// return the distance for this axis:
+</span></span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">distance</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>When you use the <code>Mouse.move()</code> command, the Arduino takes over your mouse! Make sure you have control before you use the command. A pushbutton to toggle the mouse control state is effective.</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>LANGUAGE</em> <a href="../mouseclick">Mouse.click()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../mouseend">Mouse.end()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../mousepress">Mouse.press()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../mouserelease">Mouse.release()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../mouseispressed">Mouse.isPressed()</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

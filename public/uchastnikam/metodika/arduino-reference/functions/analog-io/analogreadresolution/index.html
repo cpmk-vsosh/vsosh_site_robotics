@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>analogReadResolution() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+analogReadResolution() is an extension of the Analog API for the Zero, Due, MKR family, Nano 33 (BLE and IoT) and Portenta.
+Sets the size (in bits) …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogreadresolution/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="analogReadResolution()">
+<meta property="og:description" content="Description
+analogReadResolution() is an extension of the Analog API for the Zero, Due, MKR family, Nano 33 (BLE and IoT) and Portenta.
+Sets the size (in bits) of the value returned by analogRead(). …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogreadresolution/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="analogReadResolution()">
+<meta name="twitter:description" content="Description
+analogReadResolution() is an extension of the Analog API for the Zero, Due, MKR family, Nano 33 (BLE and IoT) and Portenta.
+Sets the size (in bits) of the value returned by analogRead(). …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>analogReadResolution()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>analogReadResolution() is an extension of the Analog API for the Zero, Due, MKR family, Nano 33 (BLE and IoT) and Portenta.</p>
+<p>Sets the size (in bits) of the value returned by <code>analogRead()</code>. It defaults to 10 bits (returns values between 0-1023) for backward compatibility with AVR based boards.</p>
+<p>The <strong>Zero, Due, MKR family and Nano 33 (BLE and IoT)</strong> boards have 12-bit ADC capabilities that can be accessed by changing the resolution to 12. This will return values from <code>analogRead()</code> between 0 and 4095.<br>
+The <strong>Portenta H7</strong> has a 16 bit ADC, which will allow values between 0 and 65535.</p>
+<p><strong>Syntax</strong></p>
+<p><code>analogReadResolution(bits)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>bits</code>: determines the resolution (in bits) of the value returned by the <code>analogRead()</code> function. You can set this between 1 and 32. You can set resolutions higher than the supported 12 or 16 bits, but values returned by <code>analogRead()</code> will suffer approximation. See the note below for details.</p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<p>The code shows how to use ADC with different resolutions.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// open a serial connection
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// read the input on A0 at default resolution (10 bits)
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// and send it out the serial connection
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogReadResolution</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;ADC 10-bit (default) : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// change the resolution to 12 bits and read A0
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogReadResolution</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;, 12-bit : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// change the resolution to 16 bits and read A0
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogReadResolution</span><span class="p">(</span><span class="mi">16</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;, 16-bit : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// change the resolution to 8 bits and read A0
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogReadResolution</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;, 8-bit : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// a little delay to not hog Serial Monitor
+</span></span></span><span class="line"><span class="cl">  <span class="nf">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>If you set the <code>analogReadResolution()</code> value to a value higher than your board’s capabilities, the Arduino will only report back at its highest resolution, padding the extra bits with zeros.</p>
+<p>For example: using the Due with <code>analogReadResolution(16)</code> will give you an approximated 16-bit number with the first 12 bits containing the real ADC reading and the last 4 bits <strong>padded with zeros</strong>.</p>
+<p>If you set the <code>analogReadResolution()</code> value to a value lower than your board’s capabilities, the extra least significant bits read from the ADC will be <strong>discarded</strong>.</p>
+<p>Using a 16 bit resolution (or any resolution <strong>higher</strong> than actual hardware capabilities) allows you to write sketches that automatically handle devices with a higher resolution ADC when these become available on future boards without changing a line of code.</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>EXAMPLE</em> <a href="http://arduino.cc/en/Tutorial/AnalogInputPins">Description of the analog input pins</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../../analog-io/analogread">analogRead()</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

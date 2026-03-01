@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bits And Bytes on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/bits-and-bytes/</link>
+    <description>Recent content in Bits And Bytes on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/bits-and-bytes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bit()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bit/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bit/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Computes the value of the specified bit (bit 0 is 1, bit 1 is 2, bit 2 is 4, etc.).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;bit(n)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;n&lt;/code&gt;: the bit whose value to compute. Note that &lt;code&gt;n&lt;/code&gt; needs to be between 0-31 (32 bit).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The value of the bit.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>bitClear()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitclear/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitclear/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Clears (writes a 0 to) a bit of a numeric variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;bitClear(x, n)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the numeric variable whose bit to clear.&lt;br&gt;&#xA;&lt;code&gt;n&lt;/code&gt;: which bit to clear, starting at 0 for the least-significant (rightmost) bit.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the value of the numeric variable after the bit at position &lt;code&gt;n&lt;/code&gt; is cleared.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Prints the output of &lt;code&gt;bitClear(x,n)&lt;/code&gt; on two given integers. The binary representation of 6 is 0110, so when &lt;code&gt;n=1&lt;/code&gt;, the second bit from the right is set to 0. After this we are left with 0100 in binary, so 4 is returned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>bitRead()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitread/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitread/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Reads a bit of a variable, e.g. &lt;code&gt;bool&lt;/code&gt;, &lt;code&gt;int&lt;/code&gt;. Note that &lt;code&gt;float&lt;/code&gt; &amp;amp; &lt;code&gt;double&lt;/code&gt; are not supported. You can read the bit of variables up to an &lt;code&gt;unsigned long long&lt;/code&gt; (64 bits / 8 bytes).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;bitRead(x, n)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the number from which to read.&lt;br&gt;&#xA;&lt;code&gt;n&lt;/code&gt;: which bit to read, starting at 0 for the least-significant (rightmost) bit.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The value of the bit (0 or 1).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>bitSet()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitset/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitset/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Sets (writes a 1 to) a bit of a numeric variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;bitSet(x, n)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the numeric variable whose bit to set.&lt;br&gt;&#xA;&lt;code&gt;n&lt;/code&gt;: which bit to set, starting at 0 for the least-significant (rightmost) bit.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the value of the numeric variable after the bit at position &lt;code&gt;n&lt;/code&gt; is set.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Prints the output of &lt;code&gt;bitSet(x,n)&lt;/code&gt; on two given integers. The binary representation of 4 is 0100, so when &lt;code&gt;n=1&lt;/code&gt;, the second bit from the right is set to 1. After this we are left with 0110 in binary, so 6 is returned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>bitWrite()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitwrite/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/bitwrite/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Writes to a bit of a variable, e.g. &lt;code&gt;bool&lt;/code&gt;, &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;long&lt;/code&gt;. Note that &lt;code&gt;float&lt;/code&gt; &amp;amp; &lt;code&gt;double&lt;/code&gt; are not supported. You can write to a bit of variables up to an &lt;code&gt;unsigned long&lt;/code&gt; (32 bits / 4 bytes).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;bitWrite(x, n, b)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: the numeric variable to which to write.&lt;br&gt;&#xA;&lt;code&gt;n&lt;/code&gt;: which bit of the number to write, starting at 0 for the least-significant (rightmost) bit.&lt;br&gt;&#xA;&lt;code&gt;b&lt;/code&gt;: the value to write to the bit (0 or 1).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>highByte()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/highbyte/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/highbyte/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Extracts the high-order (leftmost) byte of a word (or the second lowest byte of a larger data type).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;highByte(x)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value of any type&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;code&gt;byte&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/word&#34;&gt;word()&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>lowByte()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/lowbyte/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/bits-and-bytes/lowbyte/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Extracts the low-order (rightmost) byte of a variable (e.g. a word).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;lowByte(x)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value of any type&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;code&gt;byte&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../../variables/data-types/word&#34;&gt;word()&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

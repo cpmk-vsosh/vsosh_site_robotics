@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Advanced Io on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/advanced-io/</link>
+    <description>Recent content in Advanced Io on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/advanced-io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>noTone()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/notone/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/notone/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Stops the generation of a square wave triggered by &lt;code&gt;tone()&lt;/code&gt;. Has no effect if no tone is being generated.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;noTone(pin)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;pin&lt;/code&gt;: the Arduino pin on which to stop generating the tone&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Nothing&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Notes and Warnings&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you want to play different pitches on multiple pins, you need to call &lt;code&gt;noTone()&lt;/code&gt; on one pin before calling &lt;code&gt;tone()&lt;/code&gt; on the next pin.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>pulseIn()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/pulsein/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/pulsein/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Reads a pulse (either &lt;code&gt;HIGH&lt;/code&gt; or &lt;code&gt;LOW&lt;/code&gt;) on a pin. For example, if &lt;code&gt;value&lt;/code&gt; is &lt;code&gt;HIGH&lt;/code&gt;, &lt;code&gt;pulseIn()&lt;/code&gt; waits for the pin to go from &lt;code&gt;LOW&lt;/code&gt; to &lt;code&gt;HIGH&lt;/code&gt;, starts timing, then waits for the pin to go &lt;code&gt;LOW&lt;/code&gt; and stops timing. Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.&lt;/p&gt;&#xA;&lt;p&gt;The timing of this function has been determined empirically and will probably show errors in longer pulses. Works on pulses from 10 microseconds to 3 minutes in length.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>pulseInLong()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/pulseinlong/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/pulseinlong/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;pulseInLong()&lt;/code&gt; is an alternative to &lt;a href=&#34;../pulsein&#34;&gt;pulseIn()&lt;/a&gt; which is better at handling long pulse and interrupt affected scenarios.&lt;/p&gt;&#xA;&lt;p&gt;Reads a pulse (either &lt;code&gt;HIGH&lt;/code&gt; or &lt;code&gt;LOW&lt;/code&gt;) on a pin. For example, if &lt;code&gt;value&lt;/code&gt; is &lt;code&gt;HIGH&lt;/code&gt;, &lt;code&gt;pulseInLong()&lt;/code&gt; waits for the pin to go from &lt;code&gt;LOW&lt;/code&gt; to &lt;code&gt;HIGH&lt;/code&gt;, starts timing, then waits for the pin to go &lt;code&gt;LOW&lt;/code&gt; and stops timing. Returns the length of the pulse in microseconds or gives up and returns 0 if no complete pulse was received within the timeout.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>shiftIn()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftin/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftin/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Shifts in a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. For each bit, the clock pin is pulled high, the next bit is read from the data line, and then the clock pin is taken low.&lt;/p&gt;&#xA;&lt;p&gt;If you’re interfacing with a device that’s clocked by rising edges, you’ll need to make sure that the clock pin is low before the first call to &lt;code&gt;shiftIn()&lt;/code&gt;, e.g. with a call to &lt;code&gt;digitalWrite(clockPin, LOW)&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>shiftOut()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftout/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftout/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.&lt;/p&gt;&#xA;&lt;p&gt;Note- if you’re interfacing with a device that’s clocked by rising edges, you’ll need to make sure that the clock pin is low before the call to &lt;code&gt;shiftOut()&lt;/code&gt;, e.g. with a call to &lt;code&gt;digitalWrite(clockPin, LOW)&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>tone()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/tone/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/tone/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Generates a square wave of the specified frequency (and 50% duty cycle) on a pin. A duration can be specified, otherwise the wave continues until a call to &lt;a href=&#34;../notone&#34;&gt;noTone()&lt;/a&gt;. The pin can be connected to a piezo buzzer or other speaker to play tones.&lt;/p&gt;&#xA;&lt;p&gt;Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to &lt;code&gt;tone()&lt;/code&gt; will have no effect. If the tone is playing on the same pin, the call will set its frequency.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

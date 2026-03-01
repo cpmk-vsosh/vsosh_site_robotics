@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>string — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="string">
+<meta property="og:description" content="Description
+Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and null-terminate it. This page described the latter …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="string">
+<meta name="twitter:description" content="Description
+Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and null-terminate it. This page described the latter …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>string</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and null-terminate it. This page described the latter method. For more details on the String object, which gives you more functionality at the cost of more memory, see the <a href="../stringobject">String object</a> page.</p>
+<p><strong>Syntax</strong></p>
+<p>All of the following are valid declarations for strings.</p>
+<p><code>char Str1[15];</code><br>
+<code>char Str2[8] = {'a', 'r', 'd', 'u', 'i', 'n', 'o'};</code><br>
+<code>char Str3[8] = {'a', 'r', 'd', 'u', 'i', 'n', 'o', '\0'};</code><br>
+<code>char Str4[] = &quot;arduino&quot;;</code><br>
+<code>char Str5[8] = &quot;arduino&quot;;</code><br>
+<code>char Str6[15] = &quot;arduino&quot;;</code></p>
+<p><strong>Possibilities for declaring strings</strong></p>
+<ul>
+<li>
+<p>Declare an array of chars without initializing it as in Str1</p>
+</li>
+<li>
+<p>Declare an array of chars (with one extra char) and the compiler will add the required null character, as in Str2</p>
+</li>
+<li>
+<p>Explicitly add the null character, Str3</p>
+</li>
+<li>
+<p>Initialize with a string constant in quotation marks; the compiler will size the array to fit the string constant and a terminating null character, Str4</p>
+</li>
+<li>
+<p>Initialize the array with an explicit size and string constant, Str5</p>
+</li>
+<li>
+<p>Initialize the array, leaving extra space for a larger string, Str6</p>
+</li>
+</ul>
+<p><strong>Null termination</strong></p>
+<p>Generally, strings are terminated with a null character (ASCII code 0). This allows functions (like <code>Serial.print()</code>) to tell where the end of a string is. Otherwise, they would continue reading subsequent bytes of memory that aren’t actually part of the string.</p>
+<p>This means that your string needs to have space for one more character than the text you want it to contain. That is why Str2 and Str5 need to be eight characters, even though &ldquo;arduino&rdquo; is only seven - the last position is automatically filled with a null character. Str4 will be automatically sized to eight characters, one for the extra null. In Str3, we’ve explicitly included the null character (written &lsquo;\0&rsquo;) ourselves.</p>
+<p>Note that it’s possible to have a string without a final null character (e.g. if you had specified the length of Str2 as seven instead of eight). This will break most functions that use strings, so you shouldn’t do it intentionally. If you notice something behaving strangely (operating on characters not in the string), however, this could be the problem.</p>
+<p><strong>Single quotes or double quotes?</strong></p>
+<p>Strings are always defined inside double quotes (&ldquo;Abc&rdquo;) and characters are always defined inside single quotes(&lsquo;A&rsquo;).</p>
+<p><strong>Wrapping long strings</strong></p>
+<p>You can wrap long strings like this:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">myString</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;This is the first line&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s">&#34; this is the second line&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="s">&#34; etcetera&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><p><strong>Arrays of strings</strong></p>
+<p>It is often convenient, when working with large amounts of text, such as a project with an LCD display, to setup an array of strings. Because strings themselves are arrays, this is actually an example of a two-dimensional array.</p>
+<p>In the code below, the asterisk after the datatype <code>char</code> “char*” indicates that this is an array of “pointers”. All array names are actually pointers, so this is required to make an array of arrays. Pointers are one of the more esoteric parts of C++ for beginners to understand, but it isn’t necessary to understand pointers in detail to use them effectively here.</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">char</span> <span class="o">*</span><span class="n">myStrings</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#34;This is string 1&#34;</span><span class="p">,</span> <span class="s">&#34;This is string 2&#34;</span><span class="p">,</span> <span class="s">&#34;This is string 3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                     <span class="s">&#34;This is string 4&#34;</span><span class="p">,</span> <span class="s">&#34;This is string 5&#34;</span><span class="p">,</span> <span class="s">&#34;This is string 6&#34;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">myStrings</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>See also</strong></p>
+<ul>
+<li><em>LANGUAGE</em> <a href="../../utilities/progmem">PROGMEM</a></li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Serial.print() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/serial/serialprint/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Serial.print()">
+<meta property="og:description" content="Description
+Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/serial/serialprint/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Serial.print()">
+<meta name="twitter:description" content="Description
+Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Serial.print()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Prints data to the serial port as human-readable ASCII text. This command can take many forms. Numbers are printed using an ASCII character for each digit. Floats are similarly printed as ASCII digits, defaulting to two decimal places. Bytes are sent as a single character. Characters and strings are sent as is. For example-</p>
+<ul>
+<li>
+<p><code>Serial.print(78)</code> gives &ldquo;78&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(1.23456)</code> gives &ldquo;1.23&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print('N')</code> gives &ldquo;N&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(&quot;Hello world.&quot;)</code> gives &ldquo;Hello world.&rdquo;</p>
+</li>
+</ul>
+<p>An optional second parameter specifies the base (format) to use; permitted values are <code>BIN(binary, or base 2)</code>, <code>OCT(octal, or base 8)</code>, <code>DEC(decimal, or base 10)</code>, <code>HEX(hexadecimal, or base 16)</code>. For floating point numbers, this parameter specifies the number of decimal places to use. For example-</p>
+<ul>
+<li>
+<p><code>Serial.print(78, BIN)</code> gives &ldquo;1001110&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(78, OCT)</code> gives &ldquo;116&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(78, DEC)</code> gives &ldquo;78&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(78, HEX)</code> gives &ldquo;4E&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(1.23456, 0)</code> gives &ldquo;1&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(1.23456, 2)</code> gives &ldquo;1.23&rdquo;\</p>
+</li>
+<li>
+<p><code>Serial.print(1.23456, 4)</code> gives &ldquo;1.2346&rdquo;</p>
+</li>
+</ul>
+<p>You can pass flash-memory based strings to <code>Serial.print()</code> by wrapping them with <a href="../../../../variables/utilities/progmem">F()</a>. For example:</p>
+<p><code>Serial.print(F(&quot;Hello World&quot;))</code></p>
+<p>To send data without conversion to its representation as characters, use <a href="../write">Serial.write()</a>.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Serial.print(val)</code><br>
+<code>Serial.print(val, format)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>Serial</code>: serial port object. See the list of available serial ports for each board on the <a href="https://www.arduino.cc/en/Reference/serial">Serial main page</a>.<br>
+<code>val</code>: the value to print. Allowed data types: any data type.</p>
+<p><strong>Returns</strong></p>
+<p><code>print()</code> returns the number of bytes written, though reading that number is optional. Data type: <code>size_t</code>.</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">  Uses a for loop to print numbers in various formats.
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// open the serial port at 9600 bps:
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// print labels
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;NO FORMAT&#34;</span><span class="p">);</span>  <span class="c1">// prints a label
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>         <span class="c1">// prints a tab
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;DEC&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;HEX&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;OCT&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;BIN&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>        <span class="c1">// carriage return after the last label
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">64</span><span class="p">;</span> <span class="n">x</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// only part of the ASCII chart, change to suit
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// print it out in many formats:
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>       <span class="c1">// print as an ASCII-encoded decimal - same as &#34;DEC&#34;
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t\t</span><span class="s">&#34;</span><span class="p">);</span>  <span class="c1">// prints two tabs to accommodate the label length
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">DEC</span><span class="p">);</span>  <span class="c1">// print as an ASCII-encoded decimal
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>    <span class="c1">// prints a tab
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">HEX</span><span class="p">);</span>  <span class="c1">// print as an ASCII-encoded hexadecimal
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>    <span class="c1">// prints a tab
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">OCT</span><span class="p">);</span>  <span class="c1">// print as an ASCII-encoded octal
+</span></span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\t</span><span class="s">&#34;</span><span class="p">);</span>    <span class="c1">// prints a tab
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">BIN</span><span class="p">);</span>  <span class="c1">// print as an ASCII-encoded binary
+</span></span></span><span class="line"><span class="cl">    <span class="c1">// then adds the carriage return with &#34;println&#34;
+</span></span></span><span class="line"><span class="cl">    <span class="nf">delay</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>            <span class="c1">// delay 200 milliseconds
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">();</span>        <span class="c1">// prints another carriage return
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>For information on the asyncronicity of <code>Serial.print()</code>, see the Notes and Warnings section of the <a href="../write#howtouse">Serial.write() reference page</a>.</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>LANGUAGE</em> <a href="../begin">begin()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../end">end()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../available">available()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../read">read()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../peek">peek()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../flush">flush()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../println">println()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../write">write()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../serialevent">SerialEvent()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="https://www.arduino.cc/en/Tutorial/Memory">Memory</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

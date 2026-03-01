@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Пример движения по линии, с подсчетом перекрестков — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ // пример движения по линии, с подсчетом перекрестков // …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/code/line_move/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Пример движения по линии, с подсчетом перекрестков">
+<meta property="og:description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ // пример движения по линии, с подсчетом перекрестков // Пины подключениия моторов const int …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/code/line_move/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Пример движения по линии, с подсчетом перекрестков">
+<meta name="twitter:description" content="
+// Copyright (c) 2026 ЦПМК по информатике // Licensed under the MIT License. // https://robot.mipt.ru/ // пример движения по линии, с подсчетом перекрестков // Пины подключениия моторов const int …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-27T10:00:00&#43;03:00">
+          27.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Команда ЦПМК</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Пример движения по линии, с подсчетом перекрестков</h1>
+
+      
+
+      <p><img src="/img/jga25-370b.png" alt="jga25-370b"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Copyright (c) 2026 ЦПМК по информатике
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Licensed under the MIT License.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// https://robot.mipt.ru/
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// пример движения по линии, с подсчетом перекрестков
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Пины подключениия моторов
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">PIN_SPEED_L</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">PIN_DIR_L</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">PIN_SPEED_R</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="n">PIN_DIR_R</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Параметры регулятора
+</span></span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">Kp</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">baseSpeed</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>  <span class="c1">// Начальная скорость
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">threshold</span> <span class="o">=</span> <span class="mi">600</span><span class="p">;</span>  <span class="c1">// Порог для определения черного (настройте под свои датчики)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Переменные для подсчета
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">intersectionCount</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>    <span class="c1">// число перекрестков, которые увидел пробот
+</span></span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">onIntersection</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>  <span class="c1">// Флаг: находимся ли мы сейчас на перекрестке
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// настраиваем пины управления моторами как выход
+</span></span></span><span class="line"><span class="cl">  <span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_SPEED_L</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_DIR_L</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_SPEED_R</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pinMode</span><span class="p">(</span><span class="n">PIN_DIR_R</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// настраиваем направление вращения моторов для езды вперед, зависит от полярности подключения
+</span></span></span><span class="line"><span class="cl">  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_DIR_L</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">PIN_DIR_R</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>  <span class="c1">// небольшая пауза, перед началом движения
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">sensorL</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">sensorR</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Логика подсчета перекрестков
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// Если оба датчика видят черное (значение &gt; порога)
+</span></span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">sensorL</span> <span class="o">&gt;</span> <span class="n">threshold</span> <span class="o">&amp;&amp;</span> <span class="n">sensorR</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">onIntersection</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Если это новый перекресток, а не тот же самый
+</span></span></span><span class="line"><span class="cl">      <span class="n">intersectionCount</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">onIntersection</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Если хотя бы один датчик съехал с перекрестка, сбрасываем флаг
+</span></span></span><span class="line"><span class="cl">    <span class="n">onIntersection</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">//  П-регулятор (езда по линии)
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">error</span> <span class="o">=</span> <span class="n">sensorL</span> <span class="o">-</span> <span class="n">sensorR</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">adjustment</span> <span class="o">=</span> <span class="n">error</span> <span class="o">*</span> <span class="n">Kp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">speedL</span> <span class="o">=</span> <span class="n">constrain</span><span class="p">(</span><span class="n">baseSpeed</span> <span class="o">+</span> <span class="n">adjustment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>  <span class="c1">// обрезка
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">speedR</span> <span class="o">=</span> <span class="n">constrain</span><span class="p">(</span><span class="n">baseSpeed</span> <span class="o">-</span> <span class="n">adjustment</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">analogWrite</span><span class="p">(</span><span class="n">PIN_SPEED_L</span><span class="p">,</span> <span class="n">speedL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">analogWrite</span><span class="p">(</span><span class="n">PIN_SPEED_R</span><span class="p">,</span> <span class="n">speedR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="n">intersectionCount</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// остановимся после 3 перекрестка
+</span></span></span><span class="line"><span class="cl">    <span class="n">analogWrite</span><span class="p">(</span><span class="n">PIN_SPEED_L</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">analogWrite</span><span class="p">(</span><span class="n">PIN_SPEED_R</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

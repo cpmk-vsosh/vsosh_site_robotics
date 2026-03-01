@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Operators on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/data-types/string/operators/</link>
+    <description>Recent content in Operators on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/data-types/string/operators/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>!=</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/different-from/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/different-from/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Compares two Strings for difference. The comparison is case-sensitive, meaning the String &amp;ldquo;hello&amp;rdquo; is not equal to the String &amp;ldquo;HELLO&amp;rdquo;. Functionally the same as string.equals()&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1 != myString2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1&lt;/code&gt;: a String variable.&lt;br&gt;&#xA;&lt;code&gt;myString2&lt;/code&gt;: a String variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;true&lt;/code&gt;: if myString1 is different from myString2.&lt;br&gt;&#xA;&lt;code&gt;false&lt;/code&gt;: otherwise.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;EXAMPLE&lt;/em&gt; &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings&#34;&gt;String Tutorials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>[] </title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/element-access/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/element-access/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Allows you access to the individual characters of a String.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;char thisChar = myString1[n]&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;thisChar&lt;/code&gt;: Allowed data types: char.&lt;br&gt;&#xA;&lt;code&gt;myString1&lt;/code&gt;: Allowed data types: String.&lt;br&gt;&#xA;&lt;code&gt;n&lt;/code&gt;: a numeric variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The nth char of the String. Same as charAt().&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;EXAMPLE&lt;/em&gt; &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings&#34;&gt;String Tutorials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&#43;</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/concatenation/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/concatenation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Combines, or concatenates two Strings into one new String. The second String is appended to the first, and the result is placed in a new String. Works the same as string.concat().&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString3 = myString1 + myString2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1&lt;/code&gt;: a String variable.&lt;br&gt;&#xA;&lt;code&gt;myString2&lt;/code&gt;: a String variable.&lt;br&gt;&#xA;&lt;code&gt;myString3&lt;/code&gt;: a String variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;New String that is the combination of the original two Strings.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;EXAMPLE&lt;/em&gt; &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings&#34;&gt;String Tutorials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&#43;=</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/append/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/append/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It concatenates Strings with other data.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1 += data&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1&lt;/code&gt;: a String variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Nothing&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;EXAMPLE&lt;/em&gt; &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings&#34;&gt;String Tutorials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&lt;</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/less-thans/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/less-thans/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tests if the String on the left is less than the String on the right. This operator evaluate Strings in alphabetical order, on the first character where the two differ. So, for example &amp;ldquo;a&amp;rdquo; &amp;lt; &amp;ldquo;b&amp;rdquo; and &amp;ldquo;1&amp;rdquo; &amp;lt; &amp;ldquo;2&amp;rdquo;, but &amp;ldquo;999&amp;rdquo; &amp;gt; &amp;ldquo;1000&amp;rdquo; because 9 comes after 1.&lt;/p&gt;&#xA;&lt;p&gt;Caution: String comparison operators can be confusing when you’re comparing numeric Strings, because the numbers are treated as Strings and not as numbers. If you need to compare numbers numerically, compare them as ints, floats, or longs, and not as Strings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&lt;=</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/less-than-or-equal/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/less-than-or-equal/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tests if the String on the left is less than or equal to the String on the right. This operator evaluate Strings in alphabetical order, on the first character where the two differ. So, for example &amp;ldquo;a&amp;rdquo; &amp;lt; &amp;ldquo;b&amp;rdquo; and &amp;ldquo;1&amp;rdquo; &amp;lt; &amp;ldquo;2&amp;rdquo;, but &amp;ldquo;999&amp;rdquo; &amp;gt; &amp;ldquo;1000&amp;rdquo; because 9 comes after 1.&lt;/p&gt;&#xA;&lt;p&gt;Caution: String comparison operators can be confusing when you’re comparing numeric Strings, because the numbers are treated as Strings and not as numbers. If you need to compare numbers numerically, compare them as ints, floats, or longs, and not as Strings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>==</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/comparison/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/comparison/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Compares two Strings for equality. The comparison is case-sensitive, meaning the String &amp;ldquo;hello&amp;rdquo; is not equal to the String &amp;ldquo;HELLO&amp;rdquo;. Functionally the same as string.equals()&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1 == myString2&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;myString1&lt;/code&gt;: a String variable.&lt;br&gt;&#xA;&lt;code&gt;myString2&lt;/code&gt;: a String variable.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;true&lt;/code&gt;: if myString1 equals myString2.&lt;br&gt;&#xA;&lt;code&gt;false&lt;/code&gt;: otherwise.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;EXAMPLE&lt;/em&gt; &lt;a href=&#34;https://www.arduino.cc/en/Tutorial/BuiltInExamples#strings&#34;&gt;String Tutorials&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>&gt;</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/greater-than/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/greater-than/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tests if the String on the left is greater than the String on the right. This operator evaluates Strings in alphabetical order, on the first character where the two differ. So, for example &amp;ldquo;b&amp;rdquo; &amp;gt; &amp;ldquo;a&amp;rdquo; and &amp;ldquo;2&amp;rdquo; &amp;gt; &amp;ldquo;1&amp;rdquo;, but &amp;ldquo;999&amp;rdquo; &amp;gt; &amp;ldquo;1000&amp;rdquo; because 9 comes after 1.&lt;/p&gt;&#xA;&lt;p&gt;Caution: String comparison operators can be confusing when you’re comparing numeric Strings, because the numbers are treated as Strings and not as numbers. If you need to compare numbers numerically, compare them as ints, floats, or longs, and not as Strings.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>&gt;=</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/greater-than-or-equal-to/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/data-types/string/operators/greater-than-or-equal-to/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Tests if the String on the left is greater than, or equal to, the String on the right. This operator evaluate Strings in alphabetical order, on the first character where the two differ. So, for example &amp;ldquo;b&amp;rdquo; &amp;gt;= &amp;ldquo;a&amp;rdquo; and &amp;ldquo;2&amp;rdquo; &amp;gt;= &amp;ldquo;1&amp;rdquo;, but &amp;ldquo;999&amp;rdquo; &amp;gt;= &amp;ldquo;1000&amp;rdquo; because 9 comes after 1.&lt;/p&gt;&#xA;&lt;p&gt;Caution: String comparison operators can be confusing when you’re comparing numeric Strings, because the numbers are treated as Strings and not as numbers. If you need to compare numbers numerically, compare them as ints, floats, or longs, and not as Strings.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conversion on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/conversion/</link>
+    <description>Recent content in Conversion on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/conversion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>(unsigned int)</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/unsigned-int/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/unsigned-int/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;unsigned int&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;(unsigned int)x&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value of any type&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../data-types/unsignedint&#34;&gt;&lt;code&gt;unsigned int&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/unsignedint&#34;&gt;unsigned int&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>(unsigned long)</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/unsigned-long/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/unsigned-long/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;unsigned long&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;(unsigned long)x&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value of any type&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../../data-types/unsignedlong&#34;&gt;&lt;code&gt;unsigned long&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/unsignedlong&#34;&gt;unsigned long&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>byte()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/byte/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/byte/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;byte&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;byte(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(byte)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/byte&#34;&gt;&lt;code&gt;byte&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/byte&#34;&gt;byte&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>char()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/char/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/char/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;char&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;char(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(char)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/char&#34;&gt;&lt;code&gt;char&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/char&#34;&gt;char&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>float()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/float/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/float/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;float&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;float(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(float)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/float&#34;&gt;&lt;code&gt;float&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Notes and Warnings&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;See the reference for &lt;code&gt;float&lt;/code&gt; for details about the precision and limitations of floating point numbers on Arduino.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/float&#34;&gt;float&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>int()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/int/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/int/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;int&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;int(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(int)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/int&#34;&gt;&lt;code&gt;int&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/int&#34;&gt;int&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>long()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/long/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/long/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;long&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;long(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(long)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/long&#34;&gt;&lt;code&gt;long&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/long&#34;&gt;long&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>word()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/word/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/conversion/word/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Converts a value to the &lt;code&gt;word&lt;/code&gt; data type.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;word(x)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;word(h, l)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;(word)x&lt;/code&gt; (C-style type conversion)&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;x&lt;/code&gt;: a value. Allowed data types: any type.&lt;br&gt;&#xA;&lt;code&gt;h&lt;/code&gt;: the high-order (leftmost) byte of the word.&lt;br&gt;&#xA;&lt;code&gt;l&lt;/code&gt;: the low-order (rightmost) byte of the word.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Data type: &lt;a href=&#34;../../data-types/word&#34;&gt;&lt;code&gt;word&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;LANGUAGE&lt;/em&gt; &lt;a href=&#34;../../data-types/word&#34;&gt;word&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Stream on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/</link>
+    <description>Recent content in Stream on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stream.available()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamavailable/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamavailable/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;available()&lt;/code&gt; gets the number of bytes available in the stream. This is only for bytes that have already arrived.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.available()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The number of bytes available to read. Data type: &lt;code&gt;int&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.find()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamfind/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamfind/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;find()&lt;/code&gt; reads data from the stream until the target is found. The function returns true if target is found, false if timed out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;Stream.setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.find(target)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;stream.find(target, length)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;br&gt;&#xA;&lt;code&gt;target&lt;/code&gt;: the string to search for. Allowed data types: &lt;code&gt;char&lt;/code&gt;.&lt;br&gt;&#xA;&lt;code&gt;length&lt;/code&gt;: length of the target. Allowed data types: &lt;code&gt;size_t&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.findUntil()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamfinduntil/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamfinduntil/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;findUntil()&lt;/code&gt; reads data from the stream until the target string of given length or terminator string is found, or it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;Stream.setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;The function returns &lt;code&gt;true&lt;/code&gt; if target string is found, &lt;code&gt;false&lt;/code&gt; if timed out.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.findUntil(target, terminal)&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.flush()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamflush/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamflush/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;flush()&lt;/code&gt; clears the buffer once all outgoing characters have been sent.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.flush()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Nothing&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.getTimeout()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamgettimeout/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamgettimeout/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;getTimeout()&lt;/code&gt; returns the timeout value set by &lt;code&gt;setTimeout()&lt;/code&gt;. This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.getTimeout()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;None&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The timeout value set by &lt;code&gt;stream.setTimeout()&lt;/code&gt;. Data type: &lt;code&gt;unsigned long&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.parseFloat()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamparsefloat/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamparsefloat/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;parseFloat()&lt;/code&gt; returns the first valid floating point number from the current position. &lt;code&gt;parseFloat()&lt;/code&gt; is terminated by the first character that is not a floating point number. The function terminates if it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;Stream.setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.parseFloat()&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;stream.parseFloat(lookahead)&lt;/code&gt;&lt;br&gt;&#xA;&lt;code&gt;stream.parseFloat(lookahead, ignore)&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.parseInt()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamparseint/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamparseint/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;parseInt()&lt;/code&gt; returns the first valid (long) integer number from the current position.&lt;/p&gt;&#xA;&lt;p&gt;In particular:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;Parsing stops when no characters have been read for a configurable time-out value, or a non-digit is read;\&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;If no valid digits were read when the time-out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;Stream.setTimeout()&lt;/a&gt;) occurs, 0 is returned;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.peek()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streampeek/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streampeek/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Read a byte from the file without advancing to the next one. That is, successive calls to &lt;code&gt;peek()&lt;/code&gt; will return the same value, as will the next call to &lt;code&gt;read()&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.peek()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.read()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamread/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamread/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;read()&lt;/code&gt; reads characters from an incoming stream to the buffer.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.read()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The first byte of incoming data available (or -1 if no data is available).&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.readBytes()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadbytes/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadbytes/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readBytes()&lt;/code&gt; read characters from a stream into a buffer. The function terminates if the determined length has been read, or it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readBytes()&lt;/code&gt; returns the number of bytes placed in the buffer. A 0 means no valid data was found.&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.readBytesUntil()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadbytesuntil/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadbytesuntil/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readBytesUntil()&lt;/code&gt; reads characters from a stream into a buffer. The function terminates if the terminator character is detected, the determined length has been read, or it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;setTimeout()&lt;/a&gt;). The function returns the characters up to the last character before the supplied terminator. The terminator itself is not returned in the buffer.&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readBytesUntil()&lt;/code&gt; returns the number of bytes placed in the buffer. A 0 means the terminator character can’t be found or there is no data before it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.readString()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadstring/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadstring/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readString()&lt;/code&gt; reads characters from a stream into a String. The function terminates if it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.readString()&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;A String read from a stream.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.readStringUntil()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadstringuntil/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamreadstringuntil/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;readStringUntil()&lt;/code&gt; reads characters from a stream into a String. The function terminates if the terminator character is detected or it times out (see &lt;a href=&#34;../streamsettimeout&#34;&gt;setTimeout()&lt;/a&gt;).&lt;/p&gt;&#xA;&lt;p&gt;This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.readStringUntil(terminator)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;br&gt;&#xA;&lt;code&gt;terminator&lt;/code&gt;: the character to search for. Allowed data types: &lt;code&gt;char&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stream.setTimeout()</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamsettimeout/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/stream/streamsettimeout/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;setTimeout()&lt;/code&gt; sets the maximum milliseconds to wait for stream data, it defaults to 1000 milliseconds. This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the &lt;a href=&#34;../../stream&#34;&gt;Stream class&lt;/a&gt; main page for more information.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Syntax&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream.setTimeout(time)&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Parameters&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;stream&lt;/code&gt;: an instance of a class that inherits from Stream.&lt;br&gt;&#xA;&lt;code&gt;time&lt;/code&gt;: timeout duration in milliseconds. Allowed data types: &lt;code&gt;long&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Returns&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Nothing&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

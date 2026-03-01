@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>&lt;&lt; — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+The left shift operator &lt;&lt; causes the bits of the left operand to be shifted left by the number of positions specified by the right operand. …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/bitwise-operators/bitshift-left/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="&lt;&lt;">
+<meta property="og:description" content="Description
+The left shift operator &lt;&lt; causes the bits of the left operand to be shifted left by the number of positions specified by the right operand.
+Syntax
+variable &lt;&lt; number_of_bits; …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/structure/bitwise-operators/bitshift-left/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="&lt;&lt;">
+<meta name="twitter:description" content="Description
+The left shift operator &lt;&lt; causes the bits of the left operand to be shifted left by the number of positions specified by the right operand.
+Syntax
+variable &lt;&lt; number_of_bits; …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>&lt;&lt;</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>The left shift operator <code>&lt;&lt;</code> causes the bits of the left operand to be shifted <strong>left</strong> by the number of positions specified by the right operand.</p>
+<p><strong>Syntax</strong></p>
+<p><code>variable &lt;&lt; number_of_bits;</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>variable</code>: Allowed data types: <code>byte</code>, <code>int</code>, <code>long</code>.<br>
+<code>number_of_bits</code>: a number that is &lt; = 32. Allowed data types: <code>int</code>.</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>      <span class="c1">// binary: 0000000000000101
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// binary: 0000000000101000, or 40 in decimal
+</span></span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>When you shift a value x by y bits (x &lt;&lt; y), the leftmost y bits in x are lost, literally shifted out of existence:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>  <span class="c1">// binary: 0000000000000101
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">y</span><span class="p">;</span>  <span class="c1">// binary: 0100000000000000 - the first 1 in 101 was discarded
+</span></span></span></code></pre></div><p>If you are certain that none of the ones in a value are being shifted into oblivion, a simple way to think of the left-shift operator is that it multiplies the left operand by 2 raised to the right operand power. For example, to generate powers of 2, the following expressions can be employed:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl">   <span class="n">Operation</span>  <span class="n">Result</span>
+</span></span><span class="line"><span class="cl">   <span class="o">---------</span>  <span class="o">------</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">0</span>      <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">1</span>      <span class="mi">2</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">2</span>      <span class="mi">4</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">3</span>      <span class="mi">8</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">8</span>    <span class="mi">256</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span>  <span class="mi">9</span>    <span class="mi">512</span>
+</span></span><span class="line"><span class="cl">    <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">10</span>   <span class="mi">1024</span>
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span></code></pre></div><p>The following example can be used to print out the value of a received byte to the serial monitor, using the left shift operator to move along the byte from bottom(LSB) to top (MSB), and print out its Binary value:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="c1">// Prints out Binary value (1 or 0) of byte
+</span></span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printOut1</span><span class="p">(</span><span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">bits</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span> <span class="n">bits</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">bits</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Compare bits 7-0 in byte
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&amp;</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="n">bits</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;0&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>See also</strong></p>
+<ul>
+<li><em>EXAMPLE</em> <a href="https://www.arduino.cc/playground/Code/BitMath">BitMath Tutorial</a></li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

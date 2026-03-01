@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>shiftOut() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftout/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="shiftOut()">
+<meta property="og:description" content="Description
+Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/advanced-io/shiftout/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="shiftOut()">
+<meta name="twitter:description" content="Description
+Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>shiftOut()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Shifts out a byte of data one bit at a time. Starts from either the most (i.e. the leftmost) or least (rightmost) significant bit. Each bit is written in turn to a data pin, after which a clock pin is pulsed (taken high, then low) to indicate that the bit is available.</p>
+<p>Note- if you’re interfacing with a device that’s clocked by rising edges, you’ll need to make sure that the clock pin is low before the call to <code>shiftOut()</code>, e.g. with a call to <code>digitalWrite(clockPin, LOW)</code>.</p>
+<p>This is a software implementation; see also the <a href="https://www.arduino.cc/en/Reference/SPI">SPI library</a>, which provides a hardware implementation that is faster but works only on specific pins.</p>
+<p><strong>Syntax</strong></p>
+<p><code>shiftOut(dataPin, clockPin, bitOrder, value)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>dataPin</code>: the pin on which to output each bit. Allowed data types: <code>int</code>.<br>
+<code>clockPin</code>: the pin to toggle once the dataPin has been set to the correct value. Allowed data types: <code>int</code>.<br>
+<code>bitOrder</code>: which order to shift out the bits; either MSBFIRST or LSBFIRST. (Most Significant Bit First, or, Least Significant Bit First).<br>
+<code>value</code>: the data to shift out. Allowed data types: <code>byte</code>.</p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<p>For accompanying circuit, see the <a href="https://arduino.cc/en/Tutorial/ShiftOut">tutorial on controlling a 74HC595 shift register</a>.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="c1">//**************************************************************//
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  Name    : shiftOutCode, Hello World                         //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  Author  : Carlyn Maw,Tom Igoe                               //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  Date    : 25 Oct, 2006                                      //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  Version : 1.0                                               //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//  Notes   : Code for using a 74HC595 Shift Register           //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//          : to count from 0 to 255                            //
+</span></span></span><span class="line"><span class="cl"><span class="c1">//****************************************************************
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//Pin connected to ST_CP of 74HC595
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">latchPin</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//Pin connected to SH_CP of 74HC595
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">clockPin</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">////Pin connected to DS of 74HC595
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">dataPin</span> <span class="o">=</span> <span class="mi">11</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//set pins to output because they are addressed in the main loop
+</span></span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">latchPin</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">clockPin</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">//count up routine
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">256</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//ground latchPin and hold low for as long as you are transmitting
+</span></span></span><span class="line"><span class="cl">    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">latchPin</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">shiftOut</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="n">clockPin</span><span class="p">,</span> <span class="kc">LSBFIRST</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//return the latch pin high to signal chip that it
+</span></span></span><span class="line"><span class="cl">    <span class="c1">//no longer needs to listen for information
+</span></span></span><span class="line"><span class="cl">    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">latchPin</span><span class="p">,</span> <span class="kc">HIGH</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>The dataPin and clockPin must already be configured as outputs by a call to <a href="../../digital-io/pinmode">pinMode()</a>.</p>
+<p>shiftOut is currently written to output 1 byte (8 bits) so it requires a two step operation to output values larger than 255.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="c1">// Do this for MSBFIRST serial
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// shift out highbyte
+</span></span></span><span class="line"><span class="cl"><span class="nf">shiftOut</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="kc">MSBFIRST</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// shift out lowbyte
+</span></span></span><span class="line"><span class="cl"><span class="nf">shiftOut</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="kc">MSBFIRST</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Or do this for LSBFIRST serial
+</span></span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// shift out lowbyte
+</span></span></span><span class="line"><span class="cl"><span class="nf">shiftOut</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="kc">LSBFIRST</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// shift out highbyte
+</span></span></span><span class="line"><span class="cl"><span class="nf">shiftOut</span><span class="p">(</span><span class="n">dataPin</span><span class="p">,</span> <span class="n">clock</span><span class="p">,</span> <span class="kc">LSBFIRST</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">));</span>
+</span></span></code></pre></div><p><strong>See also</strong></p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Статьи робототехника on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/articles/</link>
+    <description>Recent content in Статьи робототехника on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Wed, 03 Sep 2025 10:00:00 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/articles/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Зачем нужен регулятор</title>
+      <link>http://localhost:1313/uchastnikam/articles/articl1/</link>
+      <pubDate>Wed, 03 Sep 2025 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/articles/articl1/</guid>
+      <description>&lt;h2 id=&#34;тестовая-статья&#34;&gt;Тестовая статья&lt;/h2&gt;&#xA;&lt;p&gt;Любая роботизированная система пытается добиться &lt;strong&gt;заданного значения&lt;/strong&gt; (позиции, скорости, угла, температуры и т.д.) несмотря на помехи: трение, нагрузка, задержки датчиков.&lt;br&gt;&#xA;&lt;strong&gt;Регулятор&lt;/strong&gt; — это алгоритм, который по ошибке &lt;code&gt;e = setpoint − measured&lt;/code&gt; вычисляет управляющее воздействие на привод/мотор.&lt;/p&gt;&#xA;&lt;h2 id=&#34;три-кирпичика-p-i-d&#34;&gt;Три кирпичика: P, I, D&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;P (пропорциональная часть):&lt;/strong&gt; усилие пропорционально текущей ошибке.&lt;br&gt;&#xA;Плюсы — быстро реагирует; минусы — остаётся стационарная ошибка.&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;I (интегральная часть):&lt;/strong&gt; накапливает прошлую ошибку → убирает постоянное смещение.&lt;br&gt;&#xA;Осторожно с &lt;em&gt;wind-up&lt;/em&gt; (перенакопление).&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;D (дифференциальная часть):&lt;/strong&gt; гасит колебания, реагируя на скорость изменения ошибки.&lt;br&gt;&#xA;Чувствителен к шуму — иногда требуют фильтрацию.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Комбинируя, получаем &lt;strong&gt;PI&lt;/strong&gt; (часто для скорости/потока) и &lt;strong&gt;PID&lt;/strong&gt; (универсальный для большинства задач слежения).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

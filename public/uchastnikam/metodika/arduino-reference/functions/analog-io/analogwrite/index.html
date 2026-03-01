@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>analogWrite() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogwrite/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="analogWrite()">
+<meta property="og:description" content="Description
+Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogwrite/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="analogWrite()">
+<meta name="twitter:description" content="Description
+Writes an analog value (PWM wave) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to analogWrite(), the pin will generate a …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>analogWrite()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Writes an analog value (<a href="http://arduino.cc/en/Tutorial/PWM">PWM wave</a>) to a pin. Can be used to light a LED at varying brightnesses or drive a motor at various speeds. After a call to <code>analogWrite()</code>, the pin will generate a steady rectangular wave of the specified duty cycle until the next call to <code>analogWrite()</code> (or a call to <code>digitalRead()</code> or <code>digitalWrite()</code>) on the same pin.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Board</th>
+          <th>PWM Pins *</th>
+          <th>PWM Frequency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>UNO (R3 and earlier), Nano, Mini</td>
+          <td>3, 5, 6, 9, 10, 11</td>
+          <td>490 Hz (pins 5 and 6: 980 Hz)</td>
+      </tr>
+      <tr>
+          <td>UNO R4 (Minima, WiFi) *</td>
+          <td>3, 5, 6, 9, 10, 11</td>
+          <td>490 Hz</td>
+      </tr>
+      <tr>
+          <td>Mega</td>
+          <td>2 - 13, 44 - 46</td>
+          <td>490 Hz (pins 4 and 13: 980 Hz)</td>
+      </tr>
+      <tr>
+          <td>GIGA R1 **</td>
+          <td>2 - 13</td>
+          <td>500 Hz</td>
+      </tr>
+      <tr>
+          <td>Leonardo, Micro, Yún</td>
+          <td>3, 5, 6, 9, 10, 11, 13</td>
+          <td>490 Hz (pins 3 and 11: 980 Hz)</td>
+      </tr>
+      <tr>
+          <td>UNO WiFi Rev2, Nano Every</td>
+          <td>3, 5, 6, 9, 10</td>
+          <td>976 Hz</td>
+      </tr>
+      <tr>
+          <td>MKR boards *</td>
+          <td>0 - 8, 10, A3, A4</td>
+          <td>732 Hz</td>
+      </tr>
+      <tr>
+          <td>MKR1000 WiFi **</td>
+          <td>0 - 8, 10, 11, A3, A4</td>
+          <td>732 Hz</td>
+      </tr>
+      <tr>
+          <td>Zero **</td>
+          <td>3 - 13, A0, A1</td>
+          <td>732 Hz</td>
+      </tr>
+      <tr>
+          <td>Nano 33 IoT **</td>
+          <td>2, 3, 5, 6, 9 - 12, A2, A3, A5</td>
+          <td>732 Hz</td>
+      </tr>
+      <tr>
+          <td>Nano 33 BLE/BLE Sense ****</td>
+          <td>1 - 13, A0 - A7</td>
+          <td>500 Hz</td>
+      </tr>
+      <tr>
+          <td>Due ***</td>
+          <td>2-13</td>
+          <td>1000 Hz</td>
+      </tr>
+      <tr>
+          <td>101</td>
+          <td>3, 5, 6, 9</td>
+          <td>pins 3 and 9: 490 Hz, pins 5 and 6: 980 Hz</td>
+      </tr>
+  </tbody>
+</table>
+<p>* These pins are officially supported PWM pins. While some boards have additional pins capable of PWM, using them is recommended only for advanced users that can account for timer availability and potential conflicts with other uses of those pins.<br>
+** In addition to PWM capabilities on the pins noted above, the MKR, Nano 33 IoT, Zero and UNO R4 boards have true analog output when using <code>analogWrite()</code> on the <code>DAC0</code> (<code>A0</code>) pin.<br>
+*** In addition to PWM capabilities on the pins noted above, the Due and GIGA R1 boards have true analog output when using <code>analogWrite()</code> on pins <code>DAC0</code> and <code>DAC1</code>.<br>
+**** Only 4 different pins can be used at the same time. Enabling PWM on more than 4 pins will abort the running sketch and require resetting the board to upload a new sketch again.\</p>
+<p>You do not need to call <code>pinMode()</code> to set the pin as an output before calling <code>analogWrite()</code>.<br>
+The <code>analogWrite</code> function has nothing to do with the analog pins or the <code>analogRead</code> function.</p>
+<p><strong>Syntax</strong></p>
+<p><code>analogWrite(pin, value)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>pin</code>: the Arduino pin to write to. Allowed data types: <code>int</code>.<br>
+<code>value</code>: the duty cycle: between 0 (always off) and 255 (always on). Allowed data types: <code>int</code>.</p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<p>Sets the output to the LED proportional to the value read from the potentiometer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>      <span class="c1">// LED connected to digital pin 9
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">analogPin</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>   <span class="c1">// potentiometer connected to analog pin 3
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// variable to store the read value
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>  <span class="c1">// sets the pin as output
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">val</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">analogPin</span><span class="p">);</span>  <span class="c1">// read the input pin
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span> <span class="n">val</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span> <span class="c1">// analogRead values go from 0 to 1023, analogWrite values from 0 to 255
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>The PWM outputs generated on pins 5 and 6 will have higher-than-expected duty cycles. This is because of interactions with the <code>millis()</code> and <code>delay()</code> functions, which share the same internal timer used to generate those PWM outputs. This will be noticed mostly on low duty-cycle settings (e.g. 0 - 10) and may result in a value of 0 not fully turning off the output on pins 5 and 6.</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>LANGUAGE</em> <a href="../../zero-due-mkr-family/analogwriteresolution">analogWriteResolution()</a></p>
+</li>
+<li>
+<p><em>DEFINITION</em> <a href="http://arduino.cc/en/Tutorial/PWM">PWM</a></p>
+</li>
+<li>
+<p><em>EXAMPLE</em> <a href="http://arduino.cc/en/Tutorial/Blink">Blink</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

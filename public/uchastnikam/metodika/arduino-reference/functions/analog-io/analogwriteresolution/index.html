@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>analogWriteResolution() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+analogWriteResolution() is an extension of the Analog API for the Arduino Due.
+analogWriteResolution() sets the resolution of the analogWrite() …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogwriteresolution/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="analogWriteResolution()">
+<meta property="og:description" content="Description
+analogWriteResolution() is an extension of the Analog API for the Arduino Due.
+analogWriteResolution() sets the resolution of the analogWrite() function. It defaults to 8 bits (values …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogwriteresolution/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="analogWriteResolution()">
+<meta name="twitter:description" content="Description
+analogWriteResolution() is an extension of the Analog API for the Arduino Due.
+analogWriteResolution() sets the resolution of the analogWrite() function. It defaults to 8 bits (values …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>analogWriteResolution()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p><code>analogWriteResolution()</code> is an extension of the Analog API for the Arduino Due.</p>
+<p><code>analogWriteResolution()</code> sets the resolution of the <code>analogWrite()</code> function. It defaults to 8 bits (values between 0-255) for backward compatibility with AVR based boards.</p>
+<p>The <strong>Due</strong> has the following hardware capabilities:</p>
+<ul>
+<li>
+<p>12 pins which default to 8-bit PWM, like the AVR-based boards. These can be changed to 12-bit resolution.</p>
+</li>
+<li>
+<p>2 pins with 12-bit DAC (Digital-to-Analog Converter)</p>
+</li>
+</ul>
+<p>By setting the write resolution to 12, you can use <code>analogWrite()</code> with values between 0 and 4095 to exploit the full DAC resolution or to set the PWM signal without rolling over.</p>
+<p>The <strong>Zero</strong> has the following hardware capabilities:</p>
+<ul>
+<li>
+<p>10 pins which default to 8-bit PWM, like the AVR-based boards. These can be changed to 12-bit resolution.</p>
+</li>
+<li>
+<p>1 pin with 10-bit DAC (Digital-to-Analog Converter).</p>
+</li>
+</ul>
+<p>By setting the write resolution to 10, you can use <code>analogWrite()</code> with values between 0 and 1023 to exploit the full DAC resolution</p>
+<p>The <strong>MKR Family</strong> of boards has the following hardware capabilities:</p>
+<ul>
+<li>
+<p>4 pins which default to 8-bit PWM, like the AVR-based boards. These can be changed from 8 (default) to 12-bit resolution.</p>
+</li>
+<li>
+<p>1 pin with 10-bit DAC (Digital-to-Analog Converter)</p>
+</li>
+</ul>
+<p>By setting the write resolution to 12 bits, you can use <code>analogWrite()</code> with values between 0 and 4095 for PWM signals; set 10 bit on the DAC pin to exploit the full DAC resolution of 1024 values.</p>
+<p><strong>Syntax</strong></p>
+<p><code>analogWriteResolution(bits)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>bits</code>: determines the resolution (in bits) of the values used in the <code>analogWrite()</code> function. The value can range from 1 to 32. If you choose a resolution higher or lower than your board’s hardware capabilities, the value used in <code>analogWrite()</code> will be either truncated if it’s too high or padded with zeros if it’s too low. See the note below for details.</p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<p>Explain Code</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// open a serial connection
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// make our digital pin an output
+</span></span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">pinMode</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// read the input on A0 and map it to a PWM pin
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// with an attached LED
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">sensorVal</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;Analog Read) : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// the default PWM resolution
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogWriteResolution</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34; , 8-bit PWM value : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// change the PWM resolution to 12 bits
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// the full 12 bit resolution is only supported
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// on the Due
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogWriteResolution</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4095</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34; , 12-bit PWM value : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4095</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// change the PWM resolution to 4 bits
+</span></span></span><span class="line"><span class="cl">  <span class="nf">analogWriteResolution</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">analogWrite</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&#34;, 4-bit PWM value : &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="n">sensorVal</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1023</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nf">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>If you set the <code>analogWriteResolution()</code> value to a value higher than your board’s capabilities, the Arduino will discard the extra bits. For example: using the Due with <code>analogWriteResolution(16)</code> on a 12-bit DAC pin, only the first 12 bits of the values passed to <code>analogWrite()</code> will be used and the last 4 bits will be discarded.</p>
+<p>If you set the <code>analogWriteResolution()</code> value to a value lower than your board’s capabilities, the missing bits will be <strong>padded with zeros</strong> to fill the hardware required size. For example: using the Due with analogWriteResolution(8) on a 12-bit DAC pin, the Arduino will add 4 zero bits to the 8-bit value used in <code>analogWrite()</code> to obtain the 12 bits required.</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>LANGUAGE</em> <a href="../../analog-io/analogwrite">analogWrite()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../../analog-io/analogread">analogRead()</a></p>
+</li>
+<li>
+<p><em>LANGUAGE</em> <a href="../../math/map">map()</a></p>
+</li>
+<li>
+<p><em>EXAMPLE</em> <a href="http://arduino.cc/en/Tutorial/AnalogInputPins">Description of the analog input pins</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

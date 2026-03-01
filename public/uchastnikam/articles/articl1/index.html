@@ -1,0 +1,735 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Зачем нужен регулятор — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Тестовая статья Любая роботизированная система пытается добиться заданного значения (позиции, скорости, угла, температуры и т.д.) несмотря на помехи: трение, …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/articles/articl1/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Зачем нужен регулятор">
+<meta property="og:description" content="Тестовая статья Любая роботизированная система пытается добиться заданного значения (позиции, скорости, угла, температуры и т.д.) несмотря на помехи: трение, нагрузка, задержки датчиков.
+Регулятор — …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/articles/articl1/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Зачем нужен регулятор">
+<meta name="twitter:description" content="Тестовая статья Любая роботизированная система пытается добиться заданного значения (позиции, скорости, угла, температуры и т.д.) несмотря на помехи: трение, нагрузка, задержки датчиков.
+Регулятор — …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2025-09-03T10:00:00&#43;03:00">
+          03.09.2025
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">CHAT GPT</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Зачем нужен регулятор</h1>
+
+      
+
+      <h2 id="тестовая-статья">Тестовая статья</h2>
+<p>Любая роботизированная система пытается добиться <strong>заданного значения</strong> (позиции, скорости, угла, температуры и т.д.) несмотря на помехи: трение, нагрузка, задержки датчиков.<br>
+<strong>Регулятор</strong> — это алгоритм, который по ошибке <code>e = setpoint − measured</code> вычисляет управляющее воздействие на привод/мотор.</p>
+<h2 id="три-кирпичика-p-i-d">Три кирпичика: P, I, D</h2>
+<ul>
+<li><strong>P (пропорциональная часть):</strong> усилие пропорционально текущей ошибке.<br>
+Плюсы — быстро реагирует; минусы — остаётся стационарная ошибка.</li>
+<li><strong>I (интегральная часть):</strong> накапливает прошлую ошибку → убирает постоянное смещение.<br>
+Осторожно с <em>wind-up</em> (перенакопление).</li>
+<li><strong>D (дифференциальная часть):</strong> гасит колебания, реагируя на скорость изменения ошибки.<br>
+Чувствителен к шуму — иногда требуют фильтрацию.</li>
+</ul>
+<p>Комбинируя, получаем <strong>PI</strong> (часто для скорости/потока) и <strong>PID</strong> (универсальный для большинства задач слежения).</p>
+<h2 id="как-выбрать-тип">Как выбрать тип</h2>
+<ul>
+<li><strong>P</strong> — где можно терпеть небольшое смещение (например, простая стабилизация).</li>
+<li><strong>PI</strong> — когда важен нулевой статический промах (скорость ленты, температура).</li>
+<li><strong>PID</strong> — когда система склонна к колебаниям/перерегулированиям и нужна «пожёстче» динамика (позиционирование осей, балансировка).</li>
+</ul>
+<h2 id="базовая-настройка-стартовая-евристика">Базовая настройка (стартовая евристика)</h2>
+<ol>
+<li>Поставьте <strong>I = 0</strong>, <strong>D = 0</strong>, увеличивайте <strong>P</strong>, пока система не начнёт быстро, но без больших колебаний выходить к заданию.</li>
+<li>Добавьте <strong>I</strong> небольшими шагами, чтобы убрать остаточную ошибку. Если появляются «качели» — уменьшите I.</li>
+<li>Если наблюдается перерегулирование — добавьте <strong>D</strong> (или чуть уменьшите P).</li>
+<li>Введите <strong>ограничения</strong>: по выходу, по интегратору (anti-windup), по скорости изменения выхода (slew-rate).</li>
+</ol>
+<blockquote>
+<p>Практично: вести логи ошибок/выхода, смотреть переходный процесс (перерегулирование, время установления), фиксировать удачные наборы коэффициентов.</p>
+</blockquote>
+<h2 id="частые-ошибки">Частые ошибки</h2>
+<ul>
+<li><strong>Нет анти-виндапа:</strong> интегратор «разгоняется», привод уходит в насыщение — долгий возврат.</li>
+<li><strong>Шумный D:</strong> дергает привод. Решение — ограничить диапазон D, применить фильтр на измерениях или на D-слагаемом.</li>
+<li><strong>Слишком большой P:</strong> быстро, но неустойчиво; «пилит» около уставки.</li>
+<li><strong>Слишком маленький I:</strong> остаётся смещение; слишком большой — «раскачка».</li>
+</ul>
+<h2 id="пример-pid-на-python-дискретный-с-anti-windup">Пример PID на Python (дискретный, с anti-windup)</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PID</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">kp</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">ki</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">kd</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">out_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">out_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">i_min</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">i_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="n">d_limit</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">kp</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ki</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd</span> <span class="o">=</span> <span class="n">kp</span><span class="p">,</span> <span class="n">ki</span><span class="p">,</span> <span class="n">kd</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dt</span> <span class="o">=</span> <span class="n">dt</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">out_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_max</span> <span class="o">=</span> <span class="n">out_min</span><span class="p">,</span> <span class="n">out_max</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">i_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">i_max</span> <span class="o">=</span> <span class="n">i_min</span><span class="p">,</span> <span class="n">i_max</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">d_limit</span> <span class="o">=</span> <span class="n">d_limit</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">integral</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">prev_error</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">integral</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">prev_error</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span> <span class="o">=</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">clamp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">lo</span><span class="p">,</span> <span class="n">hi</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">lo</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;</span> <span class="n">lo</span><span class="p">:</span> <span class="n">v</span> <span class="o">=</span> <span class="n">lo</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">hi</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="n">hi</span><span class="p">:</span> <span class="n">v</span> <span class="o">=</span> <span class="n">hi</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">v</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">setpoint</span><span class="p">,</span> <span class="n">measured</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">e</span> <span class="o">=</span> <span class="n">setpoint</span> <span class="o">-</span> <span class="n">measured</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># P</span>
+</span></span><span class="line"><span class="cl">        <span class="n">p</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kp</span> <span class="o">*</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># I (anti-windup через ограничение интегратора)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">integral</span> <span class="o">+=</span> <span class="n">e</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">integral</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">integral</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">i_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">i_max</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ki</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">integral</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># D (по ошибке; при первом шаге D=0)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">d_raw</span> <span class="o">=</span> <span class="mf">0.0</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">initialized</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">d_raw</span> <span class="o">=</span> <span class="p">(</span><span class="n">e</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">prev_error</span><span class="p">)</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">dt</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">d_limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">d_raw</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">d_raw</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">d_limit</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">d_limit</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">d</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kd</span> <span class="o">*</span> <span class="n">d_raw</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">u</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="n">d</span>
+</span></span><span class="line"><span class="cl">        <span class="n">u</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">clamp</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_min</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_max</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">prev_error</span> <span class="o">=</span> <span class="n">e</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">u</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Пример использования:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># pid = PID(kp=1.2, ki=0.6, kd=0.05, dt=0.01, out_min=-100, out_max=100, i_min=-10, i_max=10, d_limit=200)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># while True:</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     u = pid(setpoint, measured_value)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     actuate(u)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// Copyright (c) 2026 ЦПМК по информатике, Юрий Дементьев
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Licensed under the MIT License.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// https://robot.mipt.ru/
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Пример работы с I2C OLED дисплеем 128*64 пикселя на базе контроллера SSD1306
+</span></span></span><span class="line"><span class="cl"><span class="c1">// подключение:
+</span></span></span><span class="line"><span class="cl"><span class="c1">// VCC -  3.3В или 5В
+</span></span></span><span class="line"><span class="cl"><span class="c1">// GND - GND (0 В)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// SCL - SCL (A5 Arduino UNO) 
+</span></span></span><span class="line"><span class="cl"><span class="c1">// SDA - SDA (A4 Arduino UNO)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// в дисплее есть встроенная подтяжка для I2C
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;Wire.h&gt;</span><span class="cp">  </span><span class="c1">// Стандартная библиотека работы с I2C
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define OLED_ADDR 0x3C  </span><span class="c1">// Стандартный адрес I2C для SSD1306
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// Упрощенный шрифт ASCII (символы 32-126)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// PROGMEM заставляет компилятор оставить данные во Flash-памяти и не копировать их в SRAM при старте программы.
+</span></span></span><span class="line"><span class="cl"><span class="c1">// байты тут - столбцы при выводе символа на экран, символ можно увидеть повернув голову, например 0b01011111 превратится в !  
+</span></span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">uint8_t</span> <span class="n">font5x7</span><span class="p">[][</span><span class="mi">5</span><span class="p">]</span> <span class="n">PROGMEM</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// space
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01011111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// !
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// &#34;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span> <span class="p">},</span>  <span class="c1">// #
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00101010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00101010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010010</span> <span class="p">},</span>  <span class="c1">// $
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100011</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010011</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100010</span> <span class="p">},</span>  <span class="c1">// %
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00110110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010000</span> <span class="p">},</span>  <span class="c1">// &amp;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000011</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// &#39;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// (
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// )
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span> <span class="p">},</span>  <span class="c1">// *
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span> <span class="p">},</span>  <span class="c1">// +
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// ,
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span> <span class="p">},</span>  <span class="c1">// -
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// .
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000010</span> <span class="p">},</span>  <span class="c1">// /
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111110</span> <span class="p">},</span>  <span class="c1">// 0
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// 1
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01000010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000110</span> <span class="p">},</span>  <span class="c1">// 2
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001011</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110001</span> <span class="p">},</span>  <span class="c1">// 3
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00011000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010000</span> <span class="p">},</span>  <span class="c1">// 4
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111001</span> <span class="p">},</span>  <span class="c1">// 5
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110000</span> <span class="p">},</span>  <span class="c1">// 6
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01110001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000011</span> <span class="p">},</span>  <span class="c1">// 7
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00110110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110110</span> <span class="p">},</span>  <span class="c1">// 8
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00101001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011110</span> <span class="p">},</span>  <span class="c1">// 9
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// :
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// ;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// &lt;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span> <span class="p">},</span>  <span class="c1">// =
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span> <span class="p">},</span>  <span class="c1">// &gt;
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000110</span> <span class="p">},</span>  <span class="c1">// ?
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00110010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111110</span> <span class="p">},</span>  <span class="c1">// @
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111110</span> <span class="p">},</span>  <span class="c1">// A
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110110</span> <span class="p">},</span>  <span class="c1">// B
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span> <span class="p">},</span>  <span class="c1">// C
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011100</span> <span class="p">},</span>  <span class="c1">// D
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span> <span class="p">},</span>  <span class="c1">// E
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span> <span class="p">},</span>  <span class="c1">// F
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111010</span> <span class="p">},</span>  <span class="c1">// G
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span> <span class="p">},</span>  <span class="c1">// H
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000000</span> <span class="p">},</span>  <span class="c1">// I
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span> <span class="p">},</span>  <span class="c1">// J
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span> <span class="p">},</span>  <span class="c1">// K
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span> <span class="p">},</span>  <span class="c1">// L
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span> <span class="p">},</span>  <span class="c1">// M
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span> <span class="p">},</span>  <span class="c1">// N
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111110</span> <span class="p">},</span>  <span class="c1">// O
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000110</span> <span class="p">},</span>  <span class="c1">// P
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01011110</span> <span class="p">},</span>  <span class="c1">// Q
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00101001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000110</span> <span class="p">},</span>  <span class="c1">// R
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01000110</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00110001</span> <span class="p">},</span>  <span class="c1">// S
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000001</span> <span class="p">},</span>  <span class="c1">// T
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111111</span> <span class="p">},</span>  <span class="c1">// U
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00011111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00100000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00011111</span> <span class="p">},</span>  <span class="c1">// V
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00111111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00111111</span> <span class="p">},</span>  <span class="c1">// W
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01100011</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00010100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01100011</span> <span class="p">},</span>  <span class="c1">// X
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b00000111</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01110000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00001000</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b00000111</span> <span class="p">},</span>  <span class="c1">// Y
+</span></span></span><span class="line"><span class="cl">  <span class="p">{</span> <span class="mb">0b01100001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01010001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01001001</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000101</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="mb">0b01000011</span> <span class="p">}</span>  <span class="c1">// Z
+</span></span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">sendCmd</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">command</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// отправка команд на дисплей
+</span></span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x80</span><span class="p">);</span>  <span class="c1">// Байт управления: следующая посылка — команда
+</span></span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">command</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setCursor</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// задаем место печати символа
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// в контроллере SSD1306 память 128x64 пикселя разделена на 8 страниц (строк) по 128 столбцов
+</span></span></span><span class="line"><span class="cl">  <span class="n">sendCmd</span><span class="p">(</span><span class="mh">0xB0</span> <span class="o">+</span> <span class="n">page</span><span class="p">);</span>        <span class="c1">// Установка страницы (строки)
+</span></span></span><span class="line"><span class="cl">  <span class="n">sendCmd</span><span class="p">(</span><span class="n">col</span> <span class="o">&amp;</span> <span class="mh">0x0F</span><span class="p">);</span>         <span class="c1">// Столбец (младшие 4 бита)
+</span></span></span><span class="line"><span class="cl">  <span class="n">sendCmd</span><span class="p">(</span><span class="mh">0x10</span> <span class="o">|</span> <span class="p">(</span><span class="n">col</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span><span class="p">));</span>  <span class="c1">// Столбец (старшие 4 бита)
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">clear</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// функция очистки с заданного места и до конца строки
+</span></span></span><span class="line"><span class="cl">  <span class="n">setCursor</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x40</span><span class="p">);</span> <span class="c1">// следующий байт (или поток байтов) будет данными пикселей, которые отобразятся на экране
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">col</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">128</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Каждые 16 байт перезапускаем передачу (защита буфера Wire)
+</span></span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x40</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">clear</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// очистка строки
+</span></span></span><span class="line"><span class="cl">  <span class="n">clear</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">clear</span><span class="p">()</span> <span class="p">{</span>  <span class="c1">// очистка всего экрана
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">;</span> <span class="n">p</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clear</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printStr</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">,</span> <span class="kt">uint8_t</span> <span class="n">col</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// печать на экран
+</span></span></span><span class="line"><span class="cl">  <span class="n">setCursor</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="mi">122</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Условие: пока есть символы И есть место на экране
+</span></span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">c</span> <span class="o">&gt;=</span> <span class="sc">&#39;a&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">c</span> <span class="o">&lt;=</span> <span class="sc">&#39;z&#39;</span><span class="p">)</span> <span class="n">c</span> <span class="o">-=</span> <span class="mi">32</span><span class="p">;</span>  <span class="c1">// Если строчная буква (a-z), превращаем в заглавную (A-Z)
+</span></span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">fontIndex</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">32</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">fontIndex</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">fontIndex</span> <span class="o">&gt;</span> <span class="mi">58</span><span class="p">)</span> <span class="n">fontIndex</span> <span class="o">=</span> <span class="sc">&#39;?&#39;</span> <span class="o">-</span> <span class="mi">32</span><span class="p">;</span>  <span class="c1">// Если символ вне диапазона шрифта заменяем на знак вопроса
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>  <span class="c1">// Печать символа
+</span></span></span><span class="line"><span class="cl">    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x40</span><span class="p">);</span>  <span class="c1">// следующий байт (или поток байтов) будет данными пикселей, которые отобразятся на экране
+</span></span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">pgm_read_byte</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">font5x7</span><span class="p">[</span><span class="n">fontIndex</span><span class="p">][</span><span class="n">i</span><span class="p">])));</span>  <span class="c1">// побайтно считываем символы из таблицы
+</span></span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x00</span><span class="p">);</span>  <span class="c1">// Межсимвольный интервал 1 столбец
+</span></span></span><span class="line"><span class="cl">    <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">s</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">col</span> <span class="o">+=</span> <span class="mi">6</span><span class="p">;</span>  <span class="c1">// Сдвигаемся на 5 столюцов буквы + 1 пробел
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="n">clear</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span> <span class="c1">// стираем остаток строки
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">printStr</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// печать с начала строки
+</span></span></span><span class="line"><span class="cl">  <span class="n">printStr</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">drawProgressBar</span><span class="p">(</span><span class="kt">uint8_t</span> <span class="n">page</span><span class="p">,</span> <span class="kt">int</span> <span class="n">percent</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// рисование ползунка
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">setCursor</span><span class="p">(</span><span class="n">page</span><span class="p">,</span> <span class="mi">13</span><span class="p">);</span>  <span class="c1">// начало X=13 окончание X=115 ширина 100+2
+</span></span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x40</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mb">0b01111110</span><span class="p">);</span>  <span class="c1">// Левый край
+</span></span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Каждые 16 байт перезапускаем передачу (защита буфера Wire)
+</span></span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">16</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">beginTransmission</span><span class="p">(</span><span class="n">OLED_ADDR</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mh">0x40</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">percent</span><span class="p">)</span> <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mb">0b01111110</span><span class="p">);</span>  <span class="c1">// рисуем заполненную область
+</span></span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mb">0b01000010</span><span class="p">);</span>              <span class="c1">// или только границу
+</span></span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="mb">0b01111110</span><span class="p">);</span>  <span class="c1">// Правый край
+</span></span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">endTransmission</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Wire</span><span class="p">.</span><span class="n">setClock</span><span class="p">(</span><span class="mi">400000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// Инициализация SSD1306
+</span></span></span><span class="line"><span class="cl">  <span class="kt">uint8_t</span> <span class="n">init</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mh">0xAE</span><span class="p">,</span> <span class="mh">0xD5</span><span class="p">,</span> <span class="mh">0x80</span><span class="p">,</span> <span class="mh">0xA8</span><span class="p">,</span> <span class="mh">0x3F</span><span class="p">,</span> <span class="mh">0xD3</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0x8D</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0xA1</span><span class="p">,</span> <span class="mh">0xC8</span><span class="p">,</span> <span class="mh">0xDA</span><span class="p">,</span> <span class="mh">0x12</span><span class="p">,</span> <span class="mh">0x81</span><span class="p">,</span> <span class="mh">0xCF</span><span class="p">,</span> <span class="mh">0xD9</span><span class="p">,</span> <span class="mh">0xF1</span><span class="p">,</span> <span class="mh">0xDB</span><span class="p">,</span> <span class="mh">0x40</span><span class="p">,</span> <span class="mh">0xA4</span><span class="p">,</span> <span class="mh">0xA6</span><span class="p">,</span> <span class="mh">0xAF</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">init</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">sendCmd</span><span class="p">(</span><span class="n">init</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">clear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="n">printStr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#34;https://robot.mipt.ru/&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// выведем на экран напряжение на A0
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">adcValue</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">);</span>              <span class="c1">// Читаем значение 10 бит (0 - 1023)
+</span></span></span><span class="line"><span class="cl">  <span class="kt">float</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">adcValue</span> <span class="o">*</span> <span class="p">(</span><span class="mf">5.0</span> <span class="o">/</span> <span class="mf">1023.0</span><span class="p">);</span>  <span class="c1">// Переводим в вольты
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">buf</span><span class="p">[</span><span class="mi">22</span><span class="p">];</span>   <span class="c1">// Тут формируем строку. На экране поместится максимум 22 символа в строке
+</span></span></span><span class="line"><span class="cl">  <span class="kt">char</span> <span class="n">fBuf</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>  <span class="c1">// Временный буфер для дробного числа (snprintf в ардуино их не выводит)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Конвертируем float (voltage) в строку vBuf
+</span></span></span><span class="line"><span class="cl">  <span class="n">dtostrf</span><span class="p">(</span><span class="n">voltage</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">fBuf</span><span class="p">);</span>   <span class="c1">// (число, общая ширина 4, знаков после запятой 2, куда писать)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Формируем итоговую строку в buf
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// %d - для целого числа АЦП, %s - для строки с вольтами
+</span></span></span><span class="line"><span class="cl">  <span class="n">snprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="s">&#34;A0: %d, %s V&#34;</span><span class="p">,</span> <span class="n">adcValue</span><span class="p">,</span> <span class="n">fBuf</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">printStr</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>                   <span class="c1">// Выводим строку на экран
+</span></span></span><span class="line"><span class="cl">  <span class="n">drawProgressBar</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">voltage</span> <span class="o">*</span> <span class="mi">20</span><span class="p">);</span>  <span class="c1">// рисуем ползунок
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// напечатаем время с момента запуска микроконтроллера
+</span></span></span><span class="line"><span class="cl">  <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">currentMillis</span> <span class="o">=</span> <span class="n">millis</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">h</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentMillis</span> <span class="o">/</span> <span class="mi">3600000</span><span class="p">)</span> <span class="o">%</span> <span class="mi">24</span><span class="p">;</span> <span class="c1">// часы
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentMillis</span> <span class="o">/</span> <span class="mi">60000</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span><span class="p">;</span>  <span class="c1">// минуты
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentMillis</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">%</span> <span class="mi">60</span><span class="p">;</span>  <span class="c1">// секунды
+</span></span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">ms_hundreds</span> <span class="o">=</span> <span class="p">(</span><span class="n">currentMillis</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span>  <span class="c1">// Сотые доли (альтернативный способ вывода дробных чисел)
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Формируем строку времени: ЧЧ:ММ:СС.сс
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">snprintf</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="s">&#34;UP: %02dH %02dM %02d.%02dS&#34;</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">ms_hundreds</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">printStr</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">buf</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="где-ставить-pid-в-роботе">Где ставить PID в роботе</h3>
+<ul>
+<li><strong>Контур тока/момента</strong> → быстрый PI (в драйвере мотора).</li>
+<li><strong>Контур скорости</strong> → PI на основании измеренной скорости (энкодер/тахо).</li>
+<li><strong>Контур позиции</strong> → PID поверх скорости или напрямую по позиции (часто каскад).</li>
+</ul>
+<h2 id="мини-чек-лист-перед-отдачей-робота">Мини-чек-лист перед отдачей робота</h2>
+<ul>
+<li><input disabled="" type="checkbox"> Ограничены выходы и интегратор.</li>
+<li><input disabled="" type="checkbox"> Переходной процесс без «диких» выбросов.</li>
+<li><input disabled="" type="checkbox"> Параметры сохранены/логируются.</li>
+<li><input disabled="" type="checkbox"> Отработка на крайних уставках и при резких изменениях нагрузки.</li>
+</ul>
+<hr>
+<p>Если нужно — добавлю сюда графики переходного процесса (как изображения) или разнесу текст на два уровня: «базовый» и «углублённый» с математикой. Также могу подготовить отдельную версию для <strong>страницы-раздела</strong> (list) и карточку для ленты с коротким <code>excerpt</code>.</p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

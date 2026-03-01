@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Constants on ВСОШ робототехника</title>
+    <link>http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/constants/</link>
+    <description>Recent content in Constants on ВСОШ робототехника</description>
+    <generator>Hugo</generator>
+    <language>ru-ru</language>
+    <lastBuildDate>Sat, 28 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/uchastnikam/metodika/arduino-reference-content/variables/constants/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Floating Point Constants</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/floating-point-constants/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/floating-point-constants/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Similar to integer constants, floating point constants are used to make code more readable. Floating point constants are swapped at compile time for the value to which the expression evaluates.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Example Code&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-arduino&#34; data-lang=&#34;arduino&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kt&#34;&gt;float&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;0.005&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;// 0.005 is a floating point constant&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Notes and Warnings&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Floating point constants can also be expressed in a variety of scientific notation. &amp;lsquo;E&amp;rsquo; and &amp;rsquo;e&amp;rsquo; are both accepted as valid exponent indicators.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;floating-point constant&lt;/th&gt;&#xA;          &lt;th&gt;evaluates to:&lt;/th&gt;&#xA;          &lt;th&gt;also evaluates to:&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;10.0&lt;/td&gt;&#xA;          &lt;td&gt;10&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2.34E5&lt;/td&gt;&#xA;          &lt;td&gt;2.34 * 10^5&lt;/td&gt;&#xA;          &lt;td&gt;234000&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;67e-12&lt;/td&gt;&#xA;          &lt;td&gt;67.0 * 10^-12&lt;/td&gt;&#xA;          &lt;td&gt;0.000000000067&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>HIGH | LOW</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/high-low/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/high-low/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Defining Pin Levels: HIGH and LOW&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;When reading or writing to a digital pin there are only two possible values a pin can take/be-set-to: &lt;code&gt;HIGH&lt;/code&gt; and &lt;code&gt;LOW&lt;/code&gt;. These are the same as &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;false&lt;/code&gt;, as well as &lt;code&gt;1&lt;/code&gt; and &lt;code&gt;0&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;HIGH&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;The meaning of &lt;code&gt;HIGH&lt;/code&gt; (in reference to a pin) is somewhat different depending on whether a pin is set to an &lt;code&gt;INPUT&lt;/code&gt; or &lt;code&gt;OUTPUT&lt;/code&gt;. When a pin is configured as an &lt;code&gt;INPUT&lt;/code&gt; with &lt;code&gt;pinMode()&lt;/code&gt;, and read with &lt;code&gt;digitalRead()&lt;/code&gt;, the Arduino (ATmega) will report &lt;code&gt;HIGH&lt;/code&gt; if:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>INPUT | INPUT_PULLUP | OUTPUT</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/input-input-pullup-output/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/input-input-pullup-output/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Defining Digital Pins modes: INPUT, INPUT_PULLUP, and OUTPUT&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Digital pins can be used as &lt;code&gt;INPUT&lt;/code&gt;, &lt;code&gt;INPUT_PULLUP&lt;/code&gt;, or &lt;code&gt;OUTPUT&lt;/code&gt;. Changing a pin with &lt;a href=&#34;../../../functions/digital-io/pinmode&#34;&gt;&lt;code&gt;pinMode()&lt;/code&gt;&lt;/a&gt; changes the electrical behavior of the pin.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;INPUT&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Arduino (ATmega) pins configured as &lt;code&gt;INPUT&lt;/code&gt; with &lt;a href=&#34;../../../functions/digital-io/pinmode&#34;&gt;&lt;code&gt;pinMode()&lt;/code&gt;&lt;/a&gt; are said to be in a &lt;em&gt;high-impedance&lt;/em&gt; state. Pins configured as &lt;code&gt;INPUT&lt;/code&gt; make extremely small demands on the circuit that they are sampling, equivalent to a series resistor of 100 Megohms in front of the pin. This makes them useful for reading a sensor.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Integer Constants</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/integer-constants/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/integer-constants/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Description&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Integer constants are numbers that are used directly in a sketch, like 123. By default, these numbers are treated as &lt;a href=&#34;../../data-types/int&#34;&gt;int&lt;/a&gt; but you can change this with the U and L modifiers (see below).&lt;/p&gt;&#xA;&lt;p&gt;Normally, integer constants are treated as base 10 (decimal) integers, but special notation (formatters) may be used to enter numbers in other bases.&lt;/p&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;Base&lt;/th&gt;&#xA;          &lt;th&gt;Example&lt;/th&gt;&#xA;          &lt;th&gt;Formatter&lt;/th&gt;&#xA;          &lt;th&gt;Comment&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;10 (decimal)&lt;/td&gt;&#xA;          &lt;td&gt;123&lt;/td&gt;&#xA;          &lt;td&gt;none&lt;/td&gt;&#xA;          &lt;td&gt;&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;2 (binary)&lt;/td&gt;&#xA;          &lt;td&gt;0b1111011&lt;/td&gt;&#xA;          &lt;td&gt;leading &amp;ldquo;0b&amp;rdquo;&lt;/td&gt;&#xA;          &lt;td&gt;characters 0&amp;amp;1 valid&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;8 (octal)&lt;/td&gt;&#xA;          &lt;td&gt;0173&lt;/td&gt;&#xA;          &lt;td&gt;leading &amp;ldquo;0&amp;rdquo;&lt;/td&gt;&#xA;          &lt;td&gt;characters 0-7 valid&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;16 (hexadecimal)&lt;/td&gt;&#xA;          &lt;td&gt;0x7B&lt;/td&gt;&#xA;          &lt;td&gt;leading &amp;ldquo;0x&amp;rdquo;&lt;/td&gt;&#xA;          &lt;td&gt;characters 0-9, A-F, a-f valid&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;p&gt;&lt;strong&gt;Decimal (base 10)&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LED_BUILTIN</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/led-builtin/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/led-builtin/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Defining built-ins: LED_BUILTIN&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Most Arduino boards have a pin connected to an on-board LED in series with a resistor. The constant &lt;code&gt;LED_BUILTIN&lt;/code&gt; is the number of the pin to which the on-board LED is connected. Most boards have this LED connected to digital pin 13.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>true | false</title>
+      <link>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/true-false/</link>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 +0300</pubDate>
+      <guid>http://localhost:1313/uchastnikam/metodika/arduino-reference/variables/constants/true-false/</guid>
+      <description>&lt;p&gt;There are two constants used to represent truth and falsity in the Arduino language: &lt;code&gt;true&lt;/code&gt;, and &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;true&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;code&gt;true&lt;/code&gt; is often said to be defined as 1, which is correct, but true has a wider definition. Any integer which is non-zero is true, in a Boolean sense. So -1, 2 and -200 are all defined as true, too, in a Boolean sense.&lt;/p&gt;&#xA;&lt;p&gt;Note that the &lt;code&gt;true&lt;/code&gt; and &lt;code&gt;false&lt;/code&gt; constants are typed in lowercase unlike &lt;code&gt;HIGH&lt;/code&gt;, &lt;code&gt;LOW&lt;/code&gt;, &lt;code&gt;INPUT&lt;/code&gt;, and &lt;code&gt;OUTPUT&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

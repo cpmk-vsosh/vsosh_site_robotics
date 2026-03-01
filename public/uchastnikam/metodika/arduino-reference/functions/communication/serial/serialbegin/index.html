@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Serial.begin() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/serial/serialbegin/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Serial.begin()">
+<meta property="og:description" content="Description
+Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/communication/serial/serialbegin/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Serial.begin()">
+<meta name="twitter:description" content="Description
+Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>Serial.begin()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Sets the data rate in bits per second (baud) for serial data transmission. For communicating with Serial Monitor, make sure to use one of the baud rates listed in the menu at the bottom right corner of its screen. You can, however, specify other rates - for example, to communicate over pins 0 and 1 with a component that requires a particular baud rate.</p>
+<p>An optional second argument configures the data, parity, and stop bits. The default is 8 data bits, no parity, one stop bit.</p>
+<p><strong>Syntax</strong></p>
+<p><code>Serial.begin(speed)</code><br>
+<code>Serial.begin(speed, config)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>Serial</code>: serial port object. See the list of available serial ports for each board on the <a href="https://www.arduino.cc/en/Reference/serial">Serial main page</a>.<br>
+<code>speed</code>: in bits per second (baud). Allowed data types: <code>long</code>.<br>
+<code>config</code>: sets data, parity, and stop bits. Valid values are:<br>
+<code>SERIAL_5N1</code><br>
+<code>SERIAL_6N1</code><br>
+<code>SERIAL_7N1</code><br>
+<code>SERIAL_8N1</code> (the default)<br>
+<code>SERIAL_5N2</code><br>
+<code>SERIAL_6N2</code><br>
+<code>SERIAL_7N2</code><br>
+<code>SERIAL_8N2</code><br>
+<code>SERIAL_5E1</code>: even parity<br>
+<code>SERIAL_6E1</code><br>
+<code>SERIAL_7E1</code><br>
+<code>SERIAL_8E1</code><br>
+<code>SERIAL_5E2</code><br>
+<code>SERIAL_6E2</code><br>
+<code>SERIAL_7E2</code><br>
+<code>SERIAL_8E2</code><br>
+<code>SERIAL_5O1</code>: odd parity<br>
+<code>SERIAL_6O1</code><br>
+<code>SERIAL_7O1</code><br>
+<code>SERIAL_8O1</code><br>
+<code>SERIAL_5O2</code><br>
+<code>SERIAL_6O2</code><br>
+<code>SERIAL_7O2</code><br>
+<code>SERIAL_8O2</code></p>
+<p><strong>Returns</strong></p>
+<p>Nothing</p>
+<p><strong>Example Code</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span> <span class="c1">// opens serial port, sets data rate to 9600 bps
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
+</span></span></code></pre></div><p><strong>Arduino Mega example:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="c1">// Arduino Mega using all four of its Serial ports
+</span></span></span><span class="line"><span class="cl"><span class="c1">// (Serial, Serial1, Serial2, Serial3),
+</span></span></span><span class="line"><span class="cl"><span class="c1">// with different baud rates:
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial1</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">38400</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial2</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">19200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial3</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">4800</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;Hello Computer&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial1</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;Hello Serial 1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial2</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;Hello Serial 2&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Serial3</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&#34;Hello Serial 3&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{}</span>
+</span></span></code></pre></div><p>Thanks to Jeff Gray for the mega example</p>
+<p><strong>Notes and Warnings</strong></p>
+<p>For USB CDC serial ports (e.g. <code>Serial</code> on the Leonardo), <code>Serial.begin()</code> is irrelevant. You can use any baud rate and configuration for serial communication with these ports. See the list of available serial ports for each board on the <a href="https://www.arduino.cc/en/Reference/serial">Serial main page</a>.</p>
+<p>The only <code>config</code> value supported for <code>Serial1</code> on the Arduino Nano 33 BLE and Nano 33 BLE Sense boards is <code>SERIAL_8N1</code>.</p>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+

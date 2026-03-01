@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>analogRead() — ВСОШ робототехника</title>
+
+  
+  
+  
+    
+    <link rel="stylesheet"
+          href="/css/style.min.c800c7d0f74edc78a943dda53ba4d8f4ab50847cf07e0c73432ab2c4cc4c52bc.css"
+          integrity="sha256-yADH0PdO3HipQ92lO6TY9KtQhHzwfgxzQyqyxMxMUrw="
+          crossorigin="anonymous">
+  
+
+  <meta name="description" content="Description
+Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will …">
+<link rel="canonical" href="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogread/">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="analogRead()">
+<meta property="og:description" content="Description
+Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the …">
+<meta property="og:url" content="http://localhost:1313/uchastnikam/metodika/arduino-reference/functions/analog-io/analogread/">
+<meta property="og:image" content="/img/og.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="analogRead()">
+<meta name="twitter:description" content="Description
+Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the …">
+<meta name="twitter:image" content="/img/og.png">
+
+
+</head>
+<body>
+  <a href="#main" class="visually-hidden">Перейти к контенту</a>
+
+  <header>
+  <div class="container">
+    <nav class="nav" id="siteNav" aria-label="Основная навигация">
+      <a class="brand" href="/">
+        <img src="/img/logo.png" alt="VSOSHLOGO" height="60">
+      </a>
+
+      <button class="burger" id="burger" aria-label="Меню" aria-controls="menu" aria-expanded="false">
+        <span></span>
+      </button>
+
+      <ul class="menu" id="menu" role="menubar" aria-label="Главное меню">
+        <li role="none"><a role="menuitem" href="/">Главная</a></li>
+
+        
+        
+          
+            
+            
+              
+            
+
+            
+              <li class="has-sub" role="none">
+                <button class="submenu-toggle" aria-expanded="false">Участникам</button>
+                <ul class="submenu" role="menu" aria-label="Подменю Участникам">
+                  
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/metodika/">Методика</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/reglament/">Региональный этап</a></li>
+                    
+                  
+                    
+                      <li role="none"><a role="menuitem" href="/uchastnikam/zakl/">Заключительный этап</a></li>
+                    
+                  
+                    
+                  
+
+                  
+                  
+                </ul>
+              </li>
+            
+          
+        
+          
+        
+          
+        
+        <li role="none"><a role="menuitem" href="/contact/">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+  
+  <main class="container">
+
+    
+    <div class="back-row">
+      <a
+        id="goBack"
+        class="btn back"
+        href=""
+        data-fallback=""
+      >← Назад</a>
+
+      <div class="article-meta">
+        
+        
+        <time datetime="2026-02-28T10:00:00&#43;03:00">
+          28.02.2026
+        </time>
+
+        
+        
+        
+        
+        
+
+        
+          <span class="dot">•</span>
+          <span class="author">Admin</span>
+        
+      </div>
+    </div>
+
+    
+    <article class="article-simple">
+      <h1>analogRead()</h1>
+
+      
+
+      <p><strong>Description</strong></p>
+<p>Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit. See the table below for the usable pins, operating voltage and maximum resolution for some Arduino boards.</p>
+<p>The input range can be changed using <a href="../analogreference">analogReference()</a>, while the resolution can be changed (only for Zero, Due and MKR boards) using <a href="../../zero-due-mkr-family/analogreadresolution">analogReadResolution()</a>.</p>
+<p>On ATmega based boards (UNO, Nano, Mini, Mega), it takes about 100 microseconds (0.0001 s) to read an analog input, so the maximum reading rate is about 10,000 times a second.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Board</th>
+          <th>Operating voltage</th>
+          <th>Usable pins</th>
+          <th>Max resolution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>UNO R3</td>
+          <td>5 Volts</td>
+          <td>A0 to A5</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>UNO R4 (Minima, WiFi)</td>
+          <td>5 Volts</td>
+          <td>A0 to A5</td>
+          <td>14 bits**</td>
+      </tr>
+      <tr>
+          <td>Mini</td>
+          <td>5 Volts</td>
+          <td>A0 to A7</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>Nano, Nano Every</td>
+          <td>5 Volts</td>
+          <td>A0 to A7</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>Nano 33 (IoT, BLE, RP2040, ESP32)</td>
+          <td>3.3 Volts</td>
+          <td>A0 to A7</td>
+          <td>12 bits**</td>
+      </tr>
+      <tr>
+          <td>Mega, Mega2560, MegaADK</td>
+          <td>5 Volts</td>
+          <td>A0 to A14</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>Micro</td>
+          <td>5 Volts</td>
+          <td>A0 to A11*</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>Leonardo</td>
+          <td>5 Volts</td>
+          <td>A0 to A11*</td>
+          <td>10 bits</td>
+      </tr>
+      <tr>
+          <td>Zero</td>
+          <td>3.3 Volts</td>
+          <td>A0 to A5</td>
+          <td>12 bits**</td>
+      </tr>
+      <tr>
+          <td>Due</td>
+          <td>3.3 Volts</td>
+          <td>A0 to A11</td>
+          <td>12 bits**</td>
+      </tr>
+      <tr>
+          <td>GIGA R1</td>
+          <td>3.3 Volts</td>
+          <td>A0 to A11</td>
+          <td>16 bits**</td>
+      </tr>
+      <tr>
+          <td>MKR Family boards</td>
+          <td>3.3 Volts</td>
+          <td>A0 to A6</td>
+          <td>12 bits**</td>
+      </tr>
+  </tbody>
+</table>
+<p>*A0 through A5 are labelled on the board, A6 through A11 are respectively available on pins 4, 6, 8, 9, 10, and 12<br>
+**The default <code>analogRead()</code> resolution for these boards is 10 bits, for compatibility. You need to use <a href="../../zero-due-mkr-family/analogreadresolution">analogReadResolution()</a> to change it to a higher resolution.</p>
+<p><strong>Syntax</strong></p>
+<p><code>analogRead(pin)</code></p>
+<p><strong>Parameters</strong></p>
+<p><code>pin</code>: the name of the analog input pin to read from.</p>
+<p><strong>Returns</strong></p>
+<p>The analog reading on the pin. Although it is limited to the resolution of the analog to digital converter (0-1023 for 10 bits or 0-4095 for 12 bits). Data type: <code>int</code>.</p>
+<p><strong>Example Code</strong></p>
+<p>The code reads the voltage on analogPin and displays it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-arduino" data-lang="arduino"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">analogPin</span> <span class="o">=</span> <span class="n">A3</span><span class="p">;</span> <span class="c1">// potentiometer wiper (middle terminal) connected to analog pin 3
+</span></span></span><span class="line"><span class="cl">                    <span class="c1">// outside leads to ground and +5V
+</span></span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>  <span class="c1">// variable to store the value read
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>           <span class="c1">//  setup serial
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">val</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">analogPin</span><span class="p">);</span>  <span class="c1">// read the input pin
+</span></span></span><span class="line"><span class="cl">  <span class="nc">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>          <span class="c1">// debug value
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>Notes and Warnings</strong></p>
+<p>If the analog input pin is not connected to anything, the value returned by <code>analogRead()</code> will fluctuate based on a number of factors (e.g. the values of the other analog inputs, how close your hand is to the board, etc.).</p>
+<p><strong>See also</strong></p>
+<ul>
+<li>
+<p><em>LANGUAGE</em> <a href="../../zero-due-mkr-family/analogreadresolution">analogReadResolution()</a></p>
+</li>
+<li>
+<p><em>EXAMPLE</em> <a href="http://arduino.cc/en/Tutorial/AnalogInputPins">Description of the analog input pins</a></p>
+</li>
+</ul>
+
+    </article>
+
+  </main>
+
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container footer-top">
+    <div class="partners">
+      <div class="partners-head">
+        <h3>Партнёры</h3>
+        <span class="partners-hint">баннеры и логотипы • скролл ⟷</span>
+      </div>
+      <div class="partners-list" role="list" aria-label="Партнёры олимпиады">
+        <a class="partner-card" href="https://mipt.ru/" role="listitem" aria-label="Партнёр 1">
+          <img loading="lazy" src="/img/partners/mfti.png" alt="Партнёр 1">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> Олимпиада по робототехнике</small>
+    <div class="legal">
+      <a href="/politika-konfidencialnosti/">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+
+
+  
+  
+  
+    
+    <script defer src="/js/script.min.2c448e25f053e83849071f47a78828aa420f9d3fa0f5526ec90f9d6b6b983047.js"
+            integrity="sha256-LESOJfBT6DhJBx9Hp4goqkIPnT&#43;g9VJuyQ&#43;da2uYMEc="
+            crossorigin="anonymous"></script>
+  
+</body>
+</html>
+
