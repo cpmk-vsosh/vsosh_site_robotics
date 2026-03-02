@@ -6,6 +6,7 @@ draft: false
 author: "Команда ЦПМК"
 ---
 ![hc-sr04](/img/hrc.png)
+
 ````cpp
 // Copyright (c) 2026 ЦПМК по информатике
 // Licensed under the MIT License.
