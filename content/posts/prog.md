@@ -4,7 +4,7 @@ date: 2026-03-17T10:00:00+03:00
 publishDate: 2026-03-17T10:00:00+03:00
 draft: false
 cover: "/img/meet.png"
-excerpt: "Программа ВcОШ робототехника"
+excerpt: "Программа ВcОШ робототехника [Программа](https://vserosinf.ru/robototekhnika)"
 ---
 Опубликована программа всех мероприятий - [Программа](https://vserosinf.ru/robototekhnika)
 
