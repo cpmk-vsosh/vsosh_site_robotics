@@ -1,7 +1,7 @@
 ---
 title: "Программа ВcОШ"
-date: 2025-18-03T10:00:00+03:00   
-publishDate: 2025-18-03T10:00:00+03:00
+date: 2026-18-03T10:00:00+03:00   
+publishDate: 2026-18-03T10:00:00+03:00
 draft: false
 cover: "/img/meet.png"
 excerpt: "Программа ВcОШ робототехника"
