@@ -19,3 +19,6 @@ author: "Admin"
 - [Задачи подготовительный этап](https://disk.yandex.ru/i/Hh0SQLn__BuQMA)
 - [Задачи основной этап](https://disk.yandex.ru/i/1rOvSCPqFZWOsw)
 - [Видеоразбор](https://drive.google.com/file/d/1TAvs671a8V_04K149S8J7Nu2vHiZrol4/view)
+
+## Проектный тур
+- [Задачи основной этап](https://disk.yandex.ru/i/gJipXuXYIICx5A)
