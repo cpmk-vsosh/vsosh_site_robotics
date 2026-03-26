@@ -7,8 +7,8 @@ author: "Admin"
 ---
 
 ## Теоретический тур
-- [Задачи с решениями (9 класс)](/downloads/Otvety_i_Resheniya_dlya_zhyuri_RT_9_klass.pdf)
-- [Задачи с решениями (10–11 классы)](/downloads/Otvety_i_Resheniya_dlya_zhyuri_RT_10_11_klass.pdf)
+- [Задачи с решениями (9 класс)](/downloads/9_klass.pdf)
+- [Задачи с решениями (10–11 классы)](/downloads/10_11_klass.pdf)
 
 ## Теоретический тур видеоразбор
 - [Задачи с решениями (9 класс)](https://drive.google.com/file/d/1HgGvI0Yaa1sbMI9OdWFYfDcukQiuvy1a/view?usp=sharing)
