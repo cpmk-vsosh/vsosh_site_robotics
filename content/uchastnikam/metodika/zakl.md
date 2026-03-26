@@ -11,7 +11,9 @@ author: "Admin"
 - [Задачи с решениями (10–11 классы)](https://disk.yandex.ru/i/eqHC9-FmUb7D_A)
 <!-- - [Задачи с решениями (9 класс)](/downloads/9_klass.pdf)
 - [Задачи с решениями (10–11 классы)](/downloads/10_11_klass.pdf) -->
+- [Видеоразбор (9 класс)](https://drive.google.com/file/d/1HgGvI0Yaa1sbMI9OdWFYfDcukQiuvy1a/view?usp=sharing)
+- [Видеоразбор  (10–11 классы)](https://drive.google.com/file/d/19g5y1YO7DIWDP9JCz908gzbBgWrhmWmX/view?usp=sharing)
 
-## Теоретический тур видеоразбор
-- [Задачи с решениями (9 класс)](https://drive.google.com/file/d/1HgGvI0Yaa1sbMI9OdWFYfDcukQiuvy1a/view?usp=sharing)
-- [Задачи с решениями (10–11 классы)](https://drive.google.com/file/d/19g5y1YO7DIWDP9JCz908gzbBgWrhmWmX/view?usp=sharing)
+## Практический тур
+- [Поля](https://disk.360.yandex.ru/d/TyBok5WMGsLR-g)
+- [Видеоразбор](https://drive.google.com/file/d/1TAvs671a8V_04K149S8J7Nu2vHiZrol4/view)
