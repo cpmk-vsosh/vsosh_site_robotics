@@ -15,8 +15,8 @@ author: "Admin"
 ## Практический тур
 - [Поля](https://disk.360.yandex.ru/d/TyBok5WMGsLR-g)
 - [Описание робота](/downloads/pract_parts.pdf)
-- [Задачи подготовительный этап](https://disk.yandex.ru/i/Hh0SQLn__BuQMA)
-- [Задачи основной этап](https://disk.yandex.ru/i/1rOvSCPqFZWOsw)
+- [Задачи подготовительный этап](/downloads/prob_1.pdf)
+- [Задачи основной этап](/downloads/prob_2.pdf)
 - [Видеоразбор](https://drive.google.com/file/d/1TAvs671a8V_04K149S8J7Nu2vHiZrol4/view)
 
 ## Проектный тур
