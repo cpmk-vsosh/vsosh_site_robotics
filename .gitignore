@@ -1,12 +1,6 @@
 .DS_Store
 static/downloads/video/9_new.mp4
 static/downloads/video/10_new.mp4
-content/uchastnikam/metodika/arduino-reference-content
-# картинки
-/static/downloads/*.jpg
-/static/downloads/*.jpeg
-/static/downloads/*.png
-/static/downloads/*.gif
-/static/downloads/*.webp
-/static/downloads/*.svg
+public/
+
 
