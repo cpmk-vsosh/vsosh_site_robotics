@@ -7,8 +7,6 @@ author: "Admin"
 ---
 
 ## Теоретический тур
-- [Задачи с решениями (9 класс)](https://disk.yandex.ru/i/XJJvf62wDOqx7A)
-- [Задачи с решениями (10–11 классы)](https://disk.yandex.ru/i/eqHC9-FmUb7D_A)
 - [Задачи с решениями (9 класс)](/downloads/9_klass.pdf)
 - [Задачи с решениями (10–11 классы)](/downloads/10_11_klass.pdf)
 - [Видеоразбор (9 класс)](https://drive.google.com/file/d/1HgGvI0Yaa1sbMI9OdWFYfDcukQiuvy1a/view?usp=sharing)
