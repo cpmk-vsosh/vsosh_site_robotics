@@ -16,4 +16,6 @@ author: "Admin"
 
 ## Практический тур
 - [Поля](https://disk.360.yandex.ru/d/TyBok5WMGsLR-g)
+- [Задачи подготовительный этап](https://disk.yandex.ru/i/Hh0SQLn__BuQMA)
+- [Задачи основной этап](https://disk.yandex.ru/i/1rOvSCPqFZWOsw)
 - [Видеоразбор](https://drive.google.com/file/d/1TAvs671a8V_04K149S8J7Nu2vHiZrol4/view)
