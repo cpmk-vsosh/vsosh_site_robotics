@@ -6,6 +6,10 @@ draft: false
 author: "CHAT GPT"
 #cover: "/img/uploads/pid-cover.png"
 excerpt: "Кратко разбираем, что такое P/PI/PID-регуляторы, когда какой выбирать, как настроить и какие ошибки чаще всего встречаются."
+toc: true
+tocStart: 2
+tocEnd: 4
+tocOrdered: false
 ---
 
 ## 3.1. Структура этапов
