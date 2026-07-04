@@ -42,6 +42,18 @@
         </figure>
       {{ end }}
 
+      {{ if .Params.toc }}
+        <nav class="article-toc" aria-label="Оглавление">
+          <div class="article-toc__title">Оглавление</div>
+
+          {{ $tocStart := default 2 .Params.tocStart }}
+          {{ $tocEnd := default 4 .Params.tocEnd }}
+          {{ $tocOrdered := default false .Params.tocOrdered }}
+
+          {{ .Fragments.ToHTML $tocStart $tocEnd $tocOrdered }}
+        </nav>
+      {{ end }}
+
       {{ .Content }}
     </article>
 
