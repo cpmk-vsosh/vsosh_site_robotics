@@ -1,6 +1,6 @@
 ---
 title: "Региональный этап"
-weight: 10
+weight: 15
 description: "О регламенте проведения регионального этапа"
 menu_exclude: false
 ---
