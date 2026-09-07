@@ -1,11 +1,10 @@
 ---
-date: 2025-09-03T10:00:00+03:00
-publishDate: 2025-09-03T10:00:00+03:00
-title: "Зачем нужен регулятор"
+date: 2026-09-03T10:00:00+03:00
+publishDate: 2026-09-03T10:00:00+03:00
+title: "Рекомендации по проведению ШЭ и МЭ ВсОШ 26/27"
 draft: false
-author: "Adminn"
+author: "Admin"
 #cover: "/img/uploads/pid-cover.png"
-excerpt: "Кратко разбираем, что такое P/PI/PID-регуляторы, когда какой выбирать, как настроить и какие ошибки чаще всего встречаются."
 toc: true
 tocStart: 2
 tocEnd: 4
