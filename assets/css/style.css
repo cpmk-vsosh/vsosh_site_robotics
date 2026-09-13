@@ -471,5 +471,56 @@ a.btn{ text-decoration: none !important; }
 @media (max-width: 420px){
   .pagination{ gap: 4px; }
 }
+.latest {
+  margin: 2rem 0 3rem;
+}
 
+.latest h2 {
+  margin-bottom: 1rem;
+}
+
+.latest-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.latest-item {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #ddd;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.latest-item:hover .latest-title {
+  text-decoration: underline;
+}
+
+.latest-item time {
+  font-size: 0.9rem;
+  opacity: 0.65;
+}
+
+.latest-title {
+  font-weight: 500;
+}
+
+.latest-arrow {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+  .latest-item {
+    grid-template-columns: 1fr auto;
+  }
+
+  .latest-item time {
+    grid-column: 1 / -1;
+  }
+}
 
