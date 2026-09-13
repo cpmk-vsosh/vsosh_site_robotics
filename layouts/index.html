@@ -12,7 +12,34 @@
         </div>
       </div>
     </section>
-    
+    {{ $uchastnikam := site.GetPage "section" "uchastnikam" }}
+
+	{{ if $uchastnikam }}
+  	{{ $pages := where $uchastnikam.RegularPagesRecursive "Params.hideFromLatest" "ne" true }}
+  	{{ $latest := first 5 ($pages.ByPublishDate.Reverse) }}
+	{{ if $latest }}
+	    <section class="latest" aria-labelledby="latest-h">
+	      <h2 id="latest-h">Актуальное</h2>
+	
+	      <div class="latest-list">
+	        {{ range $latest }}
+	          {{ $d := or .PublishDate .Date }}
+	
+	          <a class="latest-item" href="{{ .RelPermalink }}">
+	            <time datetime="{{ $d | time.Format "2006-01-02" }}">
+	              {{ $d | time.Format "02.01.2006" }}
+	            </time>
+	
+	            <span class="latest-title">{{ .Title }}</span>
+	
+	            <span class="latest-arrow">→</span>
+	          </a>
+	        {{ end }}
+	      </div>
+	    </section>
+	  {{ end }}
+	{{ end }}
+	  
     <section class="hero" aria-labelledby="h1">
       <h1 id="h1">Новости</h1>
       <p class="meta">Актуальные новости олимпиады по робототехнике</p>
