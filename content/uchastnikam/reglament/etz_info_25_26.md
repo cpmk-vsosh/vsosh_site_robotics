@@ -5,7 +5,7 @@ title: "Единое техническое задание 26/27"
 draft: True
 author: "Admin"
 #cover: "/img/uploads/pid-cover.png"
-toc: true
+toc: false
 tocStart: 2
 tocEnd: 4
 tocOrdered: false
