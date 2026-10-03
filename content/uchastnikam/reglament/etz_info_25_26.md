@@ -2,10 +2,10 @@
 date: 2026-09-03T10:00:00+03:00
 publishDate: 2026-09-03T10:00:00+03:00
 title: "Единое техническое задание 26/27"
-draft: True
+draft: false
 author: "Admin"
 #cover: "/img/uploads/pid-cover.png"
-toc: false
+toc: true
 tocStart: 2
 tocEnd: 4
 tocOrdered: false
