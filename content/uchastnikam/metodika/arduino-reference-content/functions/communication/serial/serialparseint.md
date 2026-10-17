@@ -11,9 +11,9 @@ translationKey: "serialparseint"
 ---
 **Description**
 
-Looks for the next valid integer in the incoming serial. The function terminates if it times out (see [Serial.setTimeout()](../settimeout)).
+Looks for the next valid integer in the incoming serial. The function terminates if it times out (see [Serial.setTimeout()](../serialsettimeout/)).
 
-`Serial.parseInt()` inherits from the [Stream](../../stream) utility class.
+`Serial.parseInt()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 In particular:
 
@@ -46,23 +46,23 @@ The next valid integer. Data type: `long`.
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)\
+- *LANGUAGE* [begin()](../serialbegin/)\
 
-- *LANGUAGE* [end()](../end)\
+- *LANGUAGE* [end()](../serialend/)\
 
-- *LANGUAGE* [available()](../available)\
+- *LANGUAGE* [available()](../serialavailable/)\
 
-- *LANGUAGE* [read()](../read)\
+- *LANGUAGE* [read()](../serialread/)\
 
-- *LANGUAGE* [peek()](../peek)\
+- *LANGUAGE* [peek()](../serialpeek/)\
 
-- *LANGUAGE* [flush()](../flush)\
+- *LANGUAGE* [flush()](../serialflush/)\
 
-- *LANGUAGE* [print()](../print)\
+- *LANGUAGE* [print()](../serialprint/)\
 
-- *LANGUAGE* [println()](../println)\
+- *LANGUAGE* [println()](../serialprintln/)\
 
-- *LANGUAGE* [write()](../write)\
+- *LANGUAGE* [write()](../serialwrite/)\
 
 - *LANGUAGE* [SerialEvent()](../serialevent)\
 

@@ -15,7 +15,7 @@ translationKey: "serialfinduntil"
 
 The function returns true if the target string is found, false if it times out.
 
-`Serial.findUntil()` inherits from the [Stream](../../stream) utility class.
+`Serial.findUntil()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -33,6 +33,6 @@ Data type: `bool`.
 
 **See also**
 
-- *LANGUAGE* [stream](../../stream)\
+- *LANGUAGE* [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)\
 
 - *LANGUAGE* [stream.findUntil()](../../stream/streamfinduntil)

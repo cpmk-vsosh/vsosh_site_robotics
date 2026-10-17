@@ -11,11 +11,11 @@ translationKey: "serialreadbytesuntil"
 ---
 **Description**
 
-Serial.readBytesUntil() reads characters from the serial buffer into an array. The function terminates (checks being done in this order) if the determined length has been read, if it times out (see [Serial.setTimeout()](../settimeout)), or if the terminator character is detected (in which case the function returns the characters up to the last character before the supplied terminator). The terminator itself is not returned in the buffer.
+Serial.readBytesUntil() reads characters from the serial buffer into an array. The function terminates (checks being done in this order) if the determined length has been read, if it times out (see [Serial.setTimeout()](../serialsettimeout/)), or if the terminator character is detected (in which case the function returns the characters up to the last character before the supplied terminator). The terminator itself is not returned in the buffer.
 
 `Serial.readBytesUntil()` returns the number of characters read into the buffer. A 0 means that the `length` parameter \<= 0, a time out occurred before any other input, or a termination character was found before any other input.
 
-`Serial.readBytesUntil()` inherits from the [Stream](../../stream) utility class.
+`Serial.readBytesUntil()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -38,6 +38,6 @@ The terminator character is discarded from the serial buffer, unless the number 
 
 **See also**
 
-- *LANGUAGE* [Stream](../../stream)
+- *LANGUAGE* [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)
 
 - *LANGUAGE* [Stream.readBytesUntil()](../../stream/streamreadbytesuntil)

@@ -32,4 +32,4 @@ Do not confuse the boolean \|\| (double pipe) operator with the bitwise OR opera
 
 **See also**
 
-- *LANGUAGE* [\| Bitwise OR](../../bitwise-operators/bitwiseor)
+- *LANGUAGE* [\| Bitwise OR](../../bitwise-operators/bitwise-or/)

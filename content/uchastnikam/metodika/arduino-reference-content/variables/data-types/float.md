@@ -41,7 +41,7 @@ z = (float)x / 2.0; // z now contains .5 (you have to use 2.0, not 2)
 
 **Notes and Warnings**
 
-If doing math with floats, you need to add a decimal point, otherwise it will be treated as an int. See the [Floating point](../../constants/floatingpointconstants) constants page for details.
+If doing math with floats, you need to add a decimal point, otherwise it will be treated as an int. See the [Floating point](../../constants/floating-point-constants/) constants page for details.
 
 The float data type has only 6-7 decimal digits of precision. That means the total number of digits, not the number to the right of the decimal point. Unlike other platforms, where you can get more precision by using a double (e.g. up to 15 digits), on the Arduino, double is the same size as float.
 

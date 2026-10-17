@@ -19,7 +19,7 @@ In particular:
 
 - If no valid digits were read when the time-out (see [Stream.setTimeout()](../streamsettimeout)) occurs, 0 is returned;
 
-This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](../../stream) main page for more information.
+This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

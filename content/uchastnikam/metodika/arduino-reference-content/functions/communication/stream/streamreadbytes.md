@@ -15,7 +15,7 @@ translationKey: "streamreadbytes"
 
 `readBytes()` returns the number of bytes placed in the buffer. A 0 means no valid data was found.
 
-This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](../../stream) main page for more information.
+This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

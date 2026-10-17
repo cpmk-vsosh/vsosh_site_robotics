@@ -11,11 +11,11 @@ translationKey: "serialreadbytes"
 ---
 **Description**
 
-`Serial.readBytes()` reads characters from the serial port into a buffer. The function terminates if the determined length has been read, or it times out (see [Serial.setTimeout()](../settimeout)).
+`Serial.readBytes()` reads characters from the serial port into a buffer. The function terminates if the determined length has been read, or it times out (see [Serial.setTimeout()](../serialsettimeout/)).
 
 `Serial.readBytes()` returns the number of characters placed in the buffer. A 0 means no valid data was found.
 
-`Serial.readBytes()` inherits from the [Stream](../../stream) utility class.
+`Serial.readBytes()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -33,6 +33,6 @@ The number of bytes placed in the buffer. Data type: `size_t`.
 
 **See also**
 
-- *LANGUAGE* [stream](../../stream)
+- *LANGUAGE* [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)
 
 - *LANGUAGE* [stream.readBytes()](../../stream/streamreadbytes)

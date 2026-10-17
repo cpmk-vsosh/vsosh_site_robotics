@@ -19,7 +19,7 @@ On the Arduino Uno (and other ATmega based boards) an int stores a 16-bit (2-byt
 
 int’s store negative numbers with a technique called ([2’s complement math](http://en.wikipedia.org/wiki/2%27s_complement)). The highest bit, sometimes referred to as the "sign" bit, flags the number as a negative number. The rest of the bits are inverted and 1 is added.
 
-The Arduino takes care of dealing with negative numbers for you, so that arithmetic operations work transparently in the expected manner. There can be an unexpected complication in dealing with the [bitshift right operator](../../../structure/bitwise-operators/bitshiftright) (`>>`) however.
+The Arduino takes care of dealing with negative numbers for you, so that arithmetic operations work transparently in the expected manner. There can be an unexpected complication in dealing with the [bitshift right operator](../../../structure/bitwise-operators/bitshift-right/) (`>>`) however.
 
 **Syntax**
 
@@ -54,4 +54,4 @@ When signed variables are made to exceed their maximum or minimum capacity they 
 
 **See also**
 
-- *LANGUAGE* [Integer Constants](../../constants/integerconstants)
+- *LANGUAGE* [Integer Constants](../../constants/integer-constants/)

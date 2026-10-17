@@ -15,7 +15,7 @@ translationKey: "long"
 
 Long variables are extended size variables for number storage, and store 32 bits (4 bytes), from -2,147,483,648 to 2,147,483,647.
 
-If doing math with integers at least one of the values must be of type long, either an integer constant followed by an L or a variable of type long, forcing it to be a long. See the [Integer Constants](../../constants/integerconstants) page for details.
+If doing math with integers at least one of the values must be of type long, either an integer constant followed by an L or a variable of type long, forcing it to be a long. See the [Integer Constants](../../constants/integer-constants/) page for details.
 
 **Syntax**
 
@@ -34,4 +34,4 @@ long speedOfLight_km_s = 300000L;  // see the Integer Constants page for explana
 
 **See also**
 
-- *LANGUAGE* [Integer Constants](../../constants/integerconstants)
+- *LANGUAGE* [Integer Constants](../../constants/integer-constants/)

@@ -1,13 +1,19 @@
 {{ define "main" }}
   <main class="container">
 
+    {{/* Новости перечислены на главной; остальные материалы — в родительском разделе. */}}
+    {{ $backTarget := site.Home.RelPermalink }}
+    {{ if ne .Section "posts" }}
+      {{ with .Parent }}{{ $backTarget = .RelPermalink }}{{ end }}
+    {{ end }}
+
     <!-- Верхняя строка: Назад + метаданные -->
     <div class="back-row">
       <a
         id="goBack"
         class="btn back"
-        href="{{ with site.GetPage "section" "posts" }}{{ .RelPermalink }}{{ else }}/{{ end }}"
-        data-fallback="{{ with site.GetPage "section" "posts" }}{{ .RelPermalink }}{{ else }}/{{ end }}"
+        href="{{ $backTarget }}"
+        data-fallback="{{ $backTarget }}"
       >← Назад</a>
 
       <div class="article-meta">

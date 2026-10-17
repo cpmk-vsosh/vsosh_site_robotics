@@ -13,7 +13,7 @@ translationKey: "serialgettimeout"
 
 `Serial.getTimeout()` returns the timeout value set by `Serial.setTimeout()`.
 
-`Serial.getTimeout()` inherits from the [Stream](../../stream) utility class.
+`Serial.getTimeout()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -29,7 +29,7 @@ The timeout value set by `Serial.setTimeout()`. Data type: `unsigned long`.
 
 **See also**
 
-- *LANGUAGE* [stream](../../stream)
+- *LANGUAGE* [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)
 
 - *LANGUAGE* [stream.setTimeout()](../../stream/streamsettimeout)
 

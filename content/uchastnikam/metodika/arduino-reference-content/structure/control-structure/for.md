@@ -27,7 +27,7 @@ for (initialization; condition; increment) {
 
 `initialization`: happens first and exactly once.\
 `condition`: each time through the loop, `condition` is tested; if it’s `true`, the statement block, and the **increment** is executed, then the **condition** is tested again. When the **condition** becomes `false`, the loop ends.\
-`increment`: executed each time through the loop when `condition` is [`true`](../../../variables/constants/truefalse).
+`increment`: executed each time through the loop when `condition` is [`true`](../../../variables/constants/true-false/).
 
 **Example Code**
 

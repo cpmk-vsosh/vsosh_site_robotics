@@ -15,7 +15,7 @@ translationKey: "analogread"
 
 Reads the value from the specified analog pin. Arduino boards contain a multichannel, 10-bit analog to digital converter. This means that it will map input voltages between 0 and the operating voltage(5V or 3.3V) into integer values between 0 and 1023. On an Arduino UNO, for example, this yields a resolution between readings of: 5 volts / 1024 units or, 0.0049 volts (4.9 mV) per unit. See the table below for the usable pins, operating voltage and maximum resolution for some Arduino boards.
 
-The input range can be changed using [analogReference()](../analogreference), while the resolution can be changed (only for Zero, Due and MKR boards) using [analogReadResolution()](../../zero-due-mkr-family/analogreadresolution).
+The input range can be changed using [analogReference()](../analogreference), while the resolution can be changed (only for Zero, Due and MKR boards) using [analogReadResolution()](/uchastnikam/metodika/arduino-reference/functions/analog-io/analogreadresolution/).
 
 On ATmega based boards (UNO, Nano, Mini, Mega), it takes about 100 microseconds (0.0001 s) to read an analog input, so the maximum reading rate is about 10,000 times a second.
 
@@ -35,7 +35,7 @@ On ATmega based boards (UNO, Nano, Mini, Mega), it takes about 100 microseconds 
 | MKR Family boards | 3.3 Volts | A0 to A6 | 12 bits\*\* |
 
 \*A0 through A5 are labelled on the board, A6 through A11 are respectively available on pins 4, 6, 8, 9, 10, and 12\
-\*\*The default `analogRead()` resolution for these boards is 10 bits, for compatibility. You need to use [analogReadResolution()](../../zero-due-mkr-family/analogreadresolution) to change it to a higher resolution.
+\*\*The default `analogRead()` resolution for these boards is 10 bits, for compatibility. You need to use [analogReadResolution()](/uchastnikam/metodika/arduino-reference/functions/analog-io/analogreadresolution/) to change it to a higher resolution.
 
 **Syntax**
 
@@ -74,6 +74,6 @@ If the analog input pin is not connected to anything, the value returned by `ana
 
 **See also**
 
-- *LANGUAGE* [analogReadResolution()](../../zero-due-mkr-family/analogreadresolution)
+- *LANGUAGE* [analogReadResolution()](/uchastnikam/metodika/arduino-reference/functions/analog-io/analogreadresolution/)
 
 - *EXAMPLE* [Description of the analog input pins](http://arduino.cc/en/Tutorial/AnalogInputPins)

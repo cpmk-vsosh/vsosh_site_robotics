@@ -25,8 +25,8 @@ Converts a value to the `unsigned int` data type.
 
 **Returns**
 
-[`unsigned int`](../../data-types/unsignedint)
+[`unsigned int`](../../data-types/unsigned-int/)
 
 **See also**
 
-- *LANGUAGE* [unsigned int](../../data-types/unsignedint)
+- *LANGUAGE* [unsigned int](../../data-types/unsigned-int/)

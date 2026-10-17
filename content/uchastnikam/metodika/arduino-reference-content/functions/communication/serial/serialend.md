@@ -11,7 +11,7 @@ translationKey: "serialend"
 ---
 **Description**
 
-Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call [Serial.begin()](../begin).
+Disables serial communication, allowing the RX and TX pins to be used for general input and output. To re-enable serial communication, call [Serial.begin()](../serialbegin/).
 
 **Syntax**
 

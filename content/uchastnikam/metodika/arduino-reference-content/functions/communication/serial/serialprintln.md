@@ -11,7 +11,7 @@ translationKey: "serialprintln"
 ---
 **Description**
 
-Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as [Serial.print()](../print).
+Prints data to the serial port as human-readable ASCII text followed by a carriage return character (ASCII 13, or '\r') and a newline character (ASCII 10, or '\n'). This command takes the same forms as [Serial.print()](../serialprint/).
 
 **Syntax**
 
@@ -62,4 +62,4 @@ void loop() {
 
 **Notes and Warnings**
 
-For information on the asyncronicity of `Serial.println()`, see the Notes and Warnings section of the [Serial.write() reference page](../write#howtouse).
+For information on the asyncronicity of `Serial.println()`, see the Notes and Warnings section of the [Serial.write() reference page](../serialwrite/#howtouse).

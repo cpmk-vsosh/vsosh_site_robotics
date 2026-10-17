@@ -32,4 +32,4 @@ Make sure you don’t mistake the boolean AND operator, && (double ampersand) fo
 
 **See also**
 
-- *LANGUAGE* [& (Bitwise AND)](../../bitwise-operators/bitwiseand)
+- *LANGUAGE* [& (Bitwise AND)](../../bitwise-operators/bitwise-and/)

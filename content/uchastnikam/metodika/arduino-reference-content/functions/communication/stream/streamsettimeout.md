@@ -11,7 +11,7 @@ translationKey: "streamsettimeout"
 ---
 **Description**
 
-`setTimeout()` sets the maximum milliseconds to wait for stream data, it defaults to 1000 milliseconds. This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](../../stream) main page for more information.
+`setTimeout()` sets the maximum milliseconds to wait for stream data, it defaults to 1000 milliseconds. This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

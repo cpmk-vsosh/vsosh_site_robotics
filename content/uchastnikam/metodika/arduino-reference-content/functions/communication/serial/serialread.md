@@ -13,7 +13,7 @@ translationKey: "serialread"
 
 Reads incoming serial data.
 
-`Serial.read()` inherits from the [Stream](../../stream) utility class.
+`Serial.read()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 

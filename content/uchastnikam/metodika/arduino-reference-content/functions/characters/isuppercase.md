@@ -46,4 +46,4 @@ else {
 
 - *LANGUAGE* [while (conditional operators)](../../../structure/control-structure/while)
 
-- *LANGUAGE* [read()](../../communication/serial/read)
+- *LANGUAGE* [read()](/uchastnikam/metodika/arduino-reference/functions/communication/serial/serialread/)

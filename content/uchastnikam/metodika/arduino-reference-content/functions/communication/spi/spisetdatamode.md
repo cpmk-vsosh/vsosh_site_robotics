@@ -11,7 +11,7 @@ translationKey: "spisetdatamode"
 ---
 **Description**
 
-This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../begintransaction). to configure SPI parameters.
+This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../spibegintransaction/). to configure SPI parameters.
 
 Sets the SPI data mode: that is, clock polarity and phase. See the Wikipedia article on [SPI](http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus:) for details.
 

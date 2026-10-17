@@ -42,6 +42,6 @@ DDRD = DDRD | 0b11111100;
 
 **See also**
 
-- *LANGUAGE* [\|\| Logical OR](../../boolean-operators/logicalor)
+- *LANGUAGE* [\|\| Logical OR](../../boolean-operators/logical-or/)
 
 - *EXAMPLE* [BitMath Tutorial](https://www.arduino.cc/playground/Code/BitMath)

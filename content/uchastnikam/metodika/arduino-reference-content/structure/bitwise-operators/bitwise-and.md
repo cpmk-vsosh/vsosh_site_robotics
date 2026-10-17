@@ -45,6 +45,6 @@ PORTD = PORTD & 0b00000011;  // clear out bits 2 - 7, leave pins PD0 and PD1 unt
 
 **See also**
 
-- *LANGUAGE* [&& Logical AND](../../boolean-operators/logicaland)
+- *LANGUAGE* [&& Logical AND](../../boolean-operators/logical-and/)
 
 - *EXAMPLE* [BitMath Tutorial](https://www.arduino.cc/playground/Code/BitMath)

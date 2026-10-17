@@ -13,7 +13,7 @@ translationKey: "streamflush"
 
 `flush()` clears the buffer once all outgoing characters have been sent.
 
-This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [stream class](../../stream) main page for more information.
+This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

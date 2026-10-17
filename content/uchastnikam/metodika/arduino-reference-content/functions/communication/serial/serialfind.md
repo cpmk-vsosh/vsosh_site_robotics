@@ -13,7 +13,7 @@ translationKey: "serialfind"
 
 `Serial.find()` reads data from the serial buffer until the target is found. The function returns `true` if target is found, `false` if it times out.
 
-`Serial.find()` inherits from the [stream](../../stream) utility class.
+`Serial.find()` inherits from the [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -32,6 +32,6 @@ Data type: `bool`.
 
 **See also**
 
-- *LANGUAGE* [stream](../../stream)\
+- *LANGUAGE* [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)\
 
 - *LANGUAGE* [stream.find()](../../stream/streamfind)

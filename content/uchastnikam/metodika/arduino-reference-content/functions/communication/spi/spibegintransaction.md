@@ -11,7 +11,7 @@ translationKey: "spibegintransaction"
 ---
 **Description**
 
-Initializes the SPI bus. Note that calling [SPI.begin()](../begin) is required before calling this one.
+Initializes the SPI bus. Note that calling [SPI.begin()](../spibegin/) is required before calling this one.
 
 **Syntax**
 

@@ -11,7 +11,7 @@ translationKey: "spisetbitorder"
 ---
 **Description**
 
-This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../begintransaction). to configure SPI parameters.
+This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../spibegintransaction/). to configure SPI parameters.
 
 Sets the order of the bits shifted out of and into the SPI bus, either LSBFIRST (least-significant bit first) or MSBFIRST (most-significant bit first).
 

@@ -79,4 +79,4 @@ myByte |= 0b00000011 == 0b10101011;
 
 **See also**
 
-- *LANGUAGE* [\| Bitwise OR](../../bitwise-operators/bitwiseor)
+- *LANGUAGE* [\| Bitwise OR](../../bitwise-operators/bitwise-or/)

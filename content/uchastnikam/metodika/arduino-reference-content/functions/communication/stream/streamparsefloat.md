@@ -13,7 +13,7 @@ translationKey: "streamparsefloat"
 
 `parseFloat()` returns the first valid floating point number from the current position. `parseFloat()` is terminated by the first character that is not a floating point number. The function terminates if it times out (see [Stream.setTimeout()](../streamsettimeout)).
 
-This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](../../stream) main page for more information.
+This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

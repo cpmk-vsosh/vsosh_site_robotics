@@ -51,26 +51,26 @@ Nothing
 
 Please note that `serialEvent()` **does not work** on any modern Arduino boards. The only recognized boards to have support as of 2023/12/06 are the **UNO R3**, **Nano**, **Mega 2560 R3** and **Due**.
 
-Instead, you can use the [`available()`](../available) method. Examples in this page demonstrates how to read serial data only when it is available, similarly to how `Serial.event()` is implemented.
+Instead, you can use the [`available()`](../serialavailable/) method. Examples in this page demonstrates how to read serial data only when it is available, similarly to how `Serial.event()` is implemented.
 
 **See also**
 
 - *EXAMPLE* [Serial Event](http://arduino.cc/en/Tutorial/SerialEvent)
 
-- *LANGUAGE* [begin()](../begin)
+- *LANGUAGE* [begin()](../serialbegin/)
 
-- *LANGUAGE* [end()](../end)
+- *LANGUAGE* [end()](../serialend/)
 
-- *LANGUAGE* [available()](../available)
+- *LANGUAGE* [available()](../serialavailable/)
 
-- *LANGUAGE* [read()](../read)
+- *LANGUAGE* [read()](../serialread/)
 
-- *LANGUAGE* [peek()](../peek)
+- *LANGUAGE* [peek()](../serialpeek/)
 
-- *LANGUAGE* [flush()](../flush)
+- *LANGUAGE* [flush()](../serialflush/)
 
-- *LANGUAGE* [print()](../print)
+- *LANGUAGE* [print()](../serialprint/)
 
-- *LANGUAGE* [println()](../println)
+- *LANGUAGE* [println()](../serialprintln/)
 
-- *LANGUAGE* [write()](../write)
+- *LANGUAGE* [write()](../serialwrite/)

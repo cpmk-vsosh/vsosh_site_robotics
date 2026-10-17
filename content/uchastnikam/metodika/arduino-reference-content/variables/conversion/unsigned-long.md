@@ -25,8 +25,8 @@ Converts a value to the `unsigned long` data type.
 
 **Returns**
 
-[`unsigned long`](../../data-types/unsignedlong)
+[`unsigned long`](../../data-types/unsigned-long/)
 
 **See also**
 
-- *LANGUAGE* [unsigned long](../../data-types/unsignedlong)
+- *LANGUAGE* [unsigned long](../../data-types/unsigned-long/)

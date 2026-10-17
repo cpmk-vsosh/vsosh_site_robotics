@@ -26,4 +26,4 @@ A byte stores an 8-bit unsigned number, from 0 to 255.
 
 **See also**
 
-- *LANGUAGE* [byte()](../../conversion/bytecast)
+- *LANGUAGE* [byte()](../../conversion/byte/)

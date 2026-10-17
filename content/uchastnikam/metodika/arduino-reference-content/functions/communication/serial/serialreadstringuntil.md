@@ -11,9 +11,9 @@ translationKey: "serialreadstringuntil"
 ---
 **Description**
 
-`readStringUntil()` reads characters from the serial buffer into a String. The function terminates if it times out (see [setTimeout()](../settimeout)).
+`readStringUntil()` reads characters from the serial buffer into a String. The function terminates if it times out (see [setTimeout()](../serialsettimeout/)).
 
-`Serial.readStringUntil()` inherits from the [Stream](../../stream) utility class.
+`Serial.readStringUntil()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -36,23 +36,23 @@ The terminator character is discarded from the serial buffer. If the terminator 
 
 - *LANGUAGE* [Serial](https://www.arduino.cc/en/Reference/serial)
 
-- *LANGUAGE* [begin()](../begin)
+- *LANGUAGE* [begin()](../serialbegin/)
 
-- *LANGUAGE* [end()](../end)
+- *LANGUAGE* [end()](../serialend/)
 
-- *LANGUAGE* [available()](../available)
+- *LANGUAGE* [available()](../serialavailable/)
 
-- *LANGUAGE* [read()](../read)
+- *LANGUAGE* [read()](../serialread/)
 
-- *LANGUAGE* [peek()](../peek)
+- *LANGUAGE* [peek()](../serialpeek/)
 
-- *LANGUAGE* [flush()](../flush)
+- *LANGUAGE* [flush()](../serialflush/)
 
-- *LANGUAGE* [print()](../print)
+- *LANGUAGE* [print()](../serialprint/)
 
-- *LANGUAGE* [println()](../println)
+- *LANGUAGE* [println()](../serialprintln/)
 
-- *LANGUAGE* [write()](../write)
+- *LANGUAGE* [write()](../serialwrite/)
 
 - *LANGUAGE* [SerialEvent()](../serialevent)
 

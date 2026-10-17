@@ -34,4 +34,4 @@ short ledPin = 13
 
 **See also**
 
-- *LANGUAGE* [Integer Constants](../../constants/integerconstants)
+- *LANGUAGE* [Integer Constants](../../constants/integer-constants/)

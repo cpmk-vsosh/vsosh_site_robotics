@@ -79,4 +79,4 @@ myByte ^= 0b00000011 == 0b10101001;
 
 **See also**
 
-- *LANGUAGE* [^ Bitwise XOR](../../bitwise-operators/bitwisexor)
+- *LANGUAGE* [^ Bitwise XOR](../../bitwise-operators/bitwise-xor/)

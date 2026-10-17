@@ -13,7 +13,7 @@ translationKey: "string"
 ---
 **Description**
 
-Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and null-terminate it. This page described the latter method. For more details on the String object, which gives you more functionality at the cost of more memory, see the [String object](../stringobject) page.
+Text strings can be represented in two ways. you can use the String data type, or you can make a string out of an array of type char and null-terminate it. This page described the latter method. The String object gives you more functionality at the cost of more memory. See the [String functions](/uchastnikam/metodika/arduino-reference-content/variables/data-types/string/functions/) reference for the available operations.
 
 **Syntax**
 

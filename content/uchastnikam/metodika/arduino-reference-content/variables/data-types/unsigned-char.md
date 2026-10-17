@@ -36,4 +36,4 @@ unsigned char myChar = 240;
 
 **See also**
 
-- *LANGUAGE* [Serial.println](../../../functions/communication/serial/println)
+- *LANGUAGE* [Serial.println](../../../functions/communication/serial/serialprintln/)

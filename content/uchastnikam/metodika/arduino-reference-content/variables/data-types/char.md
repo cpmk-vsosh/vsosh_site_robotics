@@ -37,4 +37,4 @@ char myChar = 65; // both are equivalent
 
 **See also**
 
-- *LANGUAGE* [Serial.println](../../../functions/communication/serial/println)
+- *LANGUAGE* [Serial.println](../../../functions/communication/serial/serialprintln/)

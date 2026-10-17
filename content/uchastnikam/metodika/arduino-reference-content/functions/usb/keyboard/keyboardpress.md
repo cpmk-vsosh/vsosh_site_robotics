@@ -11,7 +11,7 @@ translationKey: "keyboardpress"
 ---
 **Description**
 
-When called, `Keyboard.press()` functions as if a key were pressed and held on your keyboard. Useful when using [modifier keys](../keyboardmodifiers). To end the key press, use [Keyboard.release()](../keyboardrelease) or [Keyboard.releaseAll()](../keyboardreleaseall).
+When called, `Keyboard.press()` functions as if a key were pressed and held on your keyboard. Useful when using [modifier keys](../keyboard-modifiers-and-special-keys/). To end the key press, use [Keyboard.release()](../keyboardrelease) or [Keyboard.releaseAll()](../keyboardreleaseall).
 
 It is necessary to call [Keyboard.begin()](../keyboardbegin) before using `press()`.
 

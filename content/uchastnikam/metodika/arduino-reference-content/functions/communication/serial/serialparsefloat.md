@@ -11,9 +11,9 @@ translationKey: "serialparsefloat"
 ---
 **Description**
 
-`Serial.parseFloat()` returns the first valid floating point number from the Serial buffer. `parseFloat()` is terminated by the first character that is not a floating point number. The function terminates if it times out (see [Serial.setTimeout()](../settimeout)).
+`Serial.parseFloat()` returns the first valid floating point number from the Serial buffer. `parseFloat()` is terminated by the first character that is not a floating point number. The function terminates if it times out (see [Serial.setTimeout()](../serialsettimeout/)).
 
-`Serial.parseFloat()` inherits from the [Stream](../../stream) utility class.
+`Serial.parseFloat()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -40,6 +40,6 @@ Data type: `float`.
 
 **See also**
 
-- *LANGUAGE* [stream()](../../stream)
+- *LANGUAGE* [stream()](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)
 
 - *LANGUAGE* [Stream.parseFloat()](../../stream/streamparsefloat)

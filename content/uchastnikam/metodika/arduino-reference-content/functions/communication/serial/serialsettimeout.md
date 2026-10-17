@@ -13,7 +13,7 @@ translationKey: "serialsettimeout"
 
 `Serial.setTimeout()` sets the maximum milliseconds to wait for serial data. It defaults to 1000 milliseconds.
 
-`Serial.setTimeout()` inherits from the [Stream](../../stream) utility class.
+`Serial.setTimeout()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -50,6 +50,6 @@ Serial functions that use the timeout value set via `Serial.setTimeout()`:
 
 **See also**
 
-- *LANGUAGE* [stream](../../stream)
+- *LANGUAGE* [stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/)
 
 - *LANGUAGE* [stream.setTimeout()](../../stream/streamsettimeout)

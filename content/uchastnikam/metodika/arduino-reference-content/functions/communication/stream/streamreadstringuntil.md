@@ -13,7 +13,7 @@ translationKey: "streamreadstringuntil"
 
 `readStringUntil()` reads characters from a stream into a String. The function terminates if the terminator character is detected or it times out (see [setTimeout()](../streamsettimeout)).
 
-This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](../../stream) main page for more information.
+This function is part of the Stream class, and can be called by any class that inherits from it (Wire, Serial, etc). See the [Stream class](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) main page for more information.
 
 **Syntax**
 

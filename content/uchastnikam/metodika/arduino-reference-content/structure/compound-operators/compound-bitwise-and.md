@@ -79,4 +79,4 @@ myByte &= 0b11111100;  // results in 0b10101000
 
 **See also**
 
-- *LANGUAGE* [& Bitwise AND](../../bitwise-operators/bitwiseand)
+- *LANGUAGE* [& Bitwise AND](../../bitwise-operators/bitwise-and/)

@@ -27,21 +27,21 @@ The number of bytes available to write.
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)\
+- *LANGUAGE* [begin()](../serialbegin/)\
 
-- *LANGUAGE* [end()](../end)\
+- *LANGUAGE* [end()](../serialend/)\
 
-- *LANGUAGE* [read()](../read)\
+- *LANGUAGE* [read()](../serialread/)\
 
-- *LANGUAGE* [peek()](../peek)\
+- *LANGUAGE* [peek()](../serialpeek/)\
 
-- *LANGUAGE* [flush()](../flush)\
+- *LANGUAGE* [flush()](../serialflush/)\
 
-- *LANGUAGE* [print()](../print)\
+- *LANGUAGE* [print()](../serialprint/)\
 
-- *LANGUAGE* [println()](../println)\
+- *LANGUAGE* [println()](../serialprintln/)\
 
-- *LANGUAGE* [write()](../write)\
+- *LANGUAGE* [write()](../serialwrite/)\
 
 - *LANGUAGE* [SerialEvent()](../serialevent)\
 

@@ -29,21 +29,21 @@ Nothing
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)
+- *LANGUAGE* [begin()](../serialbegin/)
 
-- *LANGUAGE* [end()](../end)
+- *LANGUAGE* [end()](../serialend/)
 
-- *LANGUAGE* [available()](../available)
+- *LANGUAGE* [available()](../serialavailable/)
 
-- *LANGUAGE* [read()](../read)
+- *LANGUAGE* [read()](../serialread/)
 
-- *LANGUAGE* [peek()](../peek)
+- *LANGUAGE* [peek()](../serialpeek/)
 
-- *LANGUAGE* [print()](../print)
+- *LANGUAGE* [print()](../serialprint/)
 
-- *LANGUAGE* [println()](../println)
+- *LANGUAGE* [println()](../serialprintln/)
 
-- *LANGUAGE* [write()](../write)
+- *LANGUAGE* [write()](../serialwrite/)
 
 - *LANGUAGE* [SerialEvent()](../serialevent)
 

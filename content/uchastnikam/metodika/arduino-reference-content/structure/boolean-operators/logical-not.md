@@ -38,4 +38,4 @@ The bitwise not ~ (tilde) looks much different than the boolean not ! (exclamati
 
 **See also**
 
-- *LANGUAGE* [~ Bitwise NOT](../../bitwise-operators/bitwisenot)
+- *LANGUAGE* [~ Bitwise NOT](../../bitwise-operators/bitwise-not/)

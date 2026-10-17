@@ -13,7 +13,7 @@ translationKey: "serialpeek"
 
 Returns the next byte (character) of incoming serial data without removing it from the internal serial buffer. That is, successive calls to `peek()` will return the same character, as will the next call to `read()`.
 
-`Serial.peek()` inherits from the [Stream](../../stream) utility class.
+`Serial.peek()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -29,23 +29,23 @@ The first byte of incoming serial data available (or -1 if no data is available)
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)\
+- *LANGUAGE* [begin()](../serialbegin/)\
 
-- *LANGUAGE* [end()](../end)\
+- *LANGUAGE* [end()](../serialend/)\
 
-- *LANGUAGE* [available()](../available)\
+- *LANGUAGE* [available()](../serialavailable/)\
 
-- *LANGUAGE* [read()](../read)\
+- *LANGUAGE* [read()](../serialread/)\
 
-- *LANGUAGE* [peek()](../peek)\
+- *LANGUAGE* [peek()](../serialpeek/)\
 
-- *LANGUAGE* [flush()](../flush)\
+- *LANGUAGE* [flush()](../serialflush/)\
 
-- *LANGUAGE* [print()](../print)\
+- *LANGUAGE* [print()](../serialprint/)\
 
-- *LANGUAGE* [println()](../println)\
+- *LANGUAGE* [println()](../serialprintln/)\
 
-- *LANGUAGE* [write()](../write)\
+- *LANGUAGE* [write()](../serialwrite/)\
 
 - *LANGUAGE* [SerialEvent()](../serialevent)\
 

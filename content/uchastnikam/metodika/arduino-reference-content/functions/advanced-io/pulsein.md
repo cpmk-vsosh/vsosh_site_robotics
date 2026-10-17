@@ -28,7 +28,7 @@ The timing of this function has been determined empirically and will probably sh
 **Parameters**
 
 `pin`: the number of the Arduino pin on which you want to read the pulse. Allowed data types: `int`.\
-`value`: type of pulse to read: either [HIGH](../../../variables/constants/highlow/) or [LOW](../../../variables/constants/highlow/). Allowed data types: `int`.\
+`value`: type of pulse to read: either [HIGH](/uchastnikam/metodika/arduino-reference/variables/constants/high-low/) or [LOW](/uchastnikam/metodika/arduino-reference/variables/constants/high-low/). Allowed data types: `int`.\
 `timeout` (optional): the number of microseconds to wait for the pulse to start; default is one second. Allowed data types: `unsigned long`.
 
 **Returns**

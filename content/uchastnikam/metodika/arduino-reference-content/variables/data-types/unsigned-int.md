@@ -74,4 +74,4 @@ Why use unsigned variables at all?
 
 **See also**
 
-- *LANGUAGE* [Integer Constants](../../constants/integerconstants)
+- *LANGUAGE* [Integer Constants](../../constants/integer-constants/)

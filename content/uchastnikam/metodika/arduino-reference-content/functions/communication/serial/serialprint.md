@@ -41,7 +41,7 @@ You can pass flash-memory based strings to `Serial.print()` by wrapping them wit
 
 `Serial.print(F("Hello World"))`
 
-To send data without conversion to its representation as characters, use [Serial.write()](../write).
+To send data without conversion to its representation as characters, use [Serial.write()](../serialwrite/).
 
 **Syntax**
 
@@ -108,25 +108,25 @@ void loop() {
 
 **Notes and Warnings**
 
-For information on the asyncronicity of `Serial.print()`, see the Notes and Warnings section of the [Serial.write() reference page](../write#howtouse).
+For information on the asyncronicity of `Serial.print()`, see the Notes and Warnings section of the [Serial.write() reference page](../serialwrite/#howtouse).
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)
+- *LANGUAGE* [begin()](../serialbegin/)
 
-- *LANGUAGE* [end()](../end)
+- *LANGUAGE* [end()](../serialend/)
 
-- *LANGUAGE* [available()](../available)
+- *LANGUAGE* [available()](../serialavailable/)
 
-- *LANGUAGE* [read()](../read)
+- *LANGUAGE* [read()](../serialread/)
 
-- *LANGUAGE* [peek()](../peek)
+- *LANGUAGE* [peek()](../serialpeek/)
 
-- *LANGUAGE* [flush()](../flush)
+- *LANGUAGE* [flush()](../serialflush/)
 
-- *LANGUAGE* [println()](../println)
+- *LANGUAGE* [println()](../serialprintln/)
 
-- *LANGUAGE* [write()](../write)
+- *LANGUAGE* [write()](../serialwrite/)
 
 - *LANGUAGE* [SerialEvent()](../serialevent)
 

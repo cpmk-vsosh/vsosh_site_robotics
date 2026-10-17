@@ -11,7 +11,7 @@ translationKey: "serialwrite"
 ---
 **Description**
 
-Writes binary data to the serial port. This data is sent as a byte or series of bytes; to send the characters representing the digits of a number use the [print()](../print) function instead.
+Writes binary data to the serial port. This data is sent as a byte or series of bytes; to send the characters representing the digits of a number use the [print()](../serialprint/) function instead.
 
 **Syntax**
 
@@ -45,6 +45,8 @@ void loop() {
 }
 ```
 
+<a id="howtouse"></a>
+
 **Notes and Warnings**
 
-Serial transmission is asynchronous. If there is enough empty space in the transmit buffer, `Serial.write()` will return before any characters are transmitted over serial. If the transmit buffer is full then `Serial.write()` will block until there is enough space in the buffer. To avoid blocking calls to `Serial.write()`, you can first check the amount of free space in the transmit buffer using [availableForWrite()](../availableforwrite).
+Serial transmission is asynchronous. If there is enough empty space in the transmit buffer, `Serial.write()` will return before any characters are transmitted over serial. If the transmit buffer is full then `Serial.write()` will block until there is enough space in the buffer. To avoid blocking calls to `Serial.write()`, you can first check the amount of free space in the transmit buffer using [availableForWrite()](../serialavailableforwrite/).

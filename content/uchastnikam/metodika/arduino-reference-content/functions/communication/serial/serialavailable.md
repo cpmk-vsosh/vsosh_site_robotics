@@ -13,7 +13,7 @@ translationKey: "serialavailable"
 
 Get the number of bytes (characters) available for reading from the serial port. This is data that’s already arrived and stored in the serial receive buffer (which holds 64 bytes).
 
-`Serial.available()` inherits from the [Stream](../../stream) utility class.
+`Serial.available()` inherits from the [Stream](/uchastnikam/metodika/arduino-reference-content/functions/communication/stream/) utility class.
 
 **Syntax**
 
@@ -76,21 +76,21 @@ void loop() {
 
 **See also**
 
-- *LANGUAGE* [begin()](../begin)\
+- *LANGUAGE* [begin()](../serialbegin/)\
 
-- *LANGUAGE* [end()](../end)\
+- *LANGUAGE* [end()](../serialend/)\
 
-- *LANGUAGE* [read()](../read)\
+- *LANGUAGE* [read()](../serialread/)\
 
-- *LANGUAGE* [peek()](../peek)\
+- *LANGUAGE* [peek()](../serialpeek/)\
 
-- *LANGUAGE* [flush()](../flush)\
+- *LANGUAGE* [flush()](../serialflush/)\
 
-- *LANGUAGE* [print()](../print)\
+- *LANGUAGE* [print()](../serialprint/)\
 
-- *LANGUAGE* [println()](../println)\
+- *LANGUAGE* [println()](../serialprintln/)\
 
-- *LANGUAGE* [write()](../write)\
+- *LANGUAGE* [write()](../serialwrite/)\
 
 - *LANGUAGE* [SerialEvent()](../serialevent)\
 

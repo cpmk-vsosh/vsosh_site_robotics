@@ -11,7 +11,7 @@ translationKey: "spisetclockdivider"
 ---
 **Description**
 
-This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../begintransaction). to configure SPI parameters.
+This function should not be used in new projects. Use [SPISettings](../spisettings). with [SPI.beginTransaction()](../spibegintransaction/). to configure SPI parameters.
 
 Sets the SPI clock divider relative to the system clock. On AVR based boards, the dividers available are 2, 4, 8, 16, 32, 64 or 128. The default setting is SPI_CLOCK_DIV4, which sets the SPI clock to one-quarter the frequency of the system clock (4 Mhz for the boards at 16 MHz).
 

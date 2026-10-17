@@ -34,4 +34,4 @@ void loop() {
 
 **See also**
 
-- *LANGUAGE* [Integer Constants](../../constants/integerconstants)
+- *LANGUAGE* [Integer Constants](../../constants/integer-constants/)
