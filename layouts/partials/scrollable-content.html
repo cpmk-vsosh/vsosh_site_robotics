@@ -1,0 +1,2 @@
+{{/* Оборачиваем таблицы при сборке: прокрутка работает и без JavaScript. */}}
+{{ . | replaceRE `(?s)(<table(?:\s[^>]*)?>.*?</table>)` `<div class="table-scroll" tabindex="0" role="region" aria-label="Таблица с горизонтальной прокруткой">${1}</div>` | safeHTML }}

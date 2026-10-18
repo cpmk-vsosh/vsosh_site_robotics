@@ -6,7 +6,7 @@
 
   <section class="section-head">
     <h1>{{ .Title }}</h1>
-    {{ with .Content }}<div class="lead">{{ . }}</div>{{ else }}{{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}{{ end }}
+    {{ with .Content }}<div class="lead">{{ partial "scrollable-content.html" . }}</div>{{ else }}{{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}{{ end }}
   </section>
 
   {{ $childSections := .Sections.ByWeight }}
