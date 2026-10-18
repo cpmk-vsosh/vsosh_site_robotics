@@ -27,7 +27,7 @@
         {{ end }}
         {{ range $p := $childPages }}
           {{ if not (eq $p.Params.menu_exclude true) }}
-            <li class="link-item page-link">
+            <li class="link-item material-link">
               <a class="link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
               <div class="meta">
                 {{ $d := or $p.PublishDate $p.Date }}

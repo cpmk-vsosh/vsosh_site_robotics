@@ -323,9 +323,9 @@ a.btn{ text-decoration: none !important; }
   list-style: none;
 }
 
-.page-item { display: inline-flex; }
+.pagination .page-item { display: inline-flex; }
 
-.page-link{
+.pagination .page-link{
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -339,13 +339,13 @@ a.btn{ text-decoration: none !important; }
   transition: background .15s ease, border-color .15s ease, transform .06s ease;
 }
 
-.page-link:hover,
-.page-link:focus-visible{
+.pagination .page-link:hover,
+.pagination .page-link:focus-visible{
   background: var(--bg);
   outline: none;
 }
 
-.page-item.active .page-link{
+.pagination .page-item.active .page-link{
   background: var(--brand);
   border-color: var(--brand);
   color: #fff;
@@ -353,13 +353,13 @@ a.btn{ text-decoration: none !important; }
   pointer-events: none;
 }
 
-.page-item.disabled .page-link{
+.pagination .page-item.disabled .page-link{
   opacity: .5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.page-link:active{ transform: translateY(1px); }
+.pagination .page-link:active{ transform: translateY(1px); }
 
 /* Компактная вариация (добавь класс .pagination-compact к <ul>) */
 .pagination-compact .page-link{
