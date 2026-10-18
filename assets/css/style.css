@@ -78,7 +78,7 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
 .banner-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:var(--card);border:1px solid var(--brd);border-radius:var(--radius);padding:20px}
 .banner-text{flex:1 1 280px;display:flex;flex-direction:column;gap:12px}
 .banner-text h1{margin:0;font-size:1.5em}
-.banner-img{flex:0 0 320px;max-width:100%}
+.banner-img{flex:0 0 320px;min-width:0;max-width:100%}
 .banner-img img{display:block;width:100%;height:auto;border-radius:10px;object-fit:cover}
 
 .feed{display:flex;flex-direction:column;gap:16px}
@@ -86,6 +86,8 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
 .feed-item{min-width:0;background:var(--card);border:1px solid var(--brd);border-radius:var(--radius);display:grid;grid-template-columns:120px minmax(0,1fr);grid-template-rows:1fr auto;align-items:start;gap:14px;padding:14px}
 .thumb{inline-size:120px;block-size:90px;flex:0 0 auto;border-radius:10px;background:#eee;overflow:hidden}
 .thumb img{ inline-size:100%;block-size:100%;object-fit:cover;display:block}
+.responsive-image{display:block;max-width:100%}
+.thumb .responsive-image{height:100%}
 .item-body{display:flex;flex-direction:column;min-width:0}
 .title{margin:2px 0 6px;font-weight:700}
 .desc{margin:0 0 10px}

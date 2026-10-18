@@ -4,7 +4,7 @@
     <section class="banner">
       <div class="banner-inner">
         <div class="banner-img">
-          <img class="img-adapt" src="/img/banner.png" alt="Баннер: специальный выпуск">
+          {{ partial "responsive-image.html" (dict "src" "/img/banner.png" "alt" "Баннер: специальный выпуск" "class" "img-adapt" "webp" true "widths" (slice 320 640 960) "sizes" "(max-width: 960px) calc(100vw - 74px), 320px" "loading" "eager" "fetchpriority" "high") }}
         </div>
         <div class="banner-text">
           <h1>Сайт сопровождения участников олимпиады по профилю "Робототехника"</h1>
@@ -32,7 +32,7 @@
             <article class="feed-item">
               <div class="thumb">
                 {{ with .Params.cover }}
-                  <img loading="lazy" src="{{ . | relURL }}" alt="Обложка">
+                  {{ partial "responsive-image.html" (dict "src" . "alt" "Обложка" "webp" true "widths" (slice 160 320 480) "sizes" "160px") }}
                 {{ end }}
               </div>
               <div class="item-body">

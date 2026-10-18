@@ -1,0 +1,2 @@
+{{- /* Схемы не переводим в WebP и не уменьшаем: важна читаемость размеров и подписей. */ -}}
+{{- partial "responsive-image.html" (dict "src" .Destination "alt" (.Text | plainify) "title" .Title) -}}

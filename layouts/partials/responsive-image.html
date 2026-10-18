@@ -1,0 +1,36 @@
+{{- /* Исходники остаются в static/img. WebP создаётся только для обложек и баннера. */ -}}
+{{- $src := .src -}}
+{{- $image := false -}}
+{{- if and (hasPrefix $src "/img/") (in (slice ".png" ".jpg" ".jpeg" ".webp") (lower (path.Ext $src))) -}}
+  {{- $image = resources.Get (substr $src 1) -}}
+{{- end -}}
+{{- $srcset := "" -}}
+{{- $fallbackSrcset := "" -}}
+{{- if and $image .webp -}}
+  {{- $widths := slice -}}
+  {{- $candidates := slice -}}
+  {{- $fallbackCandidates := slice -}}
+  {{- range (.widths | default (slice 480 960 1280 1920)) -}}
+    {{- $width := int (math.Min . $image.Width) -}}
+    {{- if not (in $widths $width) -}}
+      {{- $widths = $widths | append $width -}}
+      {{- /* JPEG работает и в обычном Hugo 0.123.7 без поддержки кодирования WebP. */ -}}
+      {{- $fallback := $image.Resize (printf "%dx jpg q90" $width) -}}
+      {{- $fallbackCandidates = $fallbackCandidates | append (printf "%s %dw" $fallback.RelPermalink $width) -}}
+      {{- if hugo.IsExtended -}}
+        {{- $variant := $image.Resize (printf "%dx webp q90" $width) -}}
+        {{- $candidates = $candidates | append (printf "%s %dw" $variant.RelPermalink $width) -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $srcset = delimit $candidates ", " -}}
+  {{- $fallbackSrcset = delimit $fallbackCandidates ", " -}}
+{{- end -}}
+{{- if $fallbackSrcset -}}
+<picture class="responsive-image" style="width: {{ $image.Width }}px">
+  {{- with $srcset }}<source type="image/webp" srcset="{{ . }}" sizes="{{ $.sizes | default "100vw" }}">{{ end -}}
+{{- end -}}
+<img src="{{ $src | relURL }}"{{ with $fallbackSrcset }} srcset="{{ . }}" sizes="{{ $.sizes | default "100vw" }}"{{ end }} alt="{{ .alt | default "" }}"{{ with .class }} class="{{ . }}"{{ end }}{{ with .title }} title="{{ . }}"{{ end }}{{ with $image }} width="{{ .Width }}" height="{{ .Height }}"{{ end }} loading="{{ .loading | default "lazy" }}" decoding="async"{{ with .fetchpriority }} fetchpriority="{{ . }}"{{ end }}>
+{{- if $fallbackSrcset -}}
+</picture>
+{{- end -}}

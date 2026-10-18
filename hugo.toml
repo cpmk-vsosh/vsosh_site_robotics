@@ -9,6 +9,15 @@ title = "ВСОШ робототехника"
   authorName = "Команда ЦПМК"
   currentSeason = "2026-27"
 
+# Даём Hugo Pipes доступ к изображениям, сохраняя исходные адреса /img/.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/img"
+    target = "assets/img"
+
 [markup]
   [markup.highlight]
     noClasses = false

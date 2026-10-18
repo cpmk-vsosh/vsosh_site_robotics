@@ -43,7 +43,7 @@
 
       {{ with .Params.cover }}
         <figure class="article-image">
-          <img class="img-adapt" src="{{ . | relURL }}" alt="">
+          {{ partial "responsive-image.html" (dict "src" . "alt" "" "class" "img-adapt" "webp" true "sizes" "(max-width: 1200px) calc(100vw - 70px), 1130px" "loading" "eager") }}
         </figure>
       {{ end }}
 
