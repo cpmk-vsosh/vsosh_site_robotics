@@ -10,7 +10,7 @@ function setExpanded(li, val){
 function closeAllSubmenus(except=null){
   menu?.querySelectorAll('.has-sub').forEach(li => {
     if (li !== except) {
-      li.classList.remove('open');
+      li.classList.remove('open', 'hover-open');
       setExpanded(li, false);
     }
   });
@@ -27,16 +27,30 @@ burger?.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', String(open));
 });
 
-// Подменю: клик, Enter и Пробел работают на любом экране; наведение — через CSS.
+// Единое состояние подменю для клика, клавиатуры и наведения: Escape закрывает всё.
 menu?.querySelectorAll('.submenu-toggle').forEach(btn => {
+  const li = btn.closest('.has-sub');
   btn.addEventListener('click', (e) => {
     e.preventDefault();
     e.stopPropagation();
-    const li = btn.closest('.has-sub');
     const nowOpen = !li.classList.contains('open');
-    closeAllSubmenus(li);                  // держим открытым только текущее
+    closeAllSubmenus(li);
+    li.classList.remove('hover-open');
     li.classList.toggle('open', nowOpen);
     setExpanded(li, nowOpen);
+  });
+  li.addEventListener('pointerenter', (e) => {
+    if (isMobile() || e.pointerType === 'touch') return;
+    closeAllSubmenus(li);
+    if (!li.classList.contains('open')) li.classList.add('hover-open');
+    setExpanded(li, true);
+  });
+  li.addEventListener('pointerleave', () => {
+    if (!li.classList.contains('hover-open')) return;
+    li.classList.remove('hover-open');
+    // Не скрываем ссылки, если пользователь уже перешёл к ним клавиатурой.
+    if (li.contains(document.activeElement)) li.classList.add('open');
+    setExpanded(li, li.classList.contains('open'));
   });
 });
 
@@ -49,7 +63,8 @@ document.addEventListener('focusin', (e) => {
     return;
   }
   const li = target.closest('.has-sub');
-  closeAllSubmenus(li);                   // сам фокус не раскрывает подменю
+  // На мобиле не схлопываем подменю от фокуса: это сдвигает ссылку под указателем.
+  if (!isMobile()) closeAllSubmenus(li);
 });
 
 // Клик-вне: закрыть меню/подменю (надёжнее, чем contains, учитывает псевдооверлей)
@@ -62,7 +77,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
   const mobileNavOpen = isMobile() && nav?.classList.contains('open');
-  const li = document.activeElement?.closest('#menu .has-sub');
+  const li = document.activeElement?.closest('#menu .has-sub') || menu?.querySelector('.open, .hover-open');
   closeNav();
   if (mobileNavOpen) burger?.focus();
   else li?.querySelector('.submenu-toggle')?.focus();
@@ -96,8 +111,12 @@ menu?.addEventListener('click', (e) => {
   });
 })();
 
-// При переходе с мобилы на десктоп — очистить мобильное состояние
-window.addEventListener('resize', () => {
-  if (!isMobile()) closeNav();
+// При смене режима сбрасываем меню и не оставляем фокус на скрытом элементе.
+window.matchMedia('(max-width: 960px)').addEventListener('change', () => {
+  const focusInMenu = menu?.contains(document.activeElement);
+  const focusOnBurger = document.activeElement === burger;
+  closeNav();
+  if (isMobile() && focusInMenu) burger?.focus();
+  else if (!isMobile() && focusOnBurger) nav?.querySelector('.brand')?.focus();
 });
 
