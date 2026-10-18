@@ -1,6 +1,6 @@
 :root{
   --bg:#f6f7f8; --fg:#1f2328; --muted:#6b7280; --brand:#83c794;
-  --card:#fff; --brd:#e5e7eb; --radius:14px; --link:#400260;
+  --card:#fff; --brd:#e5e7eb; --radius:14px; --link:#24613f;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -156,8 +156,10 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
 
 .links-block:{margin:0px}
 .links-list{ list-style:none; padding:0; margin:8px 0 24px; display:flex; flex-direction:column; gap:10px; }
-.link-item{ border:1px solid var(--brd); border-radius:12px; padding:12px; background:#fff; }
-.link-item .link{ font-weight:600; text-decoration:none;color:var(--link);}
+.link-item{border:1px solid var(--brd);border-radius:12px;padding:12px;background:#fff;transition:border-color .15s ease,background-color .15s ease}
+.link-item:hover,.link-item:focus-within{border-color:#9dc9ad;background:#fbfefc}
+.link-item .link{font-weight:600;text-decoration:none;color:var(--fg)}
+.link-item .link:hover,.link-item .link:focus-visible{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .link-item .meta{font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center; }
 .link-item .meta .dot{ opacity:.6 }
 .link-item .desc{ margin-top:6px; color:#444; }
@@ -187,10 +189,26 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
   transition: color .15s ease, text-underline-offset .15s ease, background-color .15s ease;
 }
 
-:where(.article-simple, .hero, .section-head, .links-block) a:hover,
+:where(.article-simple, .hero, .section-head, .links-block) a:hover{
+  text-underline-offset:3px;
+  text-decoration-thickness:.12em;
+}
 :where(.article-simple, .hero, .section-head, .links-block) a:focus-visible{
-  text-underline-offset: 3px;
-  outline: none;
+  outline:2px solid var(--link);
+  outline-offset:3px;
+  border-radius:3px;
+}
+.article-simple a[href$=".pdf" i]::after{
+  content:"PDF";
+  display:inline-block;
+  margin-left:6px;
+  padding:1px 5px;
+  border:1px solid #d4e3d9;
+  border-radius:4px;
+  background:#eef6f0;
+  color:var(--link);
+  font:600 11px/1.5 system-ui,sans-serif;
+  vertical-align:baseline;
 }
 
 :where(.article-simple, .hero, .section-head, .links-block) a:visited{
