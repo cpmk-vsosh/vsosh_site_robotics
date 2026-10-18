@@ -29,8 +29,10 @@
 
     <!-- Статья -->
     <article class="article-simple">
-      {{ partial "season-label.html" . }}
-      <h1>{{ .Title }}</h1>
+      <div class="page-title-row">
+        <h1>{{ .Title }}</h1>
+        {{ partial "season-label.html" . }}
+      </div>
       {{ if eq .Section "uchastnikam" }}
         {{ with .Params.season }}
           {{ if ne . site.Params.currentSeason }}

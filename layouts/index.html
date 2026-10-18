@@ -44,9 +44,9 @@
                 </div>
                 <h3 class="title">{{ .Title }}</h3>
                 <p class="desc">{{ with .Params.excerpt }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
-                <div class="actions">
-                  <a class="btn" href="{{ .RelPermalink }}">Читать</a>
-                </div>
+              </div>
+              <div class="actions">
+                <a class="btn" href="{{ .RelPermalink }}">Читать</a>
               </div>
             </article>
           {{ end }}

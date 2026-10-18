@@ -7,8 +7,10 @@
   </div>
 
   <section class="section-head">
-    <h1>{{ .Title }}</h1>
-    {{ partial "season-label.html" . }}
+    <div class="page-title-row">
+      <h1>{{ .Title }}</h1>
+      {{ partial "season-label.html" . }}
+    </div>
     {{ with .Content }}<div class="lead">{{ partial "scrollable-content.html" . }}</div>{{ else }}{{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}{{ end }}
   </section>
 
