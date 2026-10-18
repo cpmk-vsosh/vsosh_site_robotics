@@ -1,0 +1,5 @@
+{{/* Корневые разделы и их прямые подразделы из главного меню возвращают на главную. */}}
+{{ $rootSection := and .IsSection (le (len .Ancestors) 2) }}
+<nav class="back-navigation" aria-label="Навигация по материалам">
+  <a id="goBack" class="btn back" href="{{ site.Home.RelPermalink }}"{{ if $rootSection }} data-history="false"{{ end }}>← Назад</a>
+</nav>

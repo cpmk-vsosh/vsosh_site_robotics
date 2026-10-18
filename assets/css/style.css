@@ -33,6 +33,9 @@ a.btn{text-decoration:none}
   text-decoration:none;color:inherit;background:none;border:0;cursor:pointer;font:inherit
 }
 .menu a:hover,.submenu-toggle:hover{background:var(--bg)}
+.menu a:focus-visible,.submenu-toggle:focus-visible,.burger:focus-visible{
+  outline:2px solid var(--link);outline-offset:2px;
+}
 .submenu{
   position:absolute;top:100%;left:0;min-inline-size:220px;background:#fff;border:1px solid var(--brd);
   border-radius:12px;padding:6px;display:none;box-shadow:0 8px 24px rgba(0,0,0,.08)
@@ -125,9 +128,11 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px}
 .article-simple code{background:#f3f4f6; padding:2px 4px; border-radius:6px}
 
 .back-row{
-  display:flex; align-items:center; gap:12px; justify-content:space-between;
+  display:flex; flex-wrap:wrap; align-items:center; gap:12px; justify-content:space-between;
   margin:16px 0 8px;
 }
+.back-navigation{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px;min-width:0}
+.back-navigation a:focus-visible{outline:2px solid var(--link);outline-offset:3px}
 .back-row .article-meta{
   margin-left:auto; display:flex; align-items:center; gap:8px;
   color:var(--muted); font-size:14px;

@@ -27,10 +27,9 @@ burger?.addEventListener('click', () => {
   burger.setAttribute('aria-expanded', String(open));
 });
 
-// Подменю: кликом управляем ТОЛЬКО на мобиле; на десктопе показ через :hover/:focus-within
+// Подменю: клик, Enter и Пробел работают на любом экране; наведение — через CSS.
 menu?.querySelectorAll('.submenu-toggle').forEach(btn => {
   btn.addEventListener('click', (e) => {
-    if (!isMobile()) return;
     e.preventDefault();
     e.stopPropagation();
     const li = btn.closest('.has-sub');
@@ -50,11 +49,7 @@ document.addEventListener('focusin', (e) => {
     return;
   }
   const li = target.closest('.has-sub');
-  closeAllSubmenus(li);
-  if (isMobile() && li) {                  // на мобиле раскрываем текущее и по фокусу
-    li.classList.add('open');
-    setExpanded(li, true);
-  }
+  closeAllSubmenus(li);                   // сам фокус не раскрывает подменю
 });
 
 // Клик-вне: закрыть меню/подменю (надёжнее, чем contains, учитывает псевдооверлей)
@@ -65,7 +60,12 @@ document.addEventListener('click', (e) => {
 
 // ESC — закрыть
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeNav();
+  if (e.key !== 'Escape') return;
+  const mobileNavOpen = isMobile() && nav?.classList.contains('open');
+  const li = document.activeElement?.closest('#menu .has-sub');
+  closeNav();
+  if (mobileNavOpen) burger?.focus();
+  else li?.querySelector('.submenu-toggle')?.focus();
 });
 
 // После перехода по ссылке на мобиле — закрыть меню
@@ -80,16 +80,19 @@ menu?.addEventListener('click', (e) => {
   const backBtn = document.getElementById('goBack');
   if (!backBtn) return;
   backBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (document.referrer) {
-      try { const ref = new URL(document.referrer);
-        if (ref.origin === location.origin) { history.back(); return; }
+    // Сохраняем стандартное открытие ссылки в новой вкладке.
+    if (e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    if (backBtn.dataset.history === 'false') return;
+    if (document.referrer && history.length > 1) {
+      try {
+        const ref = new URL(document.referrer);
+        if (ref.origin === location.origin) {
+          e.preventDefault();
+          history.back();
+        }
       } catch(_) {}
     }
-    const saved = (()=>{ try { return sessionStorage.getItem('backTarget'); } catch(_) { return null; } })();
-    if (saved) { location.href = saved; return; }
-    const fallback = backBtn.getAttribute('data-fallback') || '/';
-    location.href = fallback;
+    // Без доступной внутренней истории работает обычный href на главную.
   });
 })();
 
