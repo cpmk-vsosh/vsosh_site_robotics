@@ -71,13 +71,13 @@ a.btn{text-decoration:none}
 
 main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overflow-wrap:anywhere}
 .hero{background:var(--card);border:1px solid var(--brd);border-radius:var(--radius);padding:18px}
-.hero h1{margin:0 0 6px}
+.hero h2{margin:0 0 6px;font-size:2em}
 .meta{color:var(--muted);font-size:13px}
 
 .banner{margin:12px 0 24px}
 .banner-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;background:var(--card);border:1px solid var(--brd);border-radius:var(--radius);padding:20px}
 .banner-text{flex:1 1 280px;display:flex;flex-direction:column;gap:12px}
-.banner-text h2{margin:0}
+.banner-text h1{margin:0;font-size:1.5em}
 .banner-img{flex:0 0 320px;max-width:100%}
 .banner-img img{display:block;width:100%;height:auto;border-radius:10px;object-fit:cover}
 

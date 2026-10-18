@@ -1,5 +1,8 @@
 ---
 title: "Разборы заключительного этапа 25/26"
+canonicalURL: "/uchastnikam/zakl/razbor/"
+sitemap:
+  disable: true
 season: "2025-26"
 date: 2026-03-26T10:00:00+03:00
 publishDate: 2026-03-26T10:00:00+03:00

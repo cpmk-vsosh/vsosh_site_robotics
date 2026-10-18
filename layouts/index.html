@@ -7,14 +7,14 @@
           <img class="img-adapt" src="/img/banner.png" alt="Баннер: специальный выпуск">
         </div>
         <div class="banner-text">
-          <h2>Сайт сопровождения участников олимпиады по профилю "Робототехника"</h2>
+          <h1>Сайт сопровождения участников олимпиады по профилю "Робототехника"</h1>
           <p>Читайте всю актуальную информацию по олимпиаде в 26/27 году.</p>
         </div>
       </div>
     </section>
 	  
     <section class="hero" aria-labelledby="h1">
-      <h1 id="h1">Новости</h1>
+      <h2 id="h1">Новости</h2>
       <p class="meta">Актуальные новости олимпиады по робототехнике</p>
     </section>
 
@@ -26,7 +26,7 @@
         {{ $posts := site.GetPage "section" "posts" }}
         {{ if $posts }}
           {{/* Пагинируем на главной: по 4 постов на страницу */}}
-	  {{ $p := .Paginate ($posts.RegularPages.ByPublishDate.Reverse) 4 }}
+	  {{ $p := partial "news-paginator.html" . }}
 
           {{ range $p.Pages }}
             <article class="feed-item">

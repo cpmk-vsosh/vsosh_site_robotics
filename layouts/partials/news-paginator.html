@@ -1,0 +1,5 @@
+{{- $paginator := false -}}
+{{- with site.GetPage "section" "posts" -}}
+  {{- $paginator = $.Paginate (.RegularPages.ByPublishDate.Reverse) 4 -}}
+{{- end -}}
+{{- return $paginator -}}

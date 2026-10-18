@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>{{ if .Title }}{{ .Title }} — {{ end }}{{ .Site.Title }}</title>
 
   {{/* CSS через Hugo Pipes с fallback на статик */}}
   {{ $css := resources.Get "css/style.css" }}

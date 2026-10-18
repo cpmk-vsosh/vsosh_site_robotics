@@ -1,19 +1,50 @@
-{{- $title := cond (ne .Title "") .Title .Site.Title -}}
-{{- $desc  := or .Params.description .Summary .Site.Params.description -}}
-{{- $url   := .Permalink -}}
-{{- $img   := or .Params.cover .Site.Params.ogDefault -}}
+{{- $pageTitle := or .Params.seoTitle .Title .Site.Title -}}
+{{- if and .IsPage (eq .Type "arduino-reference") (not .Params.seoTitle) -}}
+  {{- with .CurrentSection -}}
+    {{- $pageTitle = printf "%s — %s — Arduino" $pageTitle .Title -}}
+  {{- end -}}
+{{- else if eq .Kind "term" -}}
+  {{- $pageTitle = printf "%s — материалы по теме" $pageTitle -}}
+{{- end -}}
+{{- $title := printf "%s — %s" $pageTitle .Site.Title -}}
+{{- if .IsHome -}}{{- $title = .Site.Title -}}{{- $pageTitle = .Site.Title -}}{{- end -}}
 
-<meta name="description" content="{{ $desc | plainify | truncate 160 }}">
+{{- $desc := or .Params.description .Params.excerpt -}}
+{{- if not $desc -}}
+  {{- if and (not .IsHome) .Summary -}}
+    {{- $desc = printf "%s. %s" $pageTitle (.Summary | plainify) -}}
+  {{- else if .IsHome -}}
+    {{- $desc = .Site.Params.description -}}
+  {{- else -}}
+    {{- $desc = printf "%s. %s" $pageTitle .Site.Params.description -}}
+  {{- end -}}
+{{- end -}}
+{{- $url := or .Params.canonicalURL .Permalink | absURL -}}
+{{- if .IsHome -}}
+  {{- with partial "news-paginator.html" . -}}
+    {{- if gt .PageNumber 1 -}}
+      {{- $pageTitle = printf "Новости — страница %d" .PageNumber -}}
+      {{- $title = printf "%s — %s" $pageTitle site.Title -}}
+      {{- $desc = printf "%s. %s" $pageTitle $desc -}}
+      {{- $url = .URL | absURL -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $desc = trim (replaceRE `\s+` " " ($desc | plainify)) " " -}}
+{{- $img := or .Params.cover .Site.Params.ogDefault -}}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc | truncate 160 }}">
 <link rel="canonical" href="{{ $url }}">
 
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-<meta property="og:title" content="{{ $title }}">
-<meta property="og:description" content="{{ $desc | plainify | truncate 200 }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $desc | truncate 200 }}">
 <meta property="og:url" content="{{ $url }}">
-{{ with $img }}<meta property="og:image" content="{{ . | relURL }}">{{ end }}
+<meta property="og:locale" content="ru_RU">
+{{ with $img }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $title }}">
-<meta name="twitter:description" content="{{ $desc | plainify | truncate 200 }}">
-{{ with $img }}<meta name="twitter:image" content="{{ . | relURL }}">{{ end }}
-
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $desc | truncate 200 }}">
+{{ with $img }}<meta name="twitter:image" content="{{ . | absURL }}">{{ end }}
