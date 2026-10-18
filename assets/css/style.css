@@ -1,6 +1,7 @@
 :root{
   --bg:#f6f7f8; --fg:#1f2328; --muted:#6b7280; --brand:#83c794;
-  --card:#fff; --brd:#e5e7eb; --radius:14px; --link:#24613f;
+  --card:#fff; --brd:#e5e7eb; --radius:14px;
+  --link:#19466e; --link-border:#bfd3e5; --link-soft:#edf4fb; --link-card-bg:#f8fbfe;
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -157,7 +158,7 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
 .links-block:{margin:0px}
 .links-list{ list-style:none; padding:0; margin:8px 0 24px; display:flex; flex-direction:column; gap:10px; }
 .link-item{border:1px solid var(--brd);border-radius:12px;padding:12px;background:#fff;transition:border-color .15s ease,background-color .15s ease}
-.link-item:hover,.link-item:focus-within{border-color:#9dc9ad;background:#fbfefc}
+.link-item:hover,.link-item:focus-within{border-color:var(--link-border);background:var(--link-card-bg)}
 .link-item .link{font-weight:600;text-decoration:none;color:var(--fg)}
 .link-item .link:hover,.link-item .link:focus-visible{color:var(--link);text-decoration:underline;text-underline-offset:3px}
 .link-item .meta{font-size:14px; color:var(--muted); display:flex; gap:8px; align-items:center; }
@@ -203,9 +204,9 @@ main{padding:24px 0;display:flex;flex-direction:column;gap:5px;min-width:0;overf
   display:inline-block;
   margin-left:6px;
   padding:1px 5px;
-  border:1px solid #d4e3d9;
+  border:1px solid var(--link-border);
   border-radius:4px;
-  background:#eef6f0;
+  background:var(--link-soft);
   color:var(--link);
   font:600 11px/1.5 system-ui,sans-serif;
   vertical-align:baseline;
