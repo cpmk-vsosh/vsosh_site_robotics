@@ -1,5 +1,8 @@
 ---
 title: "Консультационный вебинар по ШЭ и МЭ"
+slug: "school-municipal-webinar-2026-27"
+aliases:
+  - "/posts/консультационный-вебинар-по-шэ-и-мэ/"
 date: 2026-09-10T10:00:00+03:00   
 publishDate: 2026-09-13T10:00:00+03:00
 draft: false

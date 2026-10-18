@@ -1,5 +1,8 @@
 ---
 title: "Программа ВcОШ"
+slug: "program-2025-26"
+aliases:
+  - "/posts/программа-вcош/"
 date: 2026-03-17T10:00:00+03:00   
 publishDate: 2026-03-17T10:00:00+03:00
 draft: false

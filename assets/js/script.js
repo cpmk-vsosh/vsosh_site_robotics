@@ -154,6 +154,20 @@ menu?.addEventListener('click', (e) => {
       try {
         const ref = new URL(document.referrer);
         if (ref.origin === location.origin) {
+          const aliases = JSON.parse(backBtn.dataset.aliases || '[]');
+          const normalizePath = path => decodeURI(path).replace(/\/+$/, '');
+          const fromAlias = aliases.some(path =>
+            normalizePath(new URL(path, location.href).pathname) === normalizePath(ref.pathname)
+          );
+          if (fromAlias) {
+            // После HTML-перенаправления referrer — alias, а не предыдущая страница.
+            // Возвращаемся по истории, только если видим реальную внутреннюю запись.
+            const nav = window.navigation;
+            const previous = nav?.currentEntry && nav.entries().find(entry =>
+              entry.index === nav.currentEntry.index - 1
+            );
+            if (!previous?.url || new URL(previous.url).origin !== location.origin) return;
+          }
           e.preventDefault();
           history.back();
         }
