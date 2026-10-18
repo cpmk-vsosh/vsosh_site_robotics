@@ -1,0 +1,11 @@
+{{/* Для раздела учитываем материалы всех вложенных уровней, не назначая ему один сезон. */}}
+{{ $seasons := slice }}
+{{ $general := eq .Params.scope "general" }}
+{{ with .Params.season }}{{ $seasons = $seasons | append . }}{{ end }}
+{{ if .IsSection }}
+  {{ range .RegularPagesRecursive }}
+    {{ with .Params.season }}{{ $seasons = $seasons | append . }}{{ end }}
+    {{ if eq .Params.scope "general" }}{{ $general = true }}{{ end }}
+  {{ end }}
+{{ end }}
+{{ return (dict "seasons" (uniq $seasons) "general" $general) }}

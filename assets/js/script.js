@@ -90,6 +90,58 @@ menu?.addEventListener('click', (e) => {
 });
 
 
+// Фильтр списков материалов. Статьи и новости не скрываем и не перенаправляем.
+(function(){
+  const form = document.getElementById('seasonFilter');
+  if (!form) return;
+  const select = document.getElementById('seasonSelect');
+  const general = document.getElementById('seasonGeneral');
+  const empty = document.getElementById('seasonFilterEmpty');
+  const status = document.getElementById('seasonFilterStatus');
+  const items = [...document.querySelectorAll('.links-list > .link-item')];
+  const allowed = new Set([...select.options].map(option => option.value));
+
+  function readSelection(){
+    const params = new URL(location.href).searchParams;
+    const requested = params.get('season') || form.dataset.currentSeason;
+    select.value = allowed.has(requested) ? requested : form.dataset.currentSeason;
+    general.checked = params.get('general') !== '0';
+  }
+  function apply(){
+    let visible = 0;
+    items.forEach(item => {
+      const seasons = (item.dataset.seasons || '').split(' ').filter(Boolean);
+      const common = item.dataset.general === 'true';
+      const seasonMatches = seasons.length > 0 && (select.value === 'all' || seasons.includes(select.value));
+      // Неразмеченный материал не объявляем общим и не теряем из списка.
+      const unclassified = seasons.length === 0 && !common;
+      item.hidden = !(seasonMatches || (general.checked && common) || unclassified);
+      if (!item.hidden) visible++;
+      const sectionLink = item.querySelector('.link');
+      if (sectionLink && item.classList.contains('section-link')) {
+        const url = new URL(sectionLink.href);
+        url.searchParams.set('season', select.value);
+        url.searchParams.set('general', general.checked ? '1' : '0');
+        sectionLink.href = url.href;
+      }
+    });
+    empty.hidden = visible > 0 || items.length === 0;
+    status.textContent = `Показано: ${visible} из ${items.length}.`;
+  }
+  form.addEventListener('submit', e => e.preventDefault());
+  form.addEventListener('change', () => {
+    const url = new URL(location.href);
+    url.searchParams.set('season', select.value);
+    url.searchParams.set('general', general.checked ? '1' : '0');
+    history.pushState(null, '', url);
+    apply();
+  });
+  window.addEventListener('popstate', () => { readSelection(); apply(); });
+  readSelection();
+  apply();
+  form.hidden = false;
+})();
+
 // Кнопка Назад
 (function(){
   const backBtn = document.getElementById('goBack');

@@ -1,0 +1,18 @@
+{{ $seasons := slice site.Params.currentSeason }}
+{{ range where site.RegularPages "Section" "uchastnikam" }}
+  {{ with .Params.season }}{{ $seasons = $seasons | append . }}{{ end }}
+{{ end }}
+<form id="seasonFilter" class="season-filter" aria-label="Фильтр материалов" data-current-season="{{ site.Params.currentSeason }}" hidden>
+  <label class="season-select-label" for="seasonSelect">Сезон:
+    <select id="seasonSelect" name="season">
+      {{ range sort (uniq $seasons) "value" "desc" }}
+        <option value="{{ . }}"{{ if eq . site.Params.currentSeason }} selected{{ end }}>{{ replace . "-" "/" }}{{ if eq . site.Params.currentSeason }} (текущий){{ end }}</option>
+      {{ end }}
+      <option value="all">Все сезоны</option>
+    </select>
+  </label>
+  <label class="season-general-label" for="seasonGeneral">
+    <input id="seasonGeneral" type="checkbox" name="general" checked>
+    Общие материалы
+  </label>
+</form>

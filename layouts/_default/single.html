@@ -29,7 +29,15 @@
 
     <!-- Статья -->
     <article class="article-simple">
+      {{ partial "season-label.html" . }}
       <h1>{{ .Title }}</h1>
+      {{ if eq .Section "uchastnikam" }}
+        {{ with .Params.season }}
+          {{ if ne . site.Params.currentSeason }}
+            <p class="season-note">Материал относится к сезону {{ replace . "-" "/" }}. Требования и даты других сезонов могут отличаться.</p>
+          {{ end }}
+        {{ end }}
+      {{ end }}
 
       {{ with .Params.cover }}
         <figure class="article-image">

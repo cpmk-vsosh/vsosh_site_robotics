@@ -1,0 +1,9 @@
+{{- if eq .Section "uchastnikam" -}}
+  {{- with .Params.season -}}
+    <span class="season-label season-label--season{{ if ne . site.Params.currentSeason }} season-label--other{{ end }}">Сезон {{ replace . "-" "/" }}</span>
+  {{- else -}}
+    {{- if eq $.Params.scope "general" -}}
+      <span class="season-label season-label--general">Общий материал</span>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

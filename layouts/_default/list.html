@@ -1,11 +1,14 @@
 {{ define "main" }}
 <main id="main" class="container">
+  {{ $filterEnabled := and (eq .Section "uchastnikam") (ne .Params.scope "general") }}
   <div class="back-row">
     {{ partial "back-navigation.html" . }}
+    {{ if $filterEnabled }}{{ partial "season-filter.html" . }}{{ end }}
   </div>
 
   <section class="section-head">
     <h1>{{ .Title }}</h1>
+    {{ partial "season-label.html" . }}
     {{ with .Content }}<div class="lead">{{ partial "scrollable-content.html" . }}</div>{{ else }}{{ with .Params.description }}<p class="lead">{{ . }}</p>{{ end }}{{ end }}
   </section>
 
@@ -19,21 +22,20 @@
       <ul class="links-list">
         {{ range $s := $childSections }}
           {{ if not (eq $s.Params.menu_exclude true) }}
-            <li class="link-item section-link">
+            {{ $seasonData := partial "season-data.html" $s }}
+            <li class="link-item section-link" data-seasons="{{ delimit $seasonData.seasons " " }}" data-general="{{ $seasonData.general }}">
               <a class="link" href="{{ $s.RelPermalink }}">{{ $s.Title }}</a>
+              {{ partial "card-meta.html" $s }}
               {{ with $s.Params.description }}<div class="desc">{{ . }}</div>{{ end }}
             </li>
           {{ end }}
         {{ end }}
         {{ range $p := $childPages }}
           {{ if not (eq $p.Params.menu_exclude true) }}
-            <li class="link-item material-link">
+            {{ $seasonData := partial "season-data.html" $p }}
+            <li class="link-item material-link" data-seasons="{{ delimit $seasonData.seasons " " }}" data-general="{{ $seasonData.general }}">
               <a class="link" href="{{ $p.RelPermalink }}">{{ $p.Title }}</a>
-              <div class="meta">
-                {{ $d := or $p.PublishDate $p.Date }}
-                <time datetime="{{ $d | time.Format "2006-01-02T15:04:05Z07:00" }}">{{ $d | time.Format "02.01.2006" }}</time>
-                {{ with $p.Params.author }}<span class="dot">•</span><span>{{ . }}</span>{{ end }}
-              </div>
+              {{ partial "card-meta.html" $p }}
               {{ with $p.Params.excerpt }}<div class="desc">{{ . }}</div>{{ end }}
             </li>
           {{ end }}
@@ -41,6 +43,10 @@
       </ul>
     {{ else }}
       <p class="muted">В этом разделе пока нет материалов.</p>
+    {{ end }}
+    {{ if $filterEnabled }}
+      <p id="seasonFilterEmpty" class="muted" hidden>Материалы выбранного сезона пока не опубликованы. Можно выбрать другой сезон или включить общие материалы.</p>
+      <span id="seasonFilterStatus" class="visually-hidden" role="status" aria-live="polite"></span>
     {{ end }}
   </section>
 </main>

@@ -2,6 +2,7 @@
 date: 2026-09-03T10:00:00+03:00
 publishDate: 2026-09-03T10:00:00+03:00
 title: "Рекомендации по проведению ШЭ и МЭ ВсОШ 26/27"
+season: "2026-27"
 draft: false
 author: "Admin"
 #cover: "/img/uploads/pid-cover.png"

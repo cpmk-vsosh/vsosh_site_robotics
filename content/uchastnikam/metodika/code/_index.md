@@ -1,5 +1,8 @@
 ---
 title: "Примеры кода"
+scope: "general"
+cascade:
+  scope: "general"
 weight: 10
 description: "Раздел с примерами кода"
 вate: 2026-02-26

@@ -1,0 +1,11 @@
+<div class="meta card-meta">
+  {{ $date := or .PublishDate .Date }}
+  {{ if not $date.IsZero }}
+    <time datetime="{{ $date | time.Format "2006-01-02T15:04:05Z07:00" }}">{{ $date | time.Format "02.01.2006" }}</time>
+  {{ end }}
+  {{ with .Params.author }}
+    {{ if not $date.IsZero }}<span class="dot">•</span>{{ end }}
+    <span class="card-author">{{ . }}</span>
+  {{ end }}
+  {{ partial "season-label.html" . }}
+</div>
